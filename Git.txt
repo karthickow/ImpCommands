@@ -72,3 +72,5 @@ git config color.vi true
 git mergetool
 git branch -a
 git checkout -b newfeature
+
+hello this is my new feature code blah blah
