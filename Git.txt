@@ -70,8 +70,12 @@ git add .gitignore
 
 git config color.vi true
 git mergetool
-git branch -a
-git checkout -b newfeature
-git push origin newfeature
-git checkout master
-git push origin master
+git branch -a // lists local and remote branch
+git branch // lists only local branches
+git checkout -b newfeature // creates a new branch
+git push origin newfeature //pushing to newly created branch
+git checkout master // switch branch to master
+git push origin master // push to master branch
+git merge newfeature // merge
+git branch -d newfeature // deletes local branch
+git push origin :newfeature // deletes remote branch
