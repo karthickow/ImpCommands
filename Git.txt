@@ -67,3 +67,8 @@ ssh -T git@github.com
 
 git rm --cached hello.txt
 git add .gitignore
+
+git config color.vi true
+git mergetool
+git branch -a
+git checkout -b newfeature
