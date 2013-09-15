@@ -72,3 +72,6 @@ git config color.vi true
 git mergetool
 git branch -a
 git checkout -b newfeature
+git push origin newfeature
+git checkout master
+git push origin master
