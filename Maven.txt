@@ -1,0 +1,336 @@
+1. Web Application Project from Maven Template
+----------------------------------------------
+mvn archetype:generate -DgroupId={project-packaging} -DartifactId={project-name} -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DgroupId=com.mycompany.app  -DartifactId=my-app
+
+mvn compile
+mvn test
+mvn test-compile
+mvn package
+mvn install
+mvn clean
+
+mvn -Dmaven.artifact.threads=1 clean install
+
+mvn -o package  //offline build
+
+
+2. To convert the Maven web project to support Eclipse IDE
+-----------------------------------------------------------
+mvn eclipse:eclipse -Dwtpversion=2.0
+
+mvn tomcat7:run
+
+mvn jetty:run
+
+
+
+1. eclipse -vm c:\jdk1.4.2\jre\bin\javaw
+
+2. Maven SetUp Steps:
+   =================
+	Name 	= M2_HOME 
+	Value 	= C:\Program Files\Apache Software Foundation\apache-maven-3.0.3.
+	Name 	= M2 
+	Value 	= %M2_HOME%\bin
+	Optional:
+	=========
+	Name 	=  MAVEN_OPTS
+	Value  	= -Xms256m -Xmx512m
+	Update:
+	=======
+	Name 	= Path
+	Value 	= %M2%
+
+	mvn --version
+	
+3. mvn eclipse:eclipse -Dwtpversion=1.5
+
+4. mvn eclipse:clean
+
+5. mvn clean
+	
+   This will remove the target directory with all the build data before starting so that it is fresh.
+
+6. On your command line, execute the following Maven goal:
+    
+	mvn archetype:generate -DgroupId=com.mycompany.app 
+	-DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+	
+	mvn	archetype:generate \
+		-DarchetypeGroupId=org.apache.maven.archetypes \
+		-DgroupId=com.mycompany.app \
+		-DartifactId=my-app
+	
+	You executed the Maven goal archetype:generate, and passed in various parameters to that goal. The prefix archetype is the plugin that contains the goal. If you are familiar with Ant, you may conceive of this as similar to a task. This goal created a simple project based upon an archetype. Suffice it to say for now that a plugin is a collection of goals with a general common purpose. For example the jboss-maven-plugin, whose purpose is "deal with various jboss items".
+	
+7. The src/main/java directory contains the project source code, the src/test/java directory contains 
+    the test source, and the pom.xml is the project's Project Object Model, or POM.
+
+8. The pom.xml file is the core of a project's configuration in Maven. It is a single configuration 
+   file that contains the majority of information required to build a project in just the way you want.
+   pom.xml contains the Project Object Model (POM) for this project.
+
+9. Build the Project
+   
+   mvn package
+
+	The command line will print out various actions, and end with the following:
+	 ...
+	[INFO] ------------------------------------------------------------------------
+	[INFO] BUILD SUCCESSFUL
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Total time: 2 seconds
+	[INFO] Finished at: Thu Jul 07 21:34:52 CEST 2011
+	[INFO] Final Memory: 3M/6M
+	[INFO] ------------------------------------------------------------------------
+
+	Unlike the first command executed (archetype:generate) you may notice the second is simply a single word - package. Rather than a goal, this is a phase. A phase is a step in the build lifecycle, which is an ordered sequence of phases. When a phase is given, Maven will execute every phase in the sequence up to and including the one defined. For example, if we execute the compile phase, the phases that actually get executed are:
+
+	   1. validate
+	   2. generate-sources
+	   3. process-sources
+	   4. generate-resources
+	   5. process-resources
+	   6. compile
+
+	You may test the newly compiled and packaged JAR with the following command:
+
+	java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
+
+	Which will print the quintessential:
+
+	Hello World!
+	
+10. mvn tomcat:run
+
+11. mvn --encrypt-master-password <password>
+
+12. mvn --encrypt-password <password>
+
+13. Eclipse needs to know the path to the local maven repository. Therefore the classpath 
+    variable M2_REPO has to be set. Execute the following command:
+
+    mvn -Declipse.workspace=<path-to-eclipse-workspace> eclipse:add-maven-repo	
+	
+14. Maven configuration occurs at 3 levels:
+    * Project 		- most static configuration occurs in pom.xml
+    * Installation 	- this is configuration added once for a Maven installation
+    * User 			- this is configuration specific to a particular user
+	
+15. To only download single artifacts at a time:
+
+     mvn -Dmaven.artifact.threads=1 clean install
+	 
+16. You may wish to set this option permanently, in which case you can use the MAVEN_OPTS environment
+    variable. For example, 
+    
+	export MAVEN_OPTS=-Dmaven.artifact.threads=3
+	
+17. Maven Phases
+	
+	Although hardly a comprehensive list, these are the most common default lifecycle phases executed.
+		* validate: validate the project is correct and all necessary information is available
+		* compile: compile the source code of the project
+		* test: test the compiled source code using a suitable unit testing framework. These tests
+          should not require the code be packaged or deployed		
+		* package: take the compiled code and package it in its distributable format, such as a JAR.
+		* integration-test: process and deploy the package if necessary into an environment where 
+		  integration tests can be run
+		* verify: run any checks to verify the package is valid and meets quality criteria
+		* install: install the package into the local repository, for use as a dependency in other 
+		  projects locally
+		* deploy: done in an integration or release environment, copies the final package to the 
+		  remote repository for sharing with other developers and projects.
+
+	There are two other Maven lifecycles of note beyond the default list above. They are
+		* clean: cleans up artifacts created by prior builds
+		* site: generates site documentation for this project
+		
+	Phases are actually mapped to underlying goals. The specific goals executed per phase is dependant upon the packaging type of the project. For example, package executes jar:jar if the project type is a JAR, and war:war is the project type is - you guessed it - a WAR.
+
+	An interesting thing to note is that phases and goals may be executed in sequence.
+
+	mvn clean dependency:copy-dependencies package
+
+	This command will clean the project, copy dependencies, and package the project (executing all phases up to package, of course).
+	
+18. Generating the Site
+	
+	mvn site
+	
+	This phase generates a site based upon information on the project's pom. You can look at the documentation generated under target/site.
+	
+19. src/main/java			Application/Library sources
+	src/main/resources		Application/Library resources
+	src/main/filters		Resource filter files
+	src/main/assembly		Assembly descriptors
+	src/main/config			Configuration files
+	src/main/webapp			Web application sources
+	src/test/java			Test sources
+	src/test/resources		Test resources
+	src/test/filters		Test resource filter files
+	src/site				Site
+	LICENSE.txt				Project's license
+	NOTICE.txt				Notices and attributions required by libraries that the project depends on
+	README.txt				Project's readme
+	
+	There are just two subdirectories of this structure: src and target.
+	The target directory is used to house all output of the build.
+	
+20. Maven is essentially a project management and comprehension tool and as such provides a way to 
+	help with managing:
+	* Builds
+    * Documentation
+    * Reporting
+    * Dependencies
+    * SCMs
+    * Releases
+    * Distribution
+	
+21. Benefits of using Maven
+	John Casey
+
+	   1. standardization
+	   2. reuse
+	   3. consistency wrt build output
+	   4. dependency management
+	   5. scalability (lower level of additional info/code to add a new step to the build process)
+
+	Ashley williams
+
+	   1. Dependency management
+	   2. Build lifecycle management
+	   3. Large existing repository
+	   4. Eclipse aware (sort of)
+	   5. Well documented (hopefully soon)
+
+	Eric Hartmann
+
+	   1. One directory layout,
+	   2. A single way to define dependencies,
+	   3. Setting up a project is really fast,
+	   4. 99% of my needs are available out of the box,
+	   5. Transitive dependencies ! :-)
+
+	Vincent Massol
+
+	   1. common build structure
+	   2. build best practices enforcement (shared build meme)
+	   3. automated build of application, from source code to pre-production platform => fast time to market with reduced risks
+	   4. works well with distributed teams ;-) Location doesn't matter.
+
+	Compared to Ant:
+
+	   1. Higher level of reusability between builds
+	   2. Faster turn around time to set up a powerful build (once you're used to Maven)
+	   3. Less maintenance
+	   4. Shared build meme. I know how to build any maven project
+	   5. Greater momentum: Ant is now legacy and not moving fast ahead. Maven is forging ahead fast and there's a potential of having lots of high-value tools around Maven (CI, Dashboard project, IDE integration, etc).
+
+	Emmanuel Venisse
+
+	   1. All artifacts are versionned and store in a repository
+	   2. build process is standardized for all projects
+	   3. a lot of goals are available so it isn't necessary to develop some specific build process part contrary to ANT we can reuse existing ANT tasks in build process with antrun plugin
+	   4. it provide quality project information with generated site
+	   5. Easy to learn and use
+
+	David Jackman
+
+	   1. Dependency management
+	   2. Makes the build process much easier at the project level (i.e. don't have to create very much for each project for Maven to build it correctly, and those things you do create are more declarative than functional)
+	   3. Automatic project web sites with consistent information about each project
+	   4. Recommended standards and best practices for project layout and definition
+
+	Jesse Mcconnell
+
+	   1. Promotes modular design of code. by making it simple to manage mulitple projects it allows the design to be laid out into muliple logical parts, weaving these parts together through the use of dependency tracking in pom files.
+	   2. Enforces modular design of code. it is easy to pay lipservice to modular code, but when the code is in seperate compiling projects it is impossible to cross pollinate references between modules of code unless you specifically allow for it in your dependency management... there is no 'I'll just do this now and fix it later' implementations.
+	   3. Dependency Management is clearly declared. with the dependency management mechanism you have to try to screw up your jar versioning...there is none of the classic problem of 'which version of this vendor jar is this?' And setting it up on an existing project rips the top off of the existing mess if it exists when you are forced to make 'unknown' versions in your repository to get things up and running...that or lie to yourself that you know the actual version of ABC.jar.
+	   4. strong typed life cycle there is a strong defined lifecycle that a software system goes thru from the initiation of a build to the end... and the users are allowed to mix and match their system to the lifecycle instead of cobble together their own lifecycle.. this has the additional benefit of allowing people to move from one project to another and speak using the same vocabulary in terms of software building
+
+	Henning
+
+	   1. quick project setup, no complicated build.xml files, just a POM and go
+	   2. all developers in a project use the same jar dependencies due to centralized POM.
+	   3. getting a number of reports and metrics for a project "for free"
+	   4. reduce the size of source distributions, because jars can be pulled from a central location
+
+	Roberto Castro
+
+	   1. Consistency in artifact naming
+	   2. Use of remote repository
+	   3. Web site generation
+	   
+	   
+22. Project creation
+
+	Creating a project from an archetype involves three steps:
+
+		* the selection of the archetype,
+		* the configuration of that archetype,
+		* the effective creation of the project from the collected information.
+23. Usage
+
+	Calling archetype:generate the plugin will first ask to choose the archetype from the internal catalog. Just enter the number of the archetype.
+
+	It then asks you to enter the values for the groupId, the artifactId and the version of the project to create and the base package for the sources.
+
+	It then asks for confirmation of the configuration and performs the creation of the project.
+
+	In the following example, we selected the quickstart archetype (numbered 15) and set groupId to com.company, artifactId to project, version to 1.0 and package to com.company.project.
+	
+24. For backward compatibility with the Archetype Plugin version 1.0-alpha-7, we kept the old create 
+    goal which can be called using 
+	
+	mvn archetype:create
+	
+25. If you simply want to compile your test sources (but not execute the tests), you can execute the 
+    following command: 
+	
+	mvn test-compile
+	
+26. If you simply want to compile your test sources and execute the tests, you can execute the 
+    following command:
+	
+	mvn test
+27. If you are temporarily disconnected from the internet and you need to build your projects offline 
+    you can use the offline switch on the CLI:
+	
+	mvn -o package
+	
+28. 
+	Product Artifact										Group ID			Artifact ID
+	=======================================================================================
+	Java Activation Framework								javax.activation	activation
+	J2EE													javax.j2ee			j2ee
+	Java Data Object (JDO)									javax.jdo			jdo
+	Java Message Service (JMS)								javax.jms			jms
+	JavaMail												javax.mail			mail
+	Java Persistence API (JPA) / EJB 3						javax.persistence	persistence-api
+	J2EE Connector Architecture								javax.resource		connector
+	J2EE Connector Architecture API							javax.resource		connector-api
+	Java Authentication and Authorization Service (JAAS)	javax.security		jaas
+	Java Authorization Contract for Containers				javax.security		jacc
+	Servlet API												javax.servlet		servlet-api
+	Servlet JavaServer Pages (JSP)							javax.servlet		jsp-api
+	Servlet JavaServer Pages Standard Tag Library (JSTL)	javax.servlet		jstl
+	JDBC 2.0 Optional Package								javax.sql			jdbc-stdext
+	Java Transaction API (JTA)								javax.transaction	jta
+	Java XML RPC											javax.xml			jaxrpc
+	Portlet													javax.portlet		portlet-api
+	Java Naming and Directory Interface (JNDI)				javax.naming		jndi
+
+29. mvn help:effective-pom
+	
+	Executing the effective-pom goal should print out an XML document capturing the merge between the Super POM and the POM from your project.
+	
+30. mvn archetype:create -DgroupId=com.javaworld.hotels -DartifactId=HotelWebapp 
+    -Dpackagename=com.javaworld.hotels -DarchetypeArtifactId=maven-archetype-webapp 
+
+	A web application can be created using above maven goal.
+	
+31. Then, install it using the command:
+	
+	mvn install:install-file -DgroupId=com.javaworld.hotels -DartifactId=HotelDatabase -Dversion=1.0-SNAPSHOT -Dpackaging=jar -Dfile=D:/PortalV3.4/PortalWorkspace/Helios/HotelDatabase/target

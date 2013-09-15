@@ -1,0 +1,90 @@
+http://www.mkyong.com/tutorials/spring-tutorials/
+http://www.precisejava.com/javaperf/j2ee/JDBC.htm#JDBC109
+http://everyday-tech.blogspot.com/2009/11/auto-generate-junit-test-cases.html
+http://sourceforge.net/projects/spike-test-gen/
+
+There's no need to purchase licences for developers. They can use the free version.
+
+Please drop me an email with all the developers account names. I will add them to the OW team within the MobileInsight organization (https://github.com/MobileInsight
+ 
+) and grant them push & pull rights to the repositories I'll create.
+
+Here's a link describing how to set-up git on windows: http://help.github.com/win-set-up-git/
+ 
+
+I prefer using the command line, but some developers don't like it and I understand that so here's a nice UI for working with git : http://code.google.com/p/tortoisegit/ and a guide on how to use it with github http://dbanck.de/2009/10/08/github-windows-and-tortoisegit-part-1-installing-pulling/
+ 
+
+Some useful git links:
+- https://git.wiki.kernel.org/index.php/QuickStart
+ 
+- http://www.kernel.org/pub/software/scm/git/docs/everyday.html
+ 
+- http://book.git-scm.com/
+ 
+
+Once they're set up they will be able to access the MobileInsight repositories. 
+
+The workflow I intend to use is described very well here:  http://nvie.com/posts/a-successful-git-branching-model/
+
+
+http://aarongreenlee.com/share/monitor-tomcat-performance-with-open-source-software
+http://code.google.com/p/javamelody/
+http://www.englishdaily626.com/conversation.php
+http://download.oracle.com/javase/6/docs/technotes/tools/share/jconsole.html
+http://java.sun.com/developer/technicalArticles/J2SE/monitoring/#Finalizers
+http://tomcat.apache.org/tomcat-6.0-doc/windows-service-howto.html
+http://www.digitalsanctum.com/2007/08/18/20-tips-for-using-tomcat-in-production/
+http://www.oracle.com/technetwork/java/javase/index-137495.html
+http://supportforums.blackberry.com/t5/Java-Development/Location-APIs-Start-to-finish/ta-p/571949
+
+/** ***/
+http://www.eclipsezone.com/articles/pmd/ 
+http://pmd.sourceforge.net/eclipse
+
+JAR2EXE links:
+http://viralpatel.net/blogs/2009/02/convert-jar-to-exe-executable-jar-file-to-exe-converting.html
+http://www.advancedinstaller.com/
+http://mpowers.net/executor/
+http://www.brothersoft.com/jartoexe-75019.html
+http://jsmooth.sourceforge.net/
+
+/*****/
+http://www.softwaretestinghelp.com/best-cross-browser-testing-tools-to-ease-your-browser-compatibility-testing-efforts/
+/*****/
+http://code.google.com/p/htmlcompressor/#Compressing_HTML
+http://viralpatel.net/blogs/2008/11/enable-gzip-compression-in-tomcat.html
+http://tomcat.apache.org/tomcat-5.5-doc/config/http.html
+http://thompsonng.blogspot.com/2009/04/enable-gzip-compression-on-tomcat.html
+https://springmodules.dev.java.net/docs/reference/0.8/html/cache.html
+http://ehcache.org/documentation/jdbc.html
+http://groovy.codehaus.org/JN0525-Decimals
+
+
+http://msdn.microsoft.com/en-us/magazine/cc163925.aspx
+http://sourceforge.net/projects/spike-test-gen/
+http://docs.flexunit.org/index.php?title=Main_Page
+
+http://blog.flexexamples.com/2008/04/14/calling-a-simple-web-service-from-flex-using-the-webservice-class/
+http://insideria.com/2009/03/flex-101-accessing-a-web-servi.html
+
+http://livedocs.adobe.com/flex/3/html/help.html?content=advdatagrid_02.html
+http://techrays.wordpress.com/2007/10/12/filtering-of-hierarchical-data-in-advanceddatagrid/
+http://www.forta.com/blog/index.cfm/2008/1/29/Summarizing-Grouped-Data-With-Flex-3-AdvancedDataGrid
+http://cookbooks.adobe.com/post_Generic_Flex_Data_Exporter_to_CSV_File-10568.html
+http://cookbooks.adobe.com/flex
+http://stage.jasperforge.org/plugins/espforum/view.php?group_id=83&forumid=101&topicid=74249
+http://www.docjar.com/html/api/net/sf/jasperreports/engine/fill/JRBigDecimalIncrementerFactory.java.html
+       
+       
+
+ 
+ 
+
+ 
+
+
+ 
+
+
+ 

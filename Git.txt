@@ -1,0 +1,69 @@
+git config --global user.name "karthickow"
+git config --global user.email karthickkrishnan24@gmail.com
+
+git config --global user.name "Karthick"
+git config --global user.email "karthickkrishnan24@gmail.com"
+
+Initializing a Repository in an Existing Directory
+--------------------------------------------------
+git init
+
+git@github.com:karthickow/ImpCommands.git
+git@github.com:karthickow/Jpetstore.git
+git@github.com:karthickow/CRUDWebAppMavenized.git
+git@github.com:karthickow/BusBookingSystem.git
+
+Checking the Status of Your Files
+----------------------------------
+git status
+
+Create a new repository on the command line
+-------------------------------------------
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/karthickow/main.git
+git push -u origin master
+
+Push an existing repository from the command line
+--------------------------------------------------
+git remote add origin https://github.com/karthickow/main.git
+git push -u origin master
+
+git log
+git reflog
+
+git reflog -h
+gitk
+git checkout readme
+git commit -am ""
+git reset --hard 6ad30c1
+git reset HEAD 
+git config  remote.origin.url 									// to see remote url
+git config  remote.origin.url git@github.com:karthickow/BusBookingSystem.git	// change remote url
+
+git remote -v
+git remote show origin
+
+Check for SSH keys
+-------------------
+cd ~/.ssh
+
+Generate a new SSH key
+-----------------------
+ssh-keygen -t rsa -C "karthickkrishnan24@gmail.com"
+
+# Creates a new ssh key, using the provided email as a label
+# Generating public/private rsa key pair.
+# Enter file in which to save the key (/c/Users/you/.ssh/id_rsa): [Press enter]
+ssh-add id_rsa
+
+Add your SSH key to GitHub
+----------------------------
+clip < ~/.ssh/id_rsa.pub
+
+ssh -T git@github.com
+
+git rm --cached hello.txt
+git add .gitignore

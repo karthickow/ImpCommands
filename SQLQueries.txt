@@ -1,0 +1,91 @@
+1. /** Find Locked Table in SQL Server */
+	SELECT	OBJECT_NAME(P.OBJECT_ID) AS TableName, Resource_Type, Resource_Description
+	FROM	SYS.DM_TRAN_LOCKS L
+			JOIN SYS.PARTITIONS P ON L.Resource_Associated_Entity_Id = P.Hobt_Id
+	
+	SELECT  L.Request_Session_Id AS SPID, 
+        DB_NAME(L.Resource_Database_Id) AS DatabaseName,
+        O.Name AS LockedObjectName, 
+        P.OBJECT_ID AS LockedObjectId, 
+        L.Resource_Type AS LockedResource, 
+        L.Request_Mode AS LockType,
+        ST.TEXT AS SqlStatementText,        
+        ES.Login_Name AS LoginName,
+        ES.HOST_NAME AS HostName,
+        TST.Is_User_Transaction as IsUserTransaction,
+        AT.NAME AS TransactionName,
+        CN.Auth_Scheme AS AuthenticationMethod
+	FROM    SYS.DM_TRAN_LOCKS L
+        JOIN SYS.PARTITIONS P ON P.hobt_id = L.resource_associated_entity_id
+        JOIN SYS.OBJECTS O ON O.object_id = P.object_id
+        JOIN SYS.DM_EXEC_SESSIONS ES ON ES.session_id = L.request_session_id
+        JOIN SYS.DM_TRAN_SESSION_TRANSACTIONS TST ON ES.session_id = TST.session_id
+        JOIN SYS.DM_TRAN_ACTIVE_TRANSACTIONS AT ON TST.transaction_id = AT.transaction_id
+        JOIN SYS.DM_EXEC_CONNECTIONS CN ON CN.Session_Id = ES.Session_Id
+        CROSS APPLY sys.dm_exec_sql_text(CN.most_recent_sql_handle) AS ST
+	WHERE   Resource_Database_Id = DB_ID()
+	ORDER BY L.Request_Session_Id
+	
+2. /** To find out version number of SQL server */
+	SELECT @@VERSION
+
+3. /** To display the whole SP itself */
+	EXEC SP_HELPTEXT _ACC_DataDump
+	
+4. /** Convert datatime into mm/dd/yyyy format */
+    CONVERT(DATETIME, '2007-03-03',101)
+	
+5. /** To delete a single row from a table which has duplicate data */
+	DELETE TOP 1 FROM ToolUser WHERE Id=1
+	
+6. /** Query to check Number of Partitions in the given fact table */
+    SELECT * FROM SYS.PARTITIONS WHERE OBJECT_ID  = (SELECT OBJECT_ID FROM SYS.Tables WHERE NAME='FormVisit')
+
+7.	/** Kill Process in SQL Server 2005 */
+	DECLARE @DatabaseName nvarchar(50)
+	DECLARE @SPId int
+	DECLARE @SQL nvarchar(100)
+
+	--SET @DatabaseName = N'AdventureWorks2008'
+	SET @DatabaseName = DB_NAME()
+
+	DECLARE my_cursor CURSOR FAST_FORWARD FOR
+	SELECT SPId FROM MASTER..SysProcesses
+	WHERE DBId = DB_ID(@DatabaseName) AND SPId <> @@SPId
+
+	OPEN my_cursor
+
+	FETCH NEXT FROM my_cursor INTO @SPId
+
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+	 SET @SQL = 'KILL ' + CAST(@SPId as nvarchar(10))
+	 print @SQL
+	 EXEC sp_executeSQL @SQL
+	 --KILL @SPId -- Causing Incorrect syntax near '@spid'.
+
+	 FETCH NEXT FROM my_cursor INTO @SPId
+	END
+
+	CLOSE my_cursor
+	DEALLOCATE my_cursor
+8. /** Log time running query */
+	SELECT	DB_NAME(dbid)AS dbname, open_tran, login_time, spid, blocked, waittime, lastwaittype, cpu,
+			physical_io,memusage,status,program_name,cmd,loginame 
+	FROM	SYS.SysProcesses 
+	ORDER BY login_time 
+9. /** Auto Increment FROM 1 */
+	DBCC CHECKIDENT ('StoresType', RESEED, 0) 
+10. /** */	
+	sp_configure 'show advanced option',1
+	RECONFIGURE
+	reconfigure with override
+	sp_who2 -- Tells you what threads are running
+	sp_lock -- tells you any processes getting locked
+	dbcc inputbuffer(52)-- tells you what is running based on spid provided
+	create table tempdb..temp1( col1 char(1))
+	insert into temp1 values ('a')
+	begin transaction
+	update temp1 set col1 = 'b'
+	rollback transaction
+	

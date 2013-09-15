@@ -1,0 +1,869 @@
+Once the installation process has finished you can view a list of available tasks by entering the following from a terminal prompt:
+
+tasksel --list-tasks
+
+tasksel --task-packages dns-server
+
+
+The output of the command should list:
+
+bind9-doc 
+bind9utils 
+bind9
+
+If you did not install one of the tasks during the installation process, but for example you decide to make your new LAMP server a DNS server as well, simply insert the installation CD and from a terminal:
+
+sudo tasksel install dns-server
+
+
+32/64 bit:
+==========
+file /sbin/init
+
+Server start/stop commands
+==========================
+sudo ibmhttpserver7/bin/adminctl start
+sudo ibmhttpserver7/bin/adminctl stop
+
+was7/appserver/bin/startServer.sh server1
+was7/appserver/bin/stopServer.sh server1
+
+tail -100f /home/karthick/was7/appserver/profiles/appsrv01/logs/server1/startServer.log
+tail -100f /home/karthick/was7/appserver/profiles/appsrv01/logs/server1/stopServer.log
+
+ctrl+a (Home) 	- Move to the beginning of the line.
+ctrl+e (End) 	- Move to the end of the line.
+ctrl+h (<--) 	- Erase backward
+ctrl+d (Delete) - Erase forward
+Ctrl-f  		- Move forward one character (). 
+Ctrl-b 			- Move backward one character (). 
+Alt-f  			- Move forward one word. 
+Alt-b			- Move backward one word. 
+Alt-Ctrl-f 		- Erase forward one word. 
+Alt-Ctrl-b 		- Erase backward one word. 
+Ctrl-p 			- Previous command (up arrow). 
+Ctrl-n 			- Next command (down arrow). 
+history -c
+
+To Remove Dir and Files:
+------------------------
+rm -rf dirname
+
+
+Create a new user
+------------------
+sudo adduser webspher
+
+sudo userdel webspher
+sudo rm -r /home/webspher
+top
+
+ps -A
+ps -e
+ps -U root -u root -N
+ps -u karthick
+pgrep firefox
+pgrep -u root
+
+
+Enable super user account password on Ubuntu
+============================================
+First, set a password for root user as shown below.
+
+$ sudo passwd root
+[sudo] password for ramesh:
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+
+Now with the new password you can login as super user with su command
+
+Disable super user account password on Ubuntu
+=============================================
+Later if you don’t want to use su anymore, you can lock the root user password using one of the methods shown below
+
+$ sudo passwd -l root
+( or )
+$ sudo usermod -p '!' root
+
+To logout su
+============
+1. exit.
+2. Ctrl+d
+3. su username
+
+Create a backup of what packages are currently installed:
+========================================================
+sudo dpkg --get-selections > list.txt
+
+
+sudo apt-get install openssh-server
+sudo halt
+sudo shutdown -h now
+sudo reboot
+landscape-sysinfo
+tar xzvf /mnt/cdrom/VMwareTools-x.x.x-xxxx.tar.gz -C /tmp/
+sudo ./vmware-install.pl -d
+
+!! : to run the previous command 
+^P : move up through history list, one command at a time. (Up arrow key) 
+^N : move down (or Down arrow key). 
+!n : run nth command in history list. where n is a number from your history list. 
+!n:p : only preview command number n (will not execute the command). 
+!string : Run most recent command starting with characters in string.
+
+-rw-------   1 bshotts  bshotts       576 Apr 17  1998 weather.txt
+drwxr-xr-x   6 bshotts  bshotts      1024 Oct  9  1999 web_page
+-rw-rw-r--   1 bshotts  bshotts    276480 Feb 11 20:41 web_site.tar
+-rw-------   1 bshotts  bshotts      5743 Dec 16  1998 xmas_file.txt
+
+----------     -------  -------  -------- ------------ -------------
+    |             |        |         |         |             |
+    |             |        |         |         |         File Name
+    |             |        |         |         |
+    |             |        |         |         +---  Modification Time
+    |             |        |         |
+    |             |        |         +-------------   Size (in bytes)
+    |             |        |
+    |             |        +-----------------------        Group
+    |             |
+    |             +--------------------------------        Owner
+    |
+    +----------------------------------------------   File Permissions
+
+
+
+An example of the output produced by 'ls -l' is shown below. 
+============================================================
+
+drwx------ 2 richard staff  2048 Jan  2 1997  private
+drwxrws--- 2 richard staff  2048 Jan  2 1997  admin
+-rw-rw---- 2 richard staff 12040 Aug 20 1996  admin/userinfo
+drwxr-xr-x 3 richard user   2048 May 13 09:27 public
+
+Understanding how to read this output is useful to all unix users, but especially people using group access permissions. 
+========================================================================================================================
+
+Field 1:   a set of ten permission flags. 
+Field 2:   link count (don't worry about this)
+Field 3:   owner of the file
+Field 4:   associated group for the file
+Field 5:   size in bytes
+Field 6-8: date of last modification (format varies, but always 3 fields)
+Field 9:   name of file (possibly with path, depending on how ls was called)
+
+The permission flags are read as follows (left to right) position Meaning 
+=========================================================================
+
+1 		directory flag, 'd' if a directory, '-' if a normal file, something else occasionally may appear here for special devices. 
+2,3,4 	read, write, execute permission for User (Owner) of file 
+5,6,7 	read, write, execute permission for Group 
+8,9,10 	read, write, execute permission for Other 
+
+value Meaning:
+==============
+
+- in any position means that flag is not set 
+r file is readable by owner, group or other 
+w file is writeable. On a directory, write access means you can add or delete files 
+x file is executable (only for programs and shell scripts - not useful for data files). Execute permission on a directory means you can list the files in that directory 
+s in the place where 'x' would normally go is called the set-UID or set-groupID flag. 
+
+Examples of typical useage are given below: 
+===========================================
+chmod g+w myfile 
+	give group write permission to "myfile", leaving all other permission flags alone 
+
+chmod g-rw myfile 
+	remove read and write access to "myfile", leaving all other permission flags alone 
+
+chmod g+rwxs mydir 
+	give full group read/write access to directory "mydir", also setting the set-groupID flag so that directories created inside it inherit the group 
+
+chmod u=rw,go= privatefile 
+	explicitly give user read/write access, and revoke all group and other access, to file 'privatefile' 
+
+chmod -R g+rw . 
+	give group read write access to this directory, and everything inside of it (-R = recursive) 
+
+chgrp -R medi . 
+	change the ownership of this directory to group 'medi' and everything inside of it (-R = recursive). The person issuing this command must own all the files or it will fail. 
+
+The less program is invoked by simply typing:
+=============================================
+
+less text_file
+
+This will display the file.
+
+Controlling less
+================
+Once started, less will display the text file one page at a time. You may use the Page Up and Page Down keys to move through the text file. To exit less, type "q". Here are some commands that less will accept:
+
+Keyboard commands for the less program  
+======================================
+Command 						Action 
+==========================================================================
+Page Up or b					Scroll back one page
+Page Down or space				Scroll forward one page
+G								Go to the end of the text file
+1G								Go to the beginning of the text file
+/characters						Search forward in the text file for an occurence of the specified characters 
+n								Repeat the previous search
+q								Quit
+
+file
+====
+As you wander around your Linux system, it is helpful to determine what a file contains before you try to view it. This is where the file command comes in. file will examine a file and tell you what kind of file it is.
+
+file name_of_file
+
+Directory 			Description 
+/ 					The root directory where the file system begins. In most cases the root directory only contains subdirectories.  
+/boot 				This is where the Linux kernel and boot loader files are kept. The kernel is a file called vmlinuz.  
+/etc 				The /etc directory contains the configuration files for the system. All of the files in /etc should be text files. Points of interest: 
+/etc/passwd			The passwd file contains the essential information for each user. It is here that users are defined.
+/etc/fstab			The fstab file contains a table of devices that get mounted when your system boots. This file defines your disk drives.
+/etc/hosts			This file lists the network host names and IP addresses that are intrinsically known to the system.
+/etc/init.d			This directory contains the scripts that start various system services typically at boot time. 
+/bin, /usr/bin 		These two directories contain most of the programs for the system. The /bin directory has the essential programs that the system requires 
+					to operate, while /usr/bin contains applications for the system's users.  
+/sbin, /usr/sbin 	The sbin directories contain programs for system administration, mostly for use by the superuser.  
+/usr 				The /usr directory contains a variety of things that support user applications. Some highlights: 
+/usr/share/X11		Support files for the X Windows system
+/usr/share/dict		Dictionaries for the spelling checker. Bet you didn't know that Linux had a spelling checker. See look and ispell.
+/usr/share/doc		Various documentation files in a variety of formats.
+/usr/share/man		The man pages are kept here.
+/usr/src			Source code files. If you installed the kernel source code package, you will find the entire Linux kernel source code here. 
+/usr/local 			/usr/local and its subdirectories are used for the installation of software and other files for use on the local machine. What this really
+					means is that software that is not part of the official distribution (which usually goes in /usr/bin) goes here.
+					When you find interesting programs to install on your system, they should be installed in one of the /usr/local directories. Most often, the directory of choice is /usr/local/bin.  
+/var 				The /var directory contains files that change as the system is running. This includes: 
+/var/log			Directory that contains log files. These are updated as the system runs. You should view the files in this directory from time to time, to
+					monitor the health of your system.
+/var/spool			This directory is used to hold files that are queued for some process, such as mail messages and print jobs. When a user's mail first
+					arrives on the local system (assuming you have local mail), the messages are first stored in /var/spool/mail 
+/lib 				The shared libraries (similar to DLLs in that other operating system) are kept here.  
+/home 				/home is where users keep their personal work. In general, this is the only place users are allowed to write files. This keeps things nice
+					and clean :-)  
+/root 				This is the superuser's home directory.  
+/tmp 				/tmp is a directory in which programs can write their temporary files.  
+/dev 				The /dev directory is a special directory, since it does not really contain files in the usual sense. Rather, it contains devices that are
+					available to the system. In Linux (like Unix), devices are treated like files. You can read and write devices as though they were files. For example /dev/fd0 is the first floppy disk drive, /dev/sda (/dev/hda on older systems) is the first IDE hard drive. All the devices that the kernel understands are represented here.  
+/proc 				The /proc directory is also special. This directory does not contain files. In fact, this directory does not really exist at all. It is
+					entirely virtual. The /proc directory contains little peep holes into the kernel itself. There are a group of numbered entries in this directory that correspond to all the processes running on the system. In addition, there are a number of named entries that permit access to the current configuration of the system. Many of these entries can be viewed. Try viewing /proc/cpuinfo. This entry will tell you what the kernel thinks of your CPU.  
+/media,/mnt 		Finally, we come to /media, a normal directory which is used in a special way. The /media directory is used for mount points. As we learned
+					in the second lesson, the different physical storage devices (like hard disk drives) are attached to the file system tree in various places. This process of attaching a device to the tree is called mounting. For a device to be available, it must first be mounted.
+
+When your system boots, it reads a list of mounting instructions in the file /etc/fstab, which describes which device is mounted at which mount point in the directory tree. This takes care of the hard drives, but you may also have devices that are considered temporary, such as CD-ROMs and floppy disks. Since these are removable, they do not stay mounted all the time. The /media directory is used by the automatic device mounting mechanisms found in modern desktop oriented Linux distributions. On systems that require manual mounting of removable devices, the /mnt directory provides a convenient place for mounting these temporary devices. You will often see the directories /mnt/floppy and /mnt/cdrom. To see what devices and mount points are used, type mount.  
+
+
+A weird kind of file...
+During your tour, you probably noticed a strange kind of directory entry, particularly in the /boot and /lib directories. When listed with ls -l, you would have seen something like this:
+
+
+lrwxrwxrwx     25 Jul  3 16:42 System.map -> /boot/System.map-2.0.36-3
+-rw-r--r-- 105911 Oct 13  1998 System.map-2.0.36-0.7
+-rw-r--r-- 105935 Dec 29  1998 System.map-2.0.36-3
+-rw-r--r-- 181986 Dec 11  1999 initrd-2.0.36-0.7.img
+-rw-r--r-- 182001 Dec 11  1999 initrd-2.0.36.img
+lrwxrwxrwx     26 Jul  3 16:42 module-info -> /boot/module-info-2.0.36-3
+-rw-r--r--  11773 Oct 13  1998 module-info-2.0.36-0.7
+-rw-r--r--  11773 Dec 29  1998 module-info-2.0.36-3
+lrwxrwxrwx     16 Dec 11  1999 vmlinuz -> vmlinuz-2.0.36-3
+-rw-r--r-- 454325 Oct 13  1998 vmlinuz-2.0.36-0.7
+-rw-r--r-- 454434 Dec 29  1998 vmlinuz-2.0.36-3
+
+Notice the files, System.map, module-info and vmlinuz. See the strange notation after the file names?
+
+These three files are called symbolic links. Symbolic links are a special type of file that point to another file. With symbolic links, it is possible for a single file to have multiple names. Here's how it works: Whenever the system is given a file name that is a symbolic link, it transparently maps it to the file it is pointing to.
+
+Just what is this good for? This is a very handy feature. Let's consider the directory listing above (which is the /boot directory of an old Red Hat 5.2 system). This system has had multiple versions of the Linux kernel installed. We can see this from the files vmlinuz-2.0.36-0.7 and vmlinuz-2.0.36-3. These file names suggest that both version 2.0.36-0.7 and 2.0.36-3 are installed. Because the file names contain the version it is easy to see the differences in the directory listing. However, this would be confusing to programs that rely on a fixed name for the kernel file. These programs might expect the kernel to simply be called "vmlinuz". Here is where the beauty of the symbolic link comes in. By creating a symbolic link called vmlinuz that points to vmlinuz-2.0.36-3, we have solved the problem.
+
+To create symbolic links, use the ln command.
+
+To Add user to sudoers list:
+-----------------------------
+sudo select-editor
+
+sudo visudo
+root    ALL=(ALL:ALL) ALL
+
+Install oracle_11g
+===================
+
+To determine the RAM size, enter the following command:
+-------------------------------------------------------
+grep MemTotal /proc/meminfo
+
+To determine the size of the configured swap space, enter the following command:
+--------------------------------------------------------------------------------
+grep SwapTotal /proc/meminfo
+cat /proc/meminfo | grep -i swap
+
+To determine the available RAM and swap space, enter the following command:
+--------------------------------------------------------------------------
+free
+
+To determine the amount of shared memory available, enter the following command:
+---------------------------------------------------------------------------------
+df -k /dev/shm/
+
+To determine whether the system architecture can run the software, enter the following command:
+-----------------------------------------------------------------------------------------------
+uname -m
+
+To determine the amount of disk space available in the /tmp directory, enter the following command:
+---------------------------------------------------------------------------------------------------
+df -k /tmp
+df -h /tmp
+df --total -h
+df --total -h -T
+df --total -h -T --exclude-type=ext4
+f --total -h -T --type=ext4
+
+To determine the distribution and version of Linux installed, enter the following command:
+------------------------------------------------------------------------------------------
+cat /proc/version
+
+To determine whether the required kernel is installed, enter the following command:
+-----------------------------------------------------------------------------------
+uname -r
+
+ORACLE_HOSTNAME=somehost.us.example.com
+export ORACLE_HOSTNAME
+
+To determine whether the Oracle Inventory group exists, enter the following command:
+------------------------------------------------------------------------------------
+more /etc/oraInst.loc
+
+If the oraInst.loc file does not exist, then create the Oracle Inventory group by entering the following command:
+-----------------------------------------------------------------------------------------------------------------
+/usr/sbin/groupadd oinstall
+
+To determine whether the OSDBA group exists, enter the following command:
+------------------------------------------------------------------------
+grep OSDBA_group_name /etc/group
+
+Note:
+The default OSDBA group name is dba.
+
+If the OSDBA group does not exist or if you require a new OSDBA group, then create it as follows. In the following command, use the group name dba unless a group with that name already exists.
+-----------------------------------------
+/usr/sbin/groupadd dba
+
+If you require a new OSOPER group, then create it as follows. In the following command, use the group name oper unless a group with that name already exists.
+---------------------------------------------------------------------------------
+/usr/sbin/groupadd oper
+
+To determine whether the OSASM group exists, enter the following command:
+------------------------------------------------------------------------
+grep OSASM_group_name /etc/group
+
+If the OSASM group does not exist or if you require a new OSASM group, then create it as follows. In the following command, use the group name asadmin unless a group with that name already exists.
+-------------------------------------
+/usr/sbin/groupadd asmadmin
+
+To determine whether an Oracle software owner user named oracle exists, enter the following command:
+-----------------------------------------------------------------------------------------------------
+id oracle
+
+In the following procedure, use the user name oracle unless a user with that name already exists. If the Oracle software owner user does not exist or if you require a new Oracle software owner user, then create it as follows:
+
+To create the oracle user, enter a command similar to the following:
+--------------------------------------------------------------------
+/usr/sbin/useradd -g oinstall -G dba[,oper] oracle
+
+In this command:
+----------------
+        The -g option specifies the primary group, which must be the Oracle Inventory group, for example oinstall
+
+        The -G option specifies the secondary groups, which must include the OSDBA group and if required, the OSOPER group (dba or oper)
+
+Set the password of the oracle user:
+------------------------------------
+passwd oracle
+
+If the oracle user exists, but its primary group is not oinstall or it is not a member of the appropriate OSDBA or OSOPER groups, then enter a command similar to the following to modify it. Specify the primary group using the -g option and any required secondary group using the -G option:
+--------------------------------------------------------------------------------
+/usr/sbin/usermod -g oinstall -G dba[,oper] oracle
+
+If you are not logged in as the oracle user, then switch user to oracle:
+------------------------------------------------------------------------
+su - oracle
+
+To determine the default shell for the oracle user, enter the following command:
+--------------------------------------------------------------------------------
+echo $SHELL
+
+To increase the shell limits:
+------------------------------
+Add the following lines to the /etc/security/limits.conf file:
+
+1. apt-get update
+   apt-get upgrade
+	
+2. apt-get install gcc make binutils lesstif2 libc6 libc6-dev rpm libmotif3 libaio libstdc++5 gawk alien libg++2.8.1.3-glibc2.2 ksh gcc-3.3 g++-3.3 libstdc++5
+   apt-get install build-essential libaio1 gawk ksh libmotif4 alien libtool libstdc++5 pdksh unixODBC sysstat elfutils unixodbc-dev 
+   
+3. Creating Oracle DBA group:
+	sudo groupadd oinstall
+	
+4. Creating Oracle Inventory group:
+	sudo groupadd dba
+	
+5. Creating Oracle user home and account:
+	sudo mkdir -p /opt/oracle
+	sudo useradd -g oinstall -G dba  -d /opt/oracle -s /bin/bash oracle
+	sudo passwd oracle
+	sudo chown -R oracle:oinstall /opt/oracle
+
+6. Updating kernel parameters
+	The current values can be tested using the following command.
+	------------------------------------------------------------
+    /sbin/sysctl -a | grep <param-name>
+	/sbin/sysctl -a | grep kernel.shmmni
+
+	sudo gedit /etc/sysctl.conf
+	
+#
+# Oracle 11g
+#
+kernel.sem = 250 32000 100 128
+kernel.shmall = 2097152
+kernel.shmmni = 4096
+# Replace kernel.shmmax with the half of your memory in bytes
+# if lower than 4Go minus 1
+# 1073741824 is 1 GigaBytes
+kernel.shmmax=1073741824				 
+
+# Try sysctl -a | grep ip_local_port_range to get real values
+net.ipv4.ip_local_port_range = 32768  61000
+
+net.core.rmem_default = 262144
+net.core.rmem_max = 4194304
+net.core.wmem_default = 262144
+net.core.wmem_max = 1048576
+
+# Max value allowed, should be set to avoid IO errors
+fs.aio-max-nr = 1048576
+# 512 * PROCESSES / what really means processes ?
+fs.file-max = 6815744 
+
+# To allow dba to allocate hugetlbfs pages
+# 1001 is your oinstall group, id. grep oinstall /etc/group will give this value
+vm.hugetlb_shm_group = 1001
+
+7. Then, run the command below to set these kernel parameters:
+   -----------------------------------------------------------
+	sudo sysctl -p
+	
+8. Now, update /etc/security/limits.conf:
+----------------------------------------	
+	sudo gedit /etc/security/limits.conf
+	
+	# Oracle
+	oracle           soft    nproc   2047
+	oracle           hard    nproc   16384
+	oracle           soft    nofile  1024
+	oracle           hard    nofile  65536
+	oracle           soft    stack   10240
+
+9. Check that /etc/pam.d/login contains a line like this one:
+-------------------------------------------------------------
+	session    required   pam_limits.so
+
+10. Now, update /etc/profile:
+------------------------------
+	sudo gedit /etc/profile
+	And add the following lines:
+
+if [ $USER = "oracle" ]; then
+        if [ $SHELL = "/bin/ksh" ]; then
+              ulimit -p 16384
+              ulimit -n 65536
+        else
+              ulimit -u 16384 -n 65536
+        fi
+fi 
+	
+11.  Installing additional packages
+------------------------------------
+
+If not already done, update your distribution with the latest packages:
+
+	sudo apt-get update
+	sudo apt-get dist-upgrade
+	
+12. Install the following additional packages:
+---------------------------------------------
+arch
+sudo apt-cache search ia32
+
+sudo apt-get install alien
+sudo apt-get install autoconf
+sudo apt-get install automake 
+sudo apt-get install autotools-dev
+sudo apt-get install binutils
+sudo apt-get install bzip2
+sudo apt-get install doxygen
+sudo apt-get install elfutils
+sudo apt-get install expat
+sudo apt-get install gawk
+sudo apt-get install gcc
+sudo apt-get install gcc-multilib
+sudo apt-get install g++-multilib
+
+# This will help preventing prevent from runInstaller terrific ./runInstaller: line 54: ./install/.oui: No such file or directory error message
+sudo apt-get install ia32-libs
+
+sudo apt-get install ksh
+sudo apt-get install less
+sudo apt-get install lesstif2
+sudo apt-get install lesstif2-dev
+
+sudo apt-get install lib32z1
+
+sudo apt-get install libaio1
+sudo apt-get install libaio-dev
+sudo apt-get install libc6-dev
+
+sudo apt-get install libc6-dev-i386
+
+sudo apt-get install libc6-i386 
+
+sudo apt-get install libelf-dev
+sudo apt-get install libltdl-dev
+sudo apt-get install libmotif4
+sudo apt-get install libodbcinstq4-1 libodbcinstq4-1:i386
+sudo apt-get install libpth-dev
+sudo apt-get install libpthread-stubs0
+sudo apt-get install libpthread-stubs0-dev
+sudo apt-get install libstdc++5
+sudo apt-get install lsb-cxx
+sudo apt-get install make
+sudo apt-get install openssh-server
+sudo apt-get install pdksh
+sudo apt-get install rlwrap
+sudo apt-get install rpm
+sudo apt-get install sysstat
+sudo apt-get install unixodbc
+sudo apt-get install unixodbc-dev
+sudo apt-get install unzip
+sudo apt-get install x11-utils
+sudo apt-get install zlibc 
+
+13. To prevent from error genclntsh: Failed to link libclntsh.so.11.1 in make file for rdbms/lib/ins_rdbms.mk
+beacause of missing library: /usr/bin/ld: cannot find /usr/lib64/libpthread_nonshared.a inside
+we need to create a symlink for /usr/lib64:
+------------------------------------------------------------------------------------------------------------
+sudo ln -s /usr/lib/x86_64-linux-gnu /usr/lib64
+
+14. To help preventing from error lib//libagtsh.so: undefined reference to `nnfyboot' in make: rdbms/lib/dg4odbc] Error 1
+----------------------------------------------------------------------------------------------------------------------------
+sudo ln -sf /bin/bash /bin/sh
+sudo ln -s /usr/bin/awk /bin/awk
+sudo ln -s /usr/bin/rpm /bin/rpm 
+sudo ln -s /usr/bin/basename /bin/basename 
+
+15. To prevent from # /lib64/libgcc_s.so.1: File or directory does not exists, while creating lib/liborasdkbase.so.11.1 in ins_rdbms.mk, execute the command:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+cd /lib64
+sudo ln -s /lib/x86_64-linux-gnu/libgcc_s.so.1 . 
+
+16. Oracle 11g also needs libstdc++5 in 32bits version that is not provided with Ubuntu Pangolin.
+-------------------------------------------------------------------------------------------------
+	There are many ways to install it, I have followed this howto to install libstdc++5 on Ubuntu Karmic 
+Below is the summary of this HOWTO:
+
+mkdir /tmp/libstdc++5
+cd /tmp/libstdc++5
+wget http://mirrors.kernel.org/ubuntu/pool/universe/g/gcc-3.3/libstdc++5_3.3.6-17ubuntu1_amd64.deb
+wget http://mirrors.kernel.org/ubuntu/pool/universe/g/gcc-3.3/libstdc++5_3.3.6-17ubuntu1_i386.deb
+
+sudo dpkg --force-architecture -i libstdc++5_3.3.6-17ubuntu1_i386.deb
+sudo mv /usr/lib/libstdc++.so.5* /usr/lib32/
+
+sudo dpkg -i libstdc++5_3.3.6-17ubuntu1_amd64.deb
+
+17. Others configurations
+--------------------------
+Connect as Oracle user and set some default startup file
+
+	sudo su - oracle
+	cd
+	touch .bashrc
+	ln -s .bashrc .bash_profile
+
+Edit .bashrc file:
+------------------
+	vi .bashrc
+
+And add the following line:
+----------------------------
+	umask 022
+
+Execute the .bashrc file or restart a bash shell
+------------------------------------------------
+	source .bashrc
+
+Unzip
+-----
+ unzip linux_11gR2_database_1of2.zip -d /opt/oracle/
+ unzip linux_11gR2_database_2of2.zip -d /opt/oracle/
+
+The following will create and enable an additional 1 GB swap file at system startup, located in the /home directory:
+--------------------------------------------------------------------------------------------------------------------
+
+dd if=/dev/zero of=/home/swapfile bs=1024 count=1048576
+mkswap /home/swapfile
+swapon /home/swapfile
+swapon -a
+
+Create a backup of the original "fstab" file and add the new swap file:
+-----------------------------------------------------------------------
+cp /etc/fstab /etc/fstab.backup_`date +%N`
+echo '/home/swapfile swap swap defaults 0 0' >> /etc/fstab
+
+Exit from root and verify the new swap space:
+---------------------------------------------
+exit
+swapon -s
+
+Modify Kernel Parameters
+-------------------------
+Oracle 11gR2 Express Edition requires the following Kernel parameters. Enter the commands exactly as shown:
+
+Cut & paste the following directly into a command shell (not a text editor):
+----------------------------------------------------------------------------
+cat > /etc/sysctl.d/60-oracle.conf <<-EOF
+# Oracle 11g XE kernel parameters
+fs.file-max=6815744
+net.ipv4.ip_local_port_range=9000 65500
+kernel.sem=250 32000 100 128
+# kernel.shmmax=429496729
+kernel.shmmax=107374183
+EOF
+
+Load and verify the new kernel parameters:
+==========================================
+service procps start
+sudo sysctl -q fs.file-max
+sudo sysctl -q kernel.shmmax
+sudo sysctl -q net.ipv4.ip_local_port_range
+sudo sysctl -q kernel.sem
+
+
+Install WAS7
+============
+cd /bin
+sudo unlink sh
+sudo ln -s /bin/bash sh
+
+1. tar -pxvzf C1FW6ML.tar.gz -C /home/karthick/setup/
+2. responsefile.base.txt
+
+-OPT allowNonRootSilentInstall="true"
+-OPT disableOSPrereqChecking="true"
+-OPT disableNonBlockingPrereqChecking="true"
+-OPT checkFilePermissions="true"
+-OPT profileType="standAlone"
+-OPT installType="installNew"
+-OPT silentInstallLicenseAcceptance="true"
+-OPT feature="noFeature"
+-OPT installLocation="/home/karthick/was7/appserver"
+-OPT PROF_enableAdminSecurity="true"
+-OPT PROF_adminUserName="karthick"
+-OPT PROF_adminPassword="wipro@123"
+-OPT PROF_profilePath="/home/karthick/was7/appserver/profiles/appsrv01"
+-OPT PROF_profileName="appsrv01"
+-OPT PROF_isDefault="true"
+-OPT PROF_hostName="192.168.179.129"
+-OPT PROF_nodeName="node1"
+-OPT PROF_cellName="cell1"
+-OPT PROF_serverName="server1"
+-OPT PROF_defaultPorts="true"
+-OPT traceFormat=ALL
+-OPT traceLevel=INFO
+## Linux Service Creation
+-OPT PROF_enableService="false"
+#-OPT PROF_serviceUserName="WAS7"
+
+
+3. ./install -options /home/webspher/responsefile.base.txt -silent    ./install -options responsefile.base.txt – is:javaconsole -silent
+4. ./install -options "/opt/IBM/WebSphere/silentFiles/myresponsefile.txt" -silent -log # !/opt/IBM/WebSphere/myOptionFiles/log.txt @ALL
+4. ./install -is:javaconsole -options responce.text -silent
+Or
+	install -options responce.text -silent -log # !/root/was_install_log.txt @ALL
+4.  user_home/waslogs
+5. /WAS/AppServer/bin   $ ./startServer.sh server1 ./stopServer.sh server1
+
+Install ibmhttpserver7
+======================
+cd /bin
+sudo unlink sh
+sudo ln -s /bin/bash sh
+
+1. tar xvf ihs.7000.linux.ia32.tar -C /home/karthick/ibmhttpserver7_setup/
+2. myresponsefile.txt
+
+-OPT silentInstallLicenseAcceptance="true"
+-OPT allowNonRootSilentInstall=true
+-OPT installLocation="/home/karthick/ibmhttpserver7"
+-OPT createAdminAuth="true"
+-OPT adminAuthUser="karthick"
+-OPT adminAuthPassword="wipro@123"
+-OPT adminAuthPasswordConfirm="wipro@123"
+-OPT runSetupAdmin="true"
+-OPT createAdminUserGroup=true
+-OPT setupAdminUser="karthick"
+-OPT setupAdminGroup="karthick"
+-OPT installPlugin="true"
+-OPT webserverDefinition="webserver01"
+-OPT washostname="192.168.179.129"
+-OPT disableOSPrereqChecking="true"
+-OPT httpPort="80"
+-OPT adminPort="8008"
+
+3. /home/karthick/ibmhttpserver7_setup/IHS/./install -options /home/karthick/ibmhttpserver7_setup/myresponsefile.txt -silent
+4. vim ibmhttpserver7/conf/httpd.conf
+5. chmod –fR 755 /home/karthick/ibmhttpserver7      chown –fR wasuser:wasgroup /home/karthick/ibmhttpserver7
+4. adminctl start
+
+Install WAS7 Plugin
+===================
+cd /bin
+sudo unlink sh
+sudo ln -s /bin/bash sh
+
+1. tar -xvzf trial_plugins_7000_linux.ia32.tar.gz -C /home/karthick/wasplugin7_setup
+2. pluginresponsefile.txt
+
+-OPT allowNonRootSilentInstall="true"
+-OPT silentInstallLicenseAcceptance="true"
+-OPT disableOSPrereqChecking="true"
+-OPT installType="local"
+-OPT installLocation="/home/karthick/wasplugin7"
+-OPT wasExistingLocation="/home/karthick/was7/appserver"
+-OPT webServerSelected="ihs"
+-OPT ihsAdminPort="8008"
+-OPT ihsAdminUserID="karthick"
+-OPT ihsAdminUserGroup="karthick"
+-OPT webServerConfigFile1="/home/karthick/ibmhttpserver7/conf/httpd.conf"
+#-OPT webServerConfigFile2=""
+-OPT webServerPortNumber="80"
+#-OPT dominoUserID="notes"
+-OPT webServerDefinition="webserver01"
+-OPT pluginCfgXmlLocation=""
+-OPT wasMachineHostName="192.168.179.129"
+-OPT mapWebserverToApplications="true"
+-OPT webServerHostName="192.168.179.129"
+-OPT profileName="appsrv01"
+
+3. /home/karthick/wasplugin7_setup/plugin/./install -options /home/karthick/wasplugin7_setup/pluginresponsefile.txt -silent
+
+Install MySQL
+=============
+
+sudo apt-get install mysql-server
+service mysql status
+service mysql stop
+service mysql start
+
+Install Java
+============
+whereis java
+sudo apt-get purge openjdk*
+
+sudo apt-get install python-software-properties
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java6-installer
+sudo apt-get install oracle-jdk7-installer
+sudo apt-get install oracle-java8-installer
+
+sudo apt-get remove oracle-java7-installer
+
+Install Tomcat:
+---------------
+sudo apt-get update
+sudo apt-get install tomcat7 tomcat7-docs tomcat7-examples tomcat7-admin -y
+sudo apt-get install tomcat7
+sudo service tomcat7 stop
+sudo nano /etc/default/tomcat7
+gksudo gedit /etc/default/tomcat7
+JAVA_HOME=/usr/lib/jvm/jdk1.7.0_21
+sudo service tomcat7 start
+
+Open the default tomcat port in your firewall
+---------------------------------------------
+sudo ufw enable 8080/tcp
+http://192.168.179.129:8080/
+
+Then type ( or copy and paste from here ) these commands one at a time:
+-----------------------------------------------------------------------
+sudo rm /var/lib/dpkg/info/oracle-java7-installer*
+sudo apt-get purge oracle-java7-installer*
+sudo rm /etc/apt/sources.list.d/*java*
+sudo apt-get update
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+
+export DISPLAY=192.168.5.2:0.0
+unset DISPLAY
+gedit HelloWorld.java
+sudo apt-get install ubuntu-desktop
+xclock, xcalc
+sudo apt-get install gksu
+
+RedHatLinux6:
+=============
+Network Configuration:
+----------------------
+ifup eth0
+setup
+vim /etc/hosts
+vim /etc/sysconfig/network
+vim /etc/resolv.conf
+ethtool eth0
+/etc/init.d/network restart
+service network restart
+service network start
+service network stop
+
+To list all services:
+----------------------
+service --status-all
+service --status-all | grep ntpd
+service --status-all | less
+
+service httpd status
+netstat -tulpn
+
+apt-get install rcconf
+
+The rcconf command under Ubuntu Linux allows you to control which services are started when the system
+-------------------------------------------------------------------------------------------------------
+boots up or reboots
+--------------------
+rcconf
+
+Type the following commands to verify your new setup, enter:
+-----------------------------------------------------------
+ifconfig eth0
+route -n
+ping google.com
+
+To see list of logged in user type who or w command:
+----------------------------------------------------
+w or who
+pkill -KILL -u {username}
+pkill -KILL -u raj
+sudo pkill -KILL -u raj
+
+Linux logout user or logoff user commands
+------------------------------------------
+ctrl+d
+logout
