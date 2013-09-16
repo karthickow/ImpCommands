@@ -1,3 +1,105 @@
+select * from v$database;
+select * from v$instance;
+select * from database_properties where property_name like '%TAB%';
+
+select distinct privilege from all_tab_privs;
+select * from dba_alert_arguments;
+select * from dba_alert_history;
+select * from dba_all_tables;
+select * from dba_application_roles;
+select * from dba_connect_role_grantees;
+select * from dba_data_files;
+select * from dba_db_links;
+select * from dba_errors;
+select * from dba_external_tables;
+select * from dba_external_locations;
+select * from dba_free_space;
+select * from dba_global_context;
+select * from dba_indexes;
+select * from dba_indextypes;
+select * from dba_java_arguments;
+select * from dba_jobs;
+select * from dba_locks;
+select * from dba_lock;
+select * from dba_objects;
+select * from dba_object_tables;
+select * from dba_policies;
+select * from dba_procedures;
+select * from dba_profiles;
+select * from dba_roles;
+select * from dba_role_privs;
+select * from dba_segments;
+select * from dba_sequences where sequence_name ='IUID_SEQ' ;
+select * from dba_services;
+select * from dba_source;
+select distinct privilege from dba_sys_privs order by 1;
+select * from dba_synonyms;
+select * from dba_tab_cols;
+select * from dba_tab_columns;
+select * from dba_tab_privs;
+select * from dba_tables;
+select * from dba_tablespaces;
+select * from dba_temp_files;
+select * from dba_temp_free_space;
+select * from dba_triggers where owner ='SCHEMA_OWNER' ;
+select * from dba_views;
+select * from dba_workspaces;
+select * from dba_users;
+
+
+show parameter OS_AU;
+show user;
+
+-- Remove existing users and roles with the same names.
+--DROP USER schema_owner CASCADE;
+--DROP USER app_user CASCADE;
+--DROP ROLE schema_rw_role;
+--DROP ROLE schema_ro_role;
+
+-- Schema owner
+--create user schema_owner identified by Admin123 default tablespace users temporary tablespace temp quota unlimited on users;
+--grant connect, create table to schema_owner;
+
+-- Application user 
+--create user app_user identified by Admin123 default tablespace users temporary tablespace temp;
+--grant connect to app_user;
+
+--CREATE ROLE schema_rw_role;
+--CREATE ROLE schema_ro_role;
+
+--GRANT schema_rw_role TO app_user;
+
+--CREATE TABLE test_tab (
+--  id          NUMBER,
+--  description VARCHAR2(50),
+--  CONSTRAINT test_tab_pk PRIMARY KEY (id)
+--);
+
+--GRANT SELECT ON test_tab TO schema_ro_role;
+--GRANT SELECT, INSERT, UPDATE, DELETE ON test_tab TO schema_rw_role;
+
+desc test_tab;
+
+--GRANT create trigger to schema_owner;
+--grant create sequence to schema_owner;
+
+--drop trigger TRG_IUID;
+--drop sequence IUID_SEQ;
+--
+-- alter session set current_schema = SYSMAN;
+-- exec mgmt_target.set_agent_tzrgn('L-156038836:3938','Asia/Calcutta');
+select * from mgmt_targets;
+select name from v$database;
+select instance from v$thread;
+SELECT * FROM V$TIMEZONE_FILE;
+
+-- emctl status dbconsole
+-- emctl start dbconsole
+-- emctl status agent
+-- emctl start agent
+-- lsnrctl status
+-- lsnrctl start
+
 select dbms_xdb.gethttpport as "HTTP-Port", dbms_xdb.getftpport as "FTP-Port" from dual;
 --begin 
 --  execute  dbms_xdb.sethttpport('8086'); 

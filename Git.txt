@@ -1,5 +1,6 @@
 git config --global user.name "karthickow"
 git config --global user.email karthickkrishnan24@gmail.com
+git config --global http.proxy http://wipro\\kkarthic:143Vipro@10.145.22.10:8080
 
 git config --global user.name "Karthick"
 git config --global user.email "karthickkrishnan24@gmail.com"
@@ -79,3 +80,4 @@ git push origin master // push to master branch
 git merge newfeature // merge
 git branch -d newfeature // deletes local branch
 git push origin :newfeature // deletes remote branch
+git remote update // will show remote branches
