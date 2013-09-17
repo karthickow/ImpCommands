@@ -1,19 +1,35 @@
+http://gitref.org/inspect/    // git reference documentation
+
 git config --global user.name "karthickow"
 git config --global user.email karthickkrishnan24@gmail.com
+
 git config --global http.proxy http://wipro\\kkarthic:143Vipro@10.145.22.10:8080
+git config --global --unset http.proxy		// to unset http proxy
 
 git config --global user.name "Karthick"
 git config --global user.email "karthickkrishnan24@gmail.com"
 
+git help -a
+
+echo 'test content' > test.txt
+echo 'more content' > more.txt
+
 Initializing a Repository in an Existing Directory
 --------------------------------------------------
 git init
-
+https://github.com/karthickow/ImpCommands.git
 git@github.com:karthickow/ImpCommands.git
+
+https://github.com/karthickow/Jpetstore.git
 git@github.com:karthickow/Jpetstore.git
+
+https://github.com/karthickow/CRUDWebAppMavenized.git
 git@github.com:karthickow/CRUDWebAppMavenized.git
+
+https://github.com/karthickow/BusBookingSystem.git
 git@github.com:karthickow/BusBookingSystem.git
 
+git clone https://github.com/karthickow/ImpCommands.git Imp // a new name to the folder
 Checking the Status of Your Files
 ----------------------------------
 git status
@@ -32,20 +48,67 @@ Push an existing repository from the command line
 git remote add origin https://github.com/karthickow/main.git
 git push -u origin master
 
-git log
+git log		//Shows a listing of commits on a branch including the corresponding details.
+git log --oneline  //To see a more compact version of the same history
+git log --oneline --graph
+git log --oneline master // to see commit logs only in master branch
+git log --oneline testing ^master // to see commit logs only in testing branch not in master branch
+git log --author 	//look for only commits from a specific author
+git log --author=Linus --oneline -5
+git log --since --before 	//filter commits by date committed
+git log --oneline --before={3.weeks.ago} --after={2010-04-18} --no-merges
+git log --grep 		//filter commits by commit message
+git log --grep=P4EDITOR --no-merges
+git log --grep="p4 depo" --format="%h %an %s" --author="Hausmann" --all-match
+git log -S 		//filter by introduced diff
+git log -Suserformat_find_requirements
+git log -p 	//show patch introduced at each commit
+git log -p --no-merges -2
+git log --stat 	//show diffstat of changes introduced at each commit
+git log --stat --no-merges -2
+
 git reflog
+git show 	//Shows information about a git object  Example: git show commit 
+git ls-tree //Shows a tree object, including the mode and the name of each item and the SHA-1 value of the blob or the tree that it points to. Example: git
+              ls-tree master^{tree}
+git cat-file	//Used to view the type of an object through the SHA-1 value. Example: git cat-file -t e69de29bb2d1d6434b8b29ae775ad8c2e48c5391 blob
+git grep	//Lets you search through your trees of content for words and phrases. Example: git grep "www.siteground.com" -- *.php
+
+git diff branchA branchB
+git log --graph --oneline --decorate --all
+git diff	//Generates patch files or statistics of differences between paths or files in your git repository, or your index or your working directory.
+              Example: git diff
+git diff --cached 	//show diff of staged changes
+git diff --stat 	//show summary of changes instead of a full diff
+git diff --cached --stat 
+git diff v0.9
+git diff v0.9 --stat
+git diff --stat master erlang
+git diff --stat 8d585ea erlang
+git diff --stat master...erlang
+git merge-base master erlang
 
 git reflog -h
-gitk
+gitk 		//Graphical Tcl/Tk based interface to a local Git repository. Example: gitk
+git gc		//Garbage collector for your repository. Optimizes your repository. Should be run occasionally. 
+git fsck	//Does an integrity check of the Git file system, identifying corrupted objects. Example: git fsck
+git prune	//Removes objects that are no longer pointed to by any object in any reachable branch. Example: git prune
 git checkout readme
 git commit -am ""
-git reset --hard 6ad30c1
+git reset --hard 6ad30c1 // Resets your index and working directory to the state of your last commit.
 git reset HEAD 
 git config  remote.origin.url 									// to see remote url
 git config  remote.origin.url git@github.com:karthickow/BusBookingSystem.git	// change remote url
 
 git remote -v
+git remote rm origin	//removing an existing remote alias
+git remote rename [old-alias] [new-alias] rename remote aliases
+git remote rename github origin
 git remote show origin
+git remote set-url 	//update an existing remote URL
+git remote set-url origin git://github.com/github/git-reference.git
+
+In a nutshell you can update your project with git fetch and share your changes with git push. You can manage your remote repositories with git remote
 
 Check for SSH keys
 -------------------
@@ -66,14 +129,39 @@ clip < ~/.ssh/id_rsa.pub
 
 ssh -T git@github.com
 
-git rm --cached hello.txt
+git stash		//Temporarily saves changes that you don’t want to commit immediately. You can apply the changes later. Example: git stash Saved working 
+				  directory and index state "WIP on master: 84f241e first commit" HEAD is now at 84f241e first commit (To restore them type "git stash apply")
+git stash apply		//grab the item from the stash list and apply to current working directory
+git stash list 	//view stashes currently on the stack
+git stash apply stash@{1}
+git stash drop 	//remove an item from the stash list
+git stash clear		//If you want to remove of all the stored items, just run the command. But only do this if you're sure you're done with the stash.
+
+git tag			//Tags a specific commit with a simple, human readable handle that never moves. Example: git tag -a v1.0 -m 'this is version 1.0 tag'
+git tag -a v1.0 
+git log --decorate
+git log --oneline --decorate --graph
+
+git fetch origin --tags // If you want to make sure all tags are always included, you must include the --tags option.
+git tag -a v0.9 558151a --For example, say we had released commit 558151a (several commits back) but forgot to tag it at the time. We can just tag it now:
+git fetch <remote> tag <tag-name>		//If you just want a single tag, use
+git push origin master --tags  //  In order to explicitly update these you must include the --tags option when using git push
+git fetch		// Fetches all the objects from the remote repository that are not present in the local one. Example: git fetch origin
+git pull	//Fetches the files from the remote repository and merges it with your local one. This command is equal to the git fetch and the git merge
+			  sequence. Example: git pull origin
+git pull origin gh-pages(branch name)
+git push	//Pushes all the modified local objects to the remote repository and advances its branches. Example: git push origin master			  
+git remote  //Shows all the remote versions of your repository. Example: git remote origin
+git rm --cached hello.txt 
+git rm 						//Removes files from your index and your working directory so they will not be tracked. Example: git rm filename
 git add .gitignore
 
 git config color.vi true
 git mergetool
 git branch -a // lists local and remote branch
 git branch // lists only local branches
-git checkout -b newfeature // creates a new branch
+git branch -v //see the last commit on each branch
+git checkout -b newfeature // create and immediately switch to a branch
 git push origin newfeature //pushing to newly created branch
 git checkout master // switch branch to master
 git push origin master // push to master branch
