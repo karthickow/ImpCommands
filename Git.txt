@@ -1,6 +1,8 @@
+shift+zz //save and exit vi editor
+
 http://gitref.org/inspect/    // git reference documentation
 
-git config --global user.name "karthickow"
+git config --global user.name "Karthick"
 git config --global user.email karthickkrishnan24@gmail.com
 
 git config --global http.proxy http://wipro\\kkarthic:143Vipro@10.145.22.10:8080
