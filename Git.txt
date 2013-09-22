@@ -76,6 +76,8 @@ git ls-tree //Shows a tree object, including the mode and the name of each item 
 git cat-file	//Used to view the type of an object through the SHA-1 value. Example: git cat-file -t e69de29bb2d1d6434b8b29ae775ad8c2e48c5391 blob
 git grep	//Lets you search through your trees of content for words and phrases. Example: git grep "www.siteground.com" -- *.php
 
+git show-ref 	//Displays references available in a local repository along with the associated commit IDs.
+git diff master origin/master	// diff b/w local and remote repository
 git diff branchA branchB
 git log --graph --oneline --decorate --all
 git diff	//Generates patch files or statistics of differences between paths or files in your git repository, or your index or your working directory.
