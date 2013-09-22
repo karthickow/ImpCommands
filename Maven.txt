@@ -23,6 +23,16 @@ mvn tomcat7:run
 
 mvn jetty:run
 
+mvn clean package jboss-as:deploy
+mvn jboss-as:undeploy
+
+Debug the Application
+---------------------
+
+If you want to debug the source code or look at the Javadocs of any library in the project, run either of the following commands to pull them into your local repository. The IDE should then detect them.
+
+        mvn dependency:sources
+        mvn dependency:resolve -Dclassifier=javadoc
 
 
 1. eclipse -vm c:\jdk1.4.2\jre\bin\javaw
