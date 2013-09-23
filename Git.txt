@@ -93,6 +93,12 @@ git diff --stat master...erlang
 git merge-base master erlang
 
 git reflog -h
+
+To undo last commit from both remote and local repository
+---------------------------------------------------------
+git reset --hard bc64f3f	// local changes will be replaced by remote
+git push origin master -f
+
 gitk 		//Graphical Tcl/Tk based interface to a local Git repository. Example: gitk
 git gc		//Garbage collector for your repository. Optimizes your repository. Should be run occasionally. 
 git fsck	//Does an integrity check of the Git file system, identifying corrupted objects. Example: git fsck
