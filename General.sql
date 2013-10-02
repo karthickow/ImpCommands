@@ -155,3 +155,59 @@ select * from contacts;
 
 select * from student;
 select student_seq.nextval from dual;
+
+
+grant connect, resource, create session, create view to demomigration identified by demomigration;
+
+-- backup database using command prompt 
+set ORACLE_SID=xe 
+D:\Karthick\InstalledApps\oraclexe\app\oracle\product\11.2.0\server\bin>rman target /
+backup database;
+list backup;
+delete backup;
+backup database plus archivelog;
+
+sqlplus / as sysdba
+shutdown abort;
+startup;
+
+RMAN> startup nomount;
+RMAN>restore controlfile from '*_1_1';
+RMAN> alter database mount;
+RMAN> restore database;
+RMAN> recover database;
+RMAN> alter database open resetlogs;  -- archive log mode
+
+-- Enable archive mode 
+-- To check archive mode status
+ archive log list;
+ 
+ show parameter recovery_file_dest;
+ show parameter DB_RECOVERY_FILE_DEST;
+ alter system set log_archive_dest_1='LOCATION=D:/Karthick/InstalledApps/oraclexe/app/oracle/archive' scope = both;
+ -- Now we shutdown the database and bring it backup in mount mode.
+ shutdown immediate;
+ startup mount;
+ -- Lastly all that is needed it set archive log mode and open the database.
+ alter database archivelog;
+ alter database open;
+ 
+ --You can switch to the log file to see that an archive is written to archive log location.
+ alter system switch logfile;
+ 
+ -- Disable Archive Log Mode
+ -- Now we shutdown the database and bring it backup in mount mode.
+ shutdown immediate;
+ startup mount;
+ -- All that is left is to disable archive log mode and open the database.
+ alter database noarchivelog;
+ alter database open;
+ archive log list;
+ 
+ -- export and import schema
+ exp userid=dbo_BusBookingSystem/dbo_BusBookingSystem@XE file=c:\bus.dmp
+ imp BusBookingSystem/BusBookingSystem@XE fromuser=dbo_BusBookingSystem touser=BusBookingSystem file=c:\bus.dmp
+ 
+ grant connect, resource, create session, create view to BusBookingSystem identified by BusBookingSystem;
+ -- The Oracle DROP USER CASCADE command drops a user and all owned objects
+ DROP  USER  BusBookingSystem  CASCADE;
