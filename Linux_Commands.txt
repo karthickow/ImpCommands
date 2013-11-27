@@ -1,3 +1,47 @@
+Copy and paste text with vi or vim
+Posted by Rex in UNIX
+The ability to duplicate text in an editor can be handy. vi and vim have several useful copy and paste commands.
+
+The command ‘Y’ or ‘yy’ copies (yanks) one or more lines. To copy one line, two lines, 10 lines, and all lines to the end of the file, respectively:
+Y 2Y
+10Y
+yG
+To paste the text contained in the buffer above (uppercase P) or below the current cursor position (lowercase p), respectively:
+P p
+It is also possible to yank text within a line. The following commands yank text from the current cursor position to the end of the word and the end of the line, respectively:
+yw y$
+The same commands paste the text within a line. Lower case p pastes after the cursor position and upper case P pastes before.
+Paste will also work with deleted text, either lines or parts of lines. Be careful not to execute any other commands prior to pasting as this will empty the buffer.
+- See more at: http://www.tech-recipes.com/rx/219/copy-and-paste-text-with-vi-or-vim/#sthash.xAdvZ7sm.dpuf
+
+
+Terminate session:
+
+Use command: ZZ
+Save changes to current file and quit.
+
+Use command line: ":wq"
+Save (write) changes to current file and quit.
+
+Use command line: ":w"
+Save (write) changes to current file without quitting.
+
+Use command line: ":w!"
+Save (write) changes to current file overriding the file permissions if the user has the privileges to change the file permissions. For example this will save a file with read only privileges if the user is the owner or has the ability to modify the privileges to allow a write. This will not permanently modify the file privileges. Note that there is no space between the two characters. A space will infer that the output is streamed to a Unix command following the "!".
+
+Use command line: ":w filename"
+Save (write) changes to a new file of name "filename" without quitting.
+
+Use command line: ":q!"
+Ignore changes and quit. No changes from last write will be saved.
+
+Use command line: ":qa"
+Quit all files opened.
+
+
+
+do-release-upgrade
+
 Once the installation process has finished you can view a list of available tasks by entering the following from a terminal prompt:
 
 tasksel --list-tasks
