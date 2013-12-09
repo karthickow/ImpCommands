@@ -1,3 +1,79 @@
+.bashrc
+--------
+export http_proxy='http://wipro\kkarthic:123Vipro@10.145.22.10:8080';
+export ftp_proxy='ftp://wipro\kkarthic:123Vipro@10.145.22.10:8080';
+export https_proxy='https://wipro\kkarthic:123Vipro@10.145.22.10:8080';
+
+/etc/apt/apt.conf
+-----------------
+Acquire::ftp::proxy "ftp://wipro\kkarthic:123Vipro@10.145.22.10:8080";
+Acquire::http::proxy "http://wipro\kkarthic:123Vipro@10.145.22.10:8080";
+Acquire::https::proxy "https://wipro\kkarthic:123Vipro@10.145.22.10:8080";
+
+sudo /opt/IBM/WebSphere/AppServer/bin/startManager.sh -logfile /tmp/wasdeploy/wasdeploy_11_29_2013_184732.log -profileName KarthickDmgr01
+sudo /opt/IBM/WebSphere/AppServer/bin/startNode.sh -logfile /tmp/wasdeploy/wasdeploy_11_29_2013_184732.log -profileName KarthickAppSrv01
+sudo /opt/IBM/WebSphere/AppServer/bin/startServer.sh server1 -logfile /tmp/wasdeploy/wasdeploy_11_29_2013_184732.log -profileName KarthickAppSrv01
+sudo /opt/IBM/WebSphere/AppServer/bin/serverStatus.sh dmgr -logfile /tmp/wasdeploy/wasdeploy_11_29_2013_184732.log -profileName KarthickDmgr01
+sudo /opt/IBM/WebSphere/AppServer/bin/serverStatus.sh server1 -logfile /tmp/wasdeploy/wasdeploy_11_29_2013_184732.log -profileName KarthickDmgr01
+
+WAS_HOME=/opt/IBM/WebSphere/AppServer
+was.install.root=/opt/IBM/WebSphere/AppServer
+profileName=KarthickDmgr01
+profilePath=/opt/IBM/WebSphere/AppServer/profiles/KarthickDmgr01
+templatePath=/opt/IBM/WebSphere/AppServer/profileTemplates/default
+nodeName=karthickCellManager01
+cellName=karthickCell01
+hostName=karthick
+startingPort=60000
+
+
+ws_ant -propertyfile /tmp/was_props/appserver.props -file /opt/IBM/WebSphere/AppServer/profileTemplates/default/actions/updatePorts.ant
+
+chmod +x listdir.sh
+
+$ chmod [references][operator][modes] file ...
+
+The references (or classes) are used to distinguish the users to whom the permissions apply. If no references are specified it defaults to “all” but modifies only the permissions allowed by the umask. The references are represented by one or more of the following letters:
+
+Reference	Class	Description
+u	user	the owner of the file
+g	group	users who are members of the file's group
+o	others	users who are neither the owner of the file nor members of the file's group
+a	all	all three of the above, same as ugo
+
+The chmod program uses an operator to specify how the modes of a file should be adjusted. The following operators are accepted:
+
+Operator	Description
++	adds the specified modes to the specified classes
+-	removes the specified modes from the specified classes
+=	the modes specified are to be made the exact modes for the specified classes
+
+The modes indicate which permissions are to be granted or removed from the specified classes. There are three basic modes which correspond to the basic permissions:
+
+Mode	Name	Description
+r	read	read a file or list a directory's contents
+w	write	write to a file or directory
+x	execute	execute a file or recurse a directory tree
+X	special execute	which is not a permission in itself but rather can be used instead of x. It applies execute permissions to directories regardless of their current permissions and applies execute permissions to a file which already has at least one execute permission bit already set (either user, group or other). It is only really useful when used with '+' and usually in combination with the -R option for giving group or other access to a big directory tree without setting execute permission on normal files (such as text files), which would normally happen if you just used "chmod -R a+rx .", whereas with 'X' you can do 
+
+"chmod -R a+rX ." instead
+
+s	setuid/gid	details in Special modes section
+t	sticky	details in Special modes section
+
+
+source ~/.profile
+
+dpkg-reconfigure console-setup
+
+ls -l /bin/sh
+dpkg-reconfigure dash
+
+
+netstat -tulpn | grep 80
+
+tar xvfz apache-ant-1.9.2-bin.tar.gz 
+
 Copy and paste text with vi or vim
 Posted by Rex in UNIX
 The ability to duplicate text in an editor can be handy. vi and vim have several useful copy and paste commands.
