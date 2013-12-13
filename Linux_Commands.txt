@@ -1,7 +1,6 @@
+
 Description 
-.bashrc
 How to remove CTRL-M characters from a file in UNIX.
---------
 You may need to do this when you import a text file from MS-DOS (or MS-Windows), and forget to transfer it in ASCII or text mode. Here are several ways to do it; pick the one you are most comfortable with.
 
 The easiest way is probably to use the stream editor sed to remove the ^M characters. Type this command: % sed -e "s/^M//" filename > newfilename
@@ -82,6 +81,8 @@ custom profile = Node01
 NodeName = karthickNode01
 Host name  = karthick.com
 
+.bashrc
+--------
 export http_proxy='http://wipro\kkarthic:123Vipro@10.145.22.10:8080';
 export ftp_proxy='ftp://wipro\kkarthic:123Vipro@10.145.22.10:8080';
 export https_proxy='https://wipro\kkarthic:123Vipro@10.145.22.10:8080';
