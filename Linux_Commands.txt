@@ -1,3 +1,85 @@
+Description 
+How to remove CTRL-M characters from a file in UNIX.
+You may need to do this when you import a text file from MS-DOS (or MS-Windows), and forget to transfer it in ASCII or text mode. Here are several ways to do it; pick the one you are most comfortable with.
+
+The easiest way is probably to use the stream editor sed to remove the ^M characters. Type this command: % sed -e "s/^M//" filename > newfilename
+To enter ^M, type CTRL-V, then CTRL-M. That is, hold down the CTRL key then press V and M in succession.
+You can also do it in vi: % vi filename
+Inside vi [in ESC mode] type: :%s/^M//g
+To enter ^M, type CTRL-V, then CTRL-M. That is, hold down the CTRL key then press V and M in succession.
+You can also do it inside Emacs. To do so, follow these steps:
+Go to the beginning of the document
+Type: M-x replace-string RET C-q C-m RET RET
+where "RET" means <press the return key> and C-q and C-m mean <hold the CTRL key and press the m (or q) key>.
+
+
+host name = karthick.com
+full name = Karthick Krishnan
+username = karthick
+pwd = wipro@123
+
+WAS7 & IHS7:
+---- 
+admin
+wipro123
+
+user1
+group1
+
+sudo unlink /bin/sh
+sudo ln -s /bin/bash /bin/sh
+
+sudo dpkg-reconfigure dash
+
+jobs -l
+kill %1
+
+Application server environment to create: Management
+Location: /opt/IBM/WebSphere/AppServer/profiles/Dmgr01
+Disk space required: 30 MB
+Profile name: Dmgr01
+Make this profile the default: True
+Node name: karthickCellManager01
+Cell name: karthickCell01
+Host name: karthick.com
+Enable administrative security (recommended): True
+Administrative console port: 9060
+Administrative console secure port: 9043
+Management bootstrap port: 9809
+Management SOAP connector port: 8879
+Run Management as a service: False
+
+
+Server name is:dmgr
+Profile name is:Dmgr01
+Profile home is:/opt/IBM/WebSphere/AppServer/profiles/Dmgr01
+Profile type is:management
+Cell name is:karthickCell01
+Node name is:karthickCellManager01
+Current encoding is:UTF-8
+Start running the following command:/opt/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/startServer.sh dmgr -profileName Dmgr01
+>ADMU0116I: Tool information is being logged in file
+>           /opt/IBM/WebSphere/AppServer/profiles/Dmgr01/logs/dmgr/startServer.log
+>ADMU0128I: Starting tool with the Dmgr01 profile
+>ADMU3100I: Reading configuration for server: dmgr
+>ADMU3200I: Server launched. Waiting for initialization status.
+>ADMU3011E: Server launched but failed initialization. startServer.log,
+>           SystemOut.log(or job log in zOS) and other log files under
+>           /opt/IBM/WebSphere/AppServer/profiles/Dmgr01/logs/dmgr should
+>           contain failure information.
+IVTL0080I: The installation verification is complete.
+
+
+
+ln -s /usr/src/linux-headers-$(uname -r)/include/generated/uapi/linux/version.h /usr/src/linux-headers-$(uname -r)/include/linux/version.h
+
+/opt/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/startServer.sh dmgr -profileName Dmgr01
+
+
+custom profile = Node01
+NodeName = karthickNode01
+Host name  = karthick.com
+
 Once the installation process has finished you can view a list of available tasks by entering the following from a terminal prompt:
 
 tasksel --list-tasks

@@ -344,3 +344,7 @@ If you want to debug the source code or look at the Javadocs of any library in t
 31. Then, install it using the command:
 	
 	mvn install:install-file -DgroupId=com.javaworld.hotels -DartifactId=HotelDatabase -Dversion=1.0-SNAPSHOT -Dpackaging=jar -Dfile=D:/PortalV3.4/PortalWorkspace/Helios/HotelDatabase/target
+
+	mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.1.0 -Dpackaging=jar -Dfile=ojdbc14.jar -DgeneratePom=true
+	
+	
