@@ -211,3 +211,8 @@ RMAN> alter database open resetlogs;  -- archive log mode
  grant connect, resource, create session, create view to BusBookingSystem identified by BusBookingSystem;
  -- The Oracle DROP USER CASCADE command drops a user and all owned objects
  DROP  USER  BusBookingSystem  CASCADE;
+ 
+ -- To start TNS listener from command line
+lsnrctl status;
+lsnrctl stop;
+lsnrctl start;
