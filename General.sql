@@ -216,3 +216,10 @@ RMAN> alter database open resetlogs;  -- archive log mode
 lsnrctl status;
 lsnrctl stop;
 lsnrctl start;
+
+Start Services from command line:
+-----------------------------------
+net start OracleServiceXE
+net stop OracleServiceXE
+net start OracleXETNSListener
+net stop OracleXETNSListener
