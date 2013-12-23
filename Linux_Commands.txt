@@ -969,10 +969,11 @@ Install Java
 ============
 whereis java
 sudo apt-get purge openjdk*
-
+apt-get install software-properties-commo
 sudo apt-get install python-software-properties
 
 sudo add-apt-repository ppa:webupd8team/java
+	 add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java6-installer
 sudo apt-get install oracle-jdk7-installer
@@ -1061,3 +1062,34 @@ Linux logout user or logoff user commands
 ------------------------------------------
 ctrl+d
 logout
+
+File Explorer:
+--------------
+sudo nautilus
+
+type eclipse
+dpkg -S /usr/bin/eclipse
+aptitude search eclipse
+
+sudo mkdir -p /usr/lib/jvm
+sudo tar xvf ~/Downloads/jdk-7u25-linux-x64.tar.gz -C /usr/lib/jvm
+sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.7.0_60/bin/javac" 1
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0_60/bin/java" 1
+sudo update-alternatives --set "javac" "/usr/lib/jvm/jdk1.7.0_60/bin/javac"
+sudo update-alternatives --set "java" "/usr/lib/jvm/jdk1.7.0_60/bin/java"
+sudo gedit /etc/profile
+JAVA_HOME=/usr/lib/jvm/jdk1.7.0_60
+PATH=$PATH:$JAVA_HOME/bin
+export JAVA_HOME
+export PATH
+
+Reload the profiles
+. /etc/profile
+java –version
+
+/etc/environment
+----------------
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/IBM/WebSphere/AppServer/java/bin:/usr/local/apache-ant-1.9.2/bin"
+JAVA_HOME="/opt/IBM/WebSphere/AppServer/java"
+ANT_HOME="/usr/local/apache-ant-1.9.2"
+WAS_HOME="/opt/IBM/WebSphere/AppServer"
