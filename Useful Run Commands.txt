@@ -158,3 +158,9 @@ Windows Update Launches													wupdmgr
 Windows Version (to show which version of windows)						winver
 Windows XP Tour Wizard													tourstart
 Wordpad 																write
+
+
+netsh wlan set hostednetwork mode=allow ssid=Test key=password
+netsh wlan stop hostednetwork
+netsh wlan start hostednetwork
+netsh wlan show hostednetwork

@@ -1,0 +1,7 @@
+To Speed up eclipse start up:
+----------------------------
+-vm
+C:\Program Files\Java\jdk1.7.0_45\bin
+-Xms256m
+-Xmx768m
+-Xverify:none

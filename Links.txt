@@ -3,30 +3,20 @@ http://www.precisejava.com/javaperf/j2ee/JDBC.htm#JDBC109
 http://everyday-tech.blogspot.com/2009/11/auto-generate-junit-test-cases.html
 http://sourceforge.net/projects/spike-test-gen/
 
-There's no need to purchase licences for developers. They can use the free version.
+https://github.com/MobileInsight
 
-Please drop me an email with all the developers account names. I will add them to the OW team within the MobileInsight organization (https://github.com/MobileInsight
+set-up git on windows: http://help.github.com/win-set-up-git/
  
-) and grant them push & pull rights to the repositories I'll create.
-
-Here's a link describing how to set-up git on windows: http://help.github.com/win-set-up-git/
- 
-
-I prefer using the command line, but some developers don't like it and I understand that so here's a nice UI for working with git : http://code.google.com/p/tortoisegit/ and a guide on how to use it with github http://dbanck.de/2009/10/08/github-windows-and-tortoisegit-part-1-installing-pulling/
+UI for working with git : http://code.google.com/p/tortoisegit/
+a guide on how to use it with github http://dbanck.de/2009/10/08/github-windows-and-tortoisegit-part-1-installing-pulling/
  
 
 Some useful git links:
 - https://git.wiki.kernel.org/index.php/QuickStart
- 
 - http://www.kernel.org/pub/software/scm/git/docs/everyday.html
- 
 - http://book.git-scm.com/
  
-
-Once they're set up they will be able to access the MobileInsight repositories. 
-
-The workflow I intend to use is described very well here:  http://nvie.com/posts/a-successful-git-branching-model/
-
+The workflow is described very well here:  http://nvie.com/posts/a-successful-git-branching-model/
 
 http://aarongreenlee.com/share/monitor-tomcat-performance-with-open-source-software
 http://code.google.com/p/javamelody/
