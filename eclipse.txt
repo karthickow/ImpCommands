@@ -5,3 +5,13 @@ C:\Program Files\Java\jdk1.7.0_45\bin
 -Xms256m
 -Xmx768m
 -Xverify:none
+
+-Djava.net.preferIPv4Stack=true
+-Dsun.lang.ClassLoader.allowArraySyntax=true
+-Dhttp.proxyHost=10.145.22.10
+-Dhttp.proxyUser=wipro\kkarthic
+-Dhttp.proxyPassword=113Vipro
+-Dhttps.proxyHost=10.145.22.10
+-Dhttps.proxyUser=wipro\kkarthic
+-Dhttps.proxyPassword=113Vipro
+-Dorg.eclipse.ecf.provider.filetransfer.excludeContributors=org.eclipse.ecf.provider.filetransfer.httpclient
