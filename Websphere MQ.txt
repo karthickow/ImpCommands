@@ -1,0 +1,70 @@
+*MQADMIN
+dspmqver
+dspmqver -i
+dspmqver -a
+crtmqm -q CHLAUTH_QM; 
+strmqm CHLAUTH_QM
+dspmq
+
+runmqsc CHLAUTH_QM
+DEFINE qlocal(CHLAUTH_QM.LOCAL.QUEUE)
+echo "dis QLOCAL(*)" | runmqsc CHLAUTH_QM | grep -1 test
+
+runmqsc CHLAUTH_QM
+DEFINE LISTENER(LISTENER.TCP) TRPTYPE (TCP) PORT(1414)
+start LISTENER(LISTENER.TCP)
+ps -ef | grep mqlsr
+
+runmqsc CHLAUTH_QM
+DEFINE CHANNEL(CHLAUTH_QM.LOCAL.MY_SVRCONN) CHLTYPE(SVRCONN)
+
+amqsput CHLAUTH_QM.LOCAL.QUEUE CHLAUTH_QM
+amqsget CHLAUTH_QM.LOCAL.QUEUE CHLAUTH_QM
+
+runmqsc CHLAUTH_QM
+DISPLAY CHLAUTH(*)
+DIS QMGR CHLAUTH
+ALTER QMGR CHLAUTH(DISABLED)
+
+DELETE CHANNEL(MY_SVRCONN)
+DELETE LISTENER(LISTENER.TCP)
+
+set MQSERVER=SERVER.CHANNGEL1/TCP/localhost(1414)
+amqsputc SYSTEM.DEFAULT.LOCAL.QUEUE CHLAUTH_QM
+
+setmqaut -m CHLAUTH_QM -t qmgr -p pattu +connect
+setmqaut -m CHLAUTH_QM -t queue -n SYSTEM.DEFAULT.LOCAL.QUEUE -p pattu +put
+setmqaut -m CHLAUTH_QM -t queue -n SYSTEM.DEFAULT.LOCAL.QUEUE -p pattu +get
+setmqaut -m CHLAUTH_QM -t queue -n CHLAUTH_QM.LOCAL.QUEUE -p pattu +put
+setmqaut -m CHLAUTH_QM -t queue -n CHLAUTH_QM.LOCAL.QUEUE -p pattu +get
+
+setmqaut -m CHLAUTH_QM -t qmgr -p ibmmq@home +connect
+setmqaut -m CHLAUTH_QM -t queue -n SYSTEM.DEFAULT.LOCAL.QUEUE -p ibmmq@home +put
+setmqaut -m CHLAUTH_QM -t queue -n SYSTEM.DEFAULT.LOCAL.QUEUE -p ibmmq@home +get
+
+Jar that are required in the classpath:
+--------------------------------------
+C:\Program Files\IBM\WebSphere MQ\java\lib
+CL3Export.jar
+CL3Nonexport.jar
+rmm.jar
+providerutil.jar
+ldap.jar
+jta.jar
+jndi.jar
+jms.jar
+fscontext.jar
+dhbcore.jar
+connector.jar
+com.ibm.mqjms.jar
+com.ibm.mq.jmqi.jar
+com.ibm.mq.jar
+com.ibm.mq.headers.jar
+com.ibm.mq.commonservices.jar
+com.ibm.mq.pcf.jar
+
+C:\Program Files\IBM\SDP\runtimes\base_v7\runtimes
+com.ibm.ws.admin.client_7.0.0.jar
+com.ibm.ws.messagingClient.jar
+com.ibm.ws.ejb.thinclient_7.0.0.jar
+
