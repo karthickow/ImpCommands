@@ -779,3 +779,4 @@ prstat
 mpstat
 ps -e -o pcpu -o pid -o user -o args
 ssh -l username hostname
+svcs -a - to list all services
