@@ -1,3 +1,4 @@
+select * from v$version
 select * from v$database;
 select * from v$instance;
 select * from database_properties where property_name like '%TAB%';
