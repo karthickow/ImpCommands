@@ -679,7 +679,7 @@ Then type ( or copy and paste from here ) these commands one at a time:
 -----------------------------------------------------------------------
 sudo rm /var/lib/dpkg/info/oracle-java7-installer*
 sudo apt-get purge oracle-java7-installer*
-sudo rm /etc/apt/sources.list.d/*java*
+sudo rm /etc/apt/sources.list.d/java
 sudo apt-get update
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
@@ -780,3 +780,8 @@ mpstat
 ps -e -o pcpu -o pid -o user -o args
 ssh -l username hostname
 svcs -a - to list all services
+
+to list down files and dir in unix
+================================== 
+alias lf="ls -l | egrep -v '^d'"
+alias ldir="ls -l | egrep '^d'"
