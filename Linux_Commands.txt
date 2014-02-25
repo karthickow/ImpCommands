@@ -785,3 +785,7 @@ to list down files and dir in unix
 ================================== 
 alias lf="ls -l | egrep -v '^d'"
 alias ldir="ls -l | egrep '^d'"
+
+counting files and directories
+ls -1 | wc -l
+ls -lR | grep ^d | wc -l
