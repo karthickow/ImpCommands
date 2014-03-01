@@ -29,6 +29,6 @@ public class BookPersistentBean implements BookPersistentBeanRemote, BookPersist
 
 	@Override
 	public List<Book> getBooks() {
-		return em.createQuery("From Book").getResultList();
+		return em.createQuery("SELECT c FROM Book c").getResultList();
 	}
 }

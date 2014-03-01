@@ -16,4 +16,7 @@
 	<session name="BookPersistentBean">
 		<interface class="com.student.bean.stateless.view.BookPersistentBeanRemote" binding-name="ejb/BookPersistentBean" />
 	</session>
+	<message-driven name="MyMDB">
+		<jca-adapter activation-spec-binding-name="jms/myActivationSpec  " destination-binding-name="jms/messageQueue"/>
+	</message-driven>
 </ejb-jar-bnd>
