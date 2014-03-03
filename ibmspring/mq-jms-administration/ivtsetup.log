@@ -1,0 +1,3 @@
+define qcf(jms/mdpSampleQCF) qmgr(QM.FOR.MDP) TRANSPORT(CLIENT) CHANNEL(MY_SVR_CON) host(localhost) port(1415) 
+def q(jms/mdpSampleQueue) qmgr(QM.FOR.MDP) qu(REQUEST.QUEUE.FOR.MDP)  
+end 

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+    <!-- Bean for JNDI Environment Template -->
+    <!--<bean id="jndi-template" class="org.springframework.jndi.JndiTemplate">
+        <property name="environment">
+            <props>
+                <prop key="java.naming.factory.initial">com.sun.jndi.fscontext.RefFSContextFactory</prop>
+                <prop key="java.naming.provider.url">file:/ibmspring/mqjndi</prop>
+            </props>
+        </property>
+    </bean>
+
+    --><!-- Bean for JMS Queue Connection Factory --><!--
+    <bean id="ibm-mq-jms-qcf" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiTemplate">
+            <ref bean="jndi-template"/>
+        </property>
+        <property name="jndiName">
+            <value>jms/mdpSampleQCF</value>
+        </property>
+    </bean>
+
+    --><!-- Bean for JMS Destination -->
+    <!--<bean id="ibm-mq-queue" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiTemplate">
+            <ref bean="jndi-template"/>
+        </property>
+        <property name="jndiName">
+            <value>jms/mdpSampleQueue</value>
+        </property>
+    </bean>
+
+--><!-- Bean defines MDP class -->
+	<bean id="message-listener" class="com.ibmmq.springmdp.HelloWorldMDP" />
+
+<!-- bean for message listener container -->
+	<!--<bean id="listenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="concurrentConsumers" value="1" />
+	    <property name="connectionFactory" ref="ibm-mq-jms-qcf" />
+	    <property name="destination" ref="ibm-mq-queue" />
+	    <property name="messageListener" ref="message-listener" />
+	</bean>
+	
+	--><bean id="transport" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+		<property name="staticField">
+			<value>com.ibm.mq.jms.JMSC.MQJMS_TP_CLIENT_MQ_TCPIP</value>
+		</property>
+	</bean>
+
+	<bean id="queueConnectionFactory" class="com.ibm.mq.jms.MQQueueConnectionFactory">
+		<!--<property name="transportType" ref="transport"/>
+		--><property name="queueManager" value="QM.FOR.MDP"/>
+		<property name="hostName" value="localhost"/>
+		<property name="port" value="1415"/>
+		<property name="channel" value="MY_SVR_CON"/>
+	</bean>
+	
+	<bean id="queueDestination" class="com.ibm.mq.jms.MQQueue">
+		<constructor-arg value="REQUEST.QUEUE.FOR.MDP"/>
+	</bean>
+	
+	<bean id="listenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="concurrentConsumers" value="1" />
+	    <property name="connectionFactory" ref="queueConnectionFactory" />
+	    <property name="destination" ref="queueDestination" />
+	    <property name="messageListener" ref="message-listener" />	    
+	</bean>
+	
+</beans>

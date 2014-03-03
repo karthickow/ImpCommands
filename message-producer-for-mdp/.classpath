@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/ibmspring/jars/com.ibm.mq.jar"/>
+	<classpathentry kind="lib" path="C:/ibmspring/jars/com.ibm.mqjms.jar"/>
+	<classpathentry kind="lib" path="C:/ibmspring/jars/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/ibmspring/jars/connector.jar"/>
+	<classpathentry kind="lib" path="C:/ibmspring/jars/dhbcore.jar"/>
+	<classpathentry kind="lib" path="C:/ibmspring/jars/fscontext.jar"/>
+	<classpathentry kind="lib" path="C:/ibmspring/jars/jms.jar"/>
+	<classpathentry kind="lib" path="C:/ibmspring/jars/jta.jar"/>
+	<classpathentry kind="lib" path="C:/ibmspring/jars/postcard.jar"/>
+	<classpathentry kind="lib" path="C:/ibmspring/jars/providerutil.jar"/>
+	<classpathentry kind="lib" path="C:/ibmspring/jars/spring.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

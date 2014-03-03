@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+    <!-- JNDI Environment Template -->
+    <bean id="jndi-Template" class="org.springframework.jndi.JndiTemplate">
+        <property name="environment">
+            <props>
+                <prop key="java.naming.factory.initial">com.sun.jndi.fscontext.RefFSContextFactory</prop>
+                <prop key="java.naming.provider.url">file:/ibmspring/mqjndi</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- JMS Queue Connection Factory -->
+    <bean id="ibm-mq-jms-qcf" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiTemplate">
+            <ref bean="jndi-Template"/>
+        </property>
+        <property name="jndiName">
+            <value>jms/mdpSampleQCF</value>
+        </property>
+    </bean>
+
+    <!-- JMS Destination -->
+    <bean id="ibm-mq-queue" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiTemplate">
+            <ref bean="jndi-Template"/>
+        </property>
+        <property name="jndiName">
+            <value>jms/mdpSampleQueue</value>
+        </property>
+    </bean>
+
+    <!-- JMS Queue Template -->
+    <bean id="jms-Template" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory">
+            <ref bean="ibm-mq-jms-qcf"/>
+        </property>
+        <property name="defaultDestination">
+            <ref bean="ibm-mq-queue"/>
+        </property>
+        <property name="receiveTimeout">
+            <value>30000</value>
+        </property>
+    </bean>
+
+	<bean id="spring-message-producer" class="com.ibm.springjms.SpringMessageProducer">
+    	<property name="jmsTemplate">
+        	<ref bean="jms-Template"/>
+        </property>
+	</bean>
+
+</beans>
