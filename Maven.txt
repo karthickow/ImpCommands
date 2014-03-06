@@ -1,3 +1,23 @@
+<proxy>
+      <active>true</active>
+      <protocol>http</protocol>
+      <username>wipro\kkarthic</username>
+      <password>111Vipro</password>
+      <host>10.145.22.10</host>
+      <port>8080</port>
+      <nonProxyHosts>localhost|127.0.0.1</nonProxyHosts>
+    </proxy>
+	
+	<proxy>
+      <active>true</active>
+      <protocol>https</protocol>
+      <username>wipro\kkarthic</username>
+      <password>111Vipro</password>
+      <host>10.145.22.10</host>
+      <port>8080</port>
+      <nonProxyHosts>localhost|127.0.0.1</nonProxyHosts>
+    </proxy>
+
 1. Web Application Project from Maven Template
 ----------------------------------------------
 mvn archetype:generate -DgroupId={project-packaging} -DartifactId={project-name} -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
