@@ -1,0 +1,5 @@
+To automatically upload the web application to tomcat server in eclipse
+=======================================================================
+<Host>
+	<Context docBase="D:\Karthick\Eclipse\EJSR2WS\J2EEApplication\target\J2EEApplication-0.0.1-SNAPSHOT" path="/jee" reloadable="true"/>
+</Host>
