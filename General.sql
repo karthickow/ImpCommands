@@ -224,3 +224,15 @@ net start OracleServiceXE
 net stop OracleServiceXE
 net start OracleXETNSListener
 net stop OracleXETNSListener
+
+
+select profile from DBA_USERS where username = 'MANAGER';
+
+SELECT resource_name, limit FROM DBA_PROFILES WHERE profile = 'DEFAULT'
+AND resource_type = 'PASSWORD';
+
+ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;
+
+select resource_name,limit from dba_profiles where profile = 'DEFAULT';
+
+alter user manager identified by manager account unlock;
