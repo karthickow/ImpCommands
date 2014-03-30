@@ -3,3 +3,6 @@ To automatically upload the web application to tomcat server in eclipse
 <Host>
 	<Context docBase="D:\Karthick\Eclipse\EJSR2WS\J2EEApplication\target\J2EEApplication-0.0.1-SNAPSHOT" path="/jee" reloadable="true"/>
 </Host>
+
+-- For windows you have to add in catalina.bat set JAVA_OPTS=…
+set JAVA_OPTS=-Xms200m -Xmx1000m -XX:MaxPermSize=300m -XX:+CMSClassUnloadingEnabled -XX:SurvivorRatio=4 -server

@@ -1,0 +1,91 @@
+java -classpath jarfilelocation classname
+java -classpath "C:\Program Files\IBM\SDP\runtimes\base_v7\java\jre\lib\xml.jar" org.apache.xalan.Version
+java -cp "C:\Program Files\IBM\SDP\runtimes\base_v7\java\jre\lib\xml.jar" org.apache.xalan.Version
+
+--JVM troubleshooting tool 
+jinfo -flag MaxPermSize 5144
+ 
+jvisualvm
+jvisualvm --console new 
+ 
+jstat -gc 5612 5s -- Seconds
+jstat -gc 5612 5ms --milli seconds
+
+--to get the process ID (pid) 
+jps -mlvV
+jps -m
+
+-- To find PermGen leaks
+jmap -heap 5144
+jmap -permstat 18254 > permstats_2.txt
+jmap -histo:live 18254 > histo_live.txt
+jmap -histo 18254 > histo.txt
+jmap -dump:format=b,file=leak 3144 
+jmap -finalizerinfo
+jmap -histo:live 5612 | more
+
+-- Trace loading of classes.
+-XX:-TraceClassLoading 
+
+--Trace unloading of classes.
+-XX:-TraceClassUnloading 
+
+--  Trace all classes loaded in order referenced (not loaded).
+-XX:-TraceClassLoadingPreorder
+
+-- Trace constant pool resolutions. (Introduced in 1.4.2.)
+-XX:-TraceClassResolution 
+
+-- To read heap dump
+jhat -J-Xmx512m leak 
+
+jconsole 5144
+
+--Temporary Solution  for OutOfMemoryError PermGen Space Error
+-XX:+UseConcMarkSweepGC
+-XX:+CMSPermGenSweepingEnabled
+-XX:+CMSClassUnloadingEnabled
+
+-XX:PermSize=256M
+-XX:MaxPermSize=512M
+
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:HeapDumpPath=E:/log
+
+-- IBM heap analyser tool
+java –Xmx1000m –jar ha135.jar
+
+-- Output GC to file each time it runs
+-verbose:gc 
+-XX:+PrintGCDetails
+-XX:+PrintGCTimeStamps
+-Xloggc:E:/log/gc.log
+
+-XX:-DisableExplicitGC - By default calls to System.gc() are enabled (-XX:-DisableExplicitGC). Use -XX:+DisableExplicitGC to disable calls to System.gc(). Note that the JVM still performs garbage collection when necessary.
+-XX:+UseConcMarkSweepGC - Use concurrent mark-sweep collection for the old generation. (Introduced in 1.4.1)
+-XX:+UseParallelGC - Use parallel garbage collection for scavenges. (Introduced in 1.4.1)
+-XX:+UseParallelOldGC - Use parallel garbage collection for the full collections. Enabling this option automatically sets -XX:+UseParallelGC. (Introduced in 5.0 update 6.)
+-XX:+UseSerialGC - Use serial garbage collection. (Introduced in 5.0.)
+
+-server
+-Xms512m
+-Xmx512m
+-XX:MaxPermSize=256m
+-XX:+UseConcMarkSweepGC
+-XX:+CMSPermGenSweepingEnabled
+-XX:+CMSClassUnloadingEnabled
+-verbose:gc
+-XX:+PrintGCDetails
+-XX:+PrintGCTimeStamps
+-Xloggc:E:/log/gc.log
+-XX:+HeapDumpOnOutOfMemoryError
+-Xss512k -- Stack size
+
+-- Ubuntu
+java -XX:+PrintFlagsFinal -version | grep -iE 'HeapSize|PermSize|ThreadStackSize'
+java -XX:+PrintFlagsFinal -Xms512m -Xmx1024m -Xss512k -XX:PermSize=64m -XX:MaxPermSize=128m -version | grep -iE 'HeapSize|PermSize|ThreadStackSize'
+
+--Windows
+java -XX:+PrintFlagsFinal -version | findstr /i "HeapSize PermSize ThreadStackSize"
+java -XX:+PrintFlagsFinal -Xms512m -Xmx1024m -Xss512k -XX:PermSize=64m -XX:MaxPermSize=128m -version | findstr /i "HeapSize|PermSize|ThreadStackSize"
+
