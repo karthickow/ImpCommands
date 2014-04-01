@@ -1,3 +1,9 @@
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>
+<user username="admin" password="wipro123" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
+
 To automatically upload the web application to tomcat server in eclipse
 =======================================================================
 <Host>
