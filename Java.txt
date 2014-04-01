@@ -10,6 +10,10 @@ jvisualvm --console new
  
 jstat -gc 5612 5s -- Seconds
 jstat -gc 5612 5ms --milli seconds
+jstat -gcutil 6436
+jstat -gcutil 6436 250 7 --  7 samples at 250 millisecond intervals
+jstat -gcnew -h3 6436 250 --  output the column header after every 3 lines of data. 
+jstat -gcutil -t 6436 250 3 -- 3 samples at 250 millisecond intervals with timestamp
 
 --to get the process ID (pid) 
 jps -mlvV
