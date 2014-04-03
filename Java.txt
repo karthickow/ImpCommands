@@ -47,7 +47,7 @@ jconsole 5144
 
 --Temporary Solution  for OutOfMemoryError PermGen Space Error
 -XX:+UseConcMarkSweepGC
--XX:+CMSPermGenSweepingEnabled
+-XX:+CMSPermGenSweepingEnabled -- deprecated
 -XX:+CMSClassUnloadingEnabled
 
 -XX:PermSize=256M
