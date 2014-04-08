@@ -12,3 +12,32 @@ To automatically upload the web application to tomcat server in eclipse
 
 -- For windows you have to add in catalina.bat set JAVA_OPTS=…
 set JAVA_OPTS=-Xms200m -Xmx1000m -XX:MaxPermSize=300m -XX:+CMSClassUnloadingEnabled -XX:SurvivorRatio=4 -server
+
+SSL Configuration
+-----------------
+
+keytool -genkey -keyalg RSA -alias tomcat -keystore keystore.jks -validity 999 -keysize 2048
+
+copy keystore.jks to conf location
+
+Add the following in server.xml
+-------------------------------
+
+<Connector
+           protocol="org.apache.coyote.http11.Http11NioProtocol"
+           port="8443" maxThreads="200"
+           scheme="https" secure="true" SSLEnabled="true"
+           keystoreFile="${catalina.home}/conf/keystore.jks" keystorePass="changeit"
+           clientAuth="false" sslProtocol="TLS"/>
+		   
+<!--For automatic redirect from HTTP to HTTPS -->
+In ~TomcatInstallation/conf/web.xml
+<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Spring4WebApp</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
