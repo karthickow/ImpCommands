@@ -145,6 +145,7 @@ dpkg-reconfigure console-setup
 ls -l /bin/sh
 
 netstat -tulpn | grep 80
+netstat -na|grep LISTEN|grep 80
 
 tar xvfz apache-ant-1.9.2-bin.tar.gz 
 
