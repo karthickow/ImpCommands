@@ -236,3 +236,5 @@ ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;
 select resource_name,limit from dba_profiles where profile = 'DEFAULT';
 
 alter user manager identified by manager account unlock;
+
+ALTER SEQUENCE hibernate_sequence INCREMENT BY -5;
