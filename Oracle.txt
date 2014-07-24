@@ -46,7 +46,8 @@ select * from dba_triggers where owner ='SCHEMA_OWNER' ;
 select * from dba_views;
 select * from dba_workspaces;
 select * from dba_users;
-
+select user from dual;
+select uid from dual;
 
 show parameter OS_AU;
 show user;
