@@ -1,0 +1,169 @@
+Install WAS7
+============
+cd /bin
+sudo unlink sh
+sudo ln -s /bin/bash sh
+
+1. tar -pxvzf C1FW6ML.tar.gz -C /home/karthick/setup/
+2. responsefile.base.txt
+
+-OPT allowNonRootSilentInstall="true"
+-OPT disableOSPrereqChecking="true"
+-OPT disableNonBlockingPrereqChecking="true"
+-OPT checkFilePermissions="true"
+-OPT profileType="standAlone"
+-OPT installType="installNew"
+-OPT silentInstallLicenseAcceptance="true"
+-OPT feature="noFeature"
+-OPT installLocation="/home/karthick/was7/appserver"
+-OPT PROF_enableAdminSecurity="true"
+-OPT PROF_adminUserName="karthick"
+-OPT PROF_adminPassword="wipro@123"
+-OPT PROF_profilePath="/home/karthick/was7/appserver/profiles/appsrv01"
+-OPT PROF_profileName="appsrv01"
+-OPT PROF_isDefault="true"
+-OPT PROF_hostName="192.168.179.129"
+-OPT PROF_nodeName="node1"
+-OPT PROF_cellName="cell1"
+-OPT PROF_serverName="server1"
+-OPT PROF_defaultPorts="true"
+-OPT traceFormat=ALL
+-OPT traceLevel=INFO
+## Linux Service Creation
+-OPT PROF_enableService="false"
+#-OPT PROF_serviceUserName="WAS7"
+
+
+3. ./install -options /home/webspher/responsefile.base.txt -silent    ./install -options responsefile.base.txt – is:javaconsole -silent
+4. ./install -options "/opt/IBM/WebSphere/silentFiles/myresponsefile.txt" -silent -log # !/opt/IBM/WebSphere/myOptionFiles/log.txt @ALL
+4. ./install -is:javaconsole -options responce.text -silent
+Or
+	install -options responce.text -silent -log # !/root/was_install_log.txt @ALL
+4.  user_home/waslogs
+5. /WAS/AppServer/bin   $ ./startServer.sh server1 ./stopServer.sh server1
+
+Install ibmhttpserver7
+======================
+cd /bin
+sudo unlink sh
+sudo ln -s /bin/bash sh
+
+1. tar xvf ihs.7000.linux.ia32.tar -C /home/karthick/ibmhttpserver7_setup/
+2. myresponsefile.txt
+
+-OPT silentInstallLicenseAcceptance="true"
+-OPT allowNonRootSilentInstall=true
+-OPT installLocation="/home/karthick/ibmhttpserver7"
+-OPT createAdminAuth="true"
+-OPT adminAuthUser="karthick"
+-OPT adminAuthPassword="wipro@123"
+-OPT adminAuthPasswordConfirm="wipro@123"
+-OPT runSetupAdmin="true"
+-OPT createAdminUserGroup=true
+-OPT setupAdminUser="karthick"
+-OPT setupAdminGroup="karthick"
+-OPT installPlugin="true"
+-OPT webserverDefinition="webserver01"
+-OPT washostname="192.168.179.129"
+-OPT disableOSPrereqChecking="true"
+-OPT httpPort="80"
+-OPT adminPort="8008"
+
+3. /home/karthick/ibmhttpserver7_setup/IHS/./install -options /home/karthick/ibmhttpserver7_setup/myresponsefile.txt -silent
+4. vim ibmhttpserver7/conf/httpd.conf
+5. chmod –fR 755 /home/karthick/ibmhttpserver7      chown –fR wasuser:wasgroup /home/karthick/ibmhttpserver7
+4. adminctl start
+
+Install WAS7 Plugin
+===================
+cd /bin
+sudo unlink sh
+sudo ln -s /bin/bash sh
+
+1. tar -xvzf trial_plugins_7000_linux.ia32.tar.gz -C /home/karthick/wasplugin7_setup
+2. pluginresponsefile.txt
+
+-OPT allowNonRootSilentInstall="true"
+-OPT silentInstallLicenseAcceptance="true"
+-OPT disableOSPrereqChecking="true"
+-OPT installType="local"
+-OPT installLocation="/home/karthick/wasplugin7"
+-OPT wasExistingLocation="/home/karthick/was7/appserver"
+-OPT webServerSelected="ihs"
+-OPT ihsAdminPort="8008"
+-OPT ihsAdminUserID="karthick"
+-OPT ihsAdminUserGroup="karthick"
+-OPT webServerConfigFile1="/home/karthick/ibmhttpserver7/conf/httpd.conf"
+#-OPT webServerConfigFile2=""
+-OPT webServerPortNumber="80"
+#-OPT dominoUserID="notes"
+-OPT webServerDefinition="webserver01"
+-OPT pluginCfgXmlLocation=""
+-OPT wasMachineHostName="192.168.179.129"
+-OPT mapWebserverToApplications="true"
+-OPT webServerHostName="192.168.179.129"
+-OPT profileName="appsrv01"
+
+3. /home/karthick/wasplugin7_setup/plugin/./install -options /home/karthick/wasplugin7_setup/pluginresponsefile.txt -silent
+
+
+To install WAS7 or IHS7 properly in Ubuntu
+------------------------------------------
+sudo unlink /bin/sh
+sudo ln -s /bin/bash /bin/sh
+		(or)
+sudo dpkg-reconfigure dash
+
+DMGR
+----
+
+/opt/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/startServer.sh dmgr -profileName Dmgr01
+
+AppServer
+---------
+custom profile = Node01
+NodeName = karthickNode01
+Host name  = karthick.com
+
+sudo /opt/IBM/WebSphere/AppServer/bin/startManager.sh -logfile /tmp/wasdeploy/wasdeploy_11_29_2013_184732.log -profileName KarthickDmgr01
+sudo /opt/IBM/WebSphere/AppServer/bin/startNode.sh -logfile /tmp/wasdeploy/wasdeploy_11_29_2013_184732.log -profileName KarthickAppSrv01
+sudo /opt/IBM/WebSphere/AppServer/bin/startServer.sh server1 -logfile /tmp/wasdeploy/wasdeploy_11_29_2013_184732.log -profileName KarthickAppSrv01
+sudo /opt/IBM/WebSphere/AppServer/bin/serverStatus.sh dmgr -logfile /tmp/wasdeploy/wasdeploy_11_29_2013_184732.log -profileName KarthickDmgr01
+sudo /opt/IBM/WebSphere/AppServer/bin/serverStatus.sh server1 -logfile /tmp/wasdeploy/wasdeploy_11_29_2013_184732.log -profileName KarthickDmgr01
+
+To update port numbers before you federate 
+------------------------------------------
+ws_ant -propertyfile /tmp/was_props/appserver.props -file /opt/IBM/WebSphere/AppServer/profileTemplates/default/actions/updatePorts.ant
+
+appserver.props
+---------------
+WAS_HOME=/opt/IBM/WebSphere/AppServer
+was.install.root=/opt/IBM/WebSphere/AppServer
+profileName=KarthickDmgr01
+profilePath=/opt/IBM/WebSphere/AppServer/profiles/KarthickDmgr01
+templatePath=/opt/IBM/WebSphere/AppServer/profileTemplates/default
+nodeName=karthickCellManager01
+cellName=karthickCell01
+hostName=karthick
+startingPort=60000
+
+Server start/stop commands
+==========================
+sudo ibmhttpserver7/bin/adminctl start
+sudo ibmhttpserver7/bin/adminctl stop
+
+was7/appserver/bin/startServer.sh server1
+was7/appserver/bin/stopServer.sh server1
+
+tail -100f /home/karthick/was7/appserver/profiles/appsrv01/logs/server1/startServer.log
+tail -100f /home/karthick/was7/appserver/profiles/appsrv01/logs/server1/stopServer.log
+
+IBM HTTP Server Start/Stop (Windows) 
+------------------------------------
+C:\Program Files\IBM\HTTPServer\bin>apache.exe -k install
+C:\Program Files\IBM\HTTPServer\bin>apache.exe -k start
+C:\Program Files\IBM\HTTPServer\bin>apache.exe -k stop
+
+WAS7 Plugin Configuration
+-------------------------
+C:\Program Files\IBM\WebSphere\AppServer\bin>configureHomeWebserver.bat
