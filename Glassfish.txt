@@ -1,0 +1,2 @@
+asadmin.bat start-domain
+asadmin.bat stop-domain

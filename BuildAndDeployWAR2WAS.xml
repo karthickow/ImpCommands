@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Spring4WebApp WAR build script" default="makewar" basedir=".">
+	<tstamp>
+		<format property="buildtimestamp" pattern="yyyy-MM-dd'T'HH:mm:ss" />
+	</tstamp>
+	
+	<property name="WARBasePath" value="E:/Karthick/InstalledApps/GitHub/Sprin4WebApp/Spring4WebApp/src/main" />
+	<property name="lib.dir" value="E:/Karthick/InstalledApps/GitHub/Sprin4WebApp/Spring4WebApp/target/Spring4WebApp-1.0/WEB-INF/lib" />
+	<property name="src.dir" value="${WARBasePath}/java" />
+	
+	<property name="package.file" value="Spring4WebApp.war" />
+	<property name="temp.dir" value="E:/Karthick/ToInstall/AntBuild/temp" />
+	<property name="dest.dir" value="E:/Karthick/ToInstall/AntBuild/dist" />
+	<property name="temp.dir.webcontent" value="${temp.dir}/webapp" />
+	<property name="temp.dir.resources" value="${temp.dir.webcontent}/resources" />
+	<property name="temp.dir.web-inf" value="${temp.dir.webcontent}/WEB-INF" />
+	<property name="temp.dir.lib" value="${temp.dir.web-inf}/lib" />
+	<property name="temp.dir.classes" value="${temp.dir.web-inf}/classes" />
+	<property name="temp.dir.meta-inf" value="${temp.dir.webcontent}/META-INF" />
+	
+	<property name="was.home" location="C:/Program Files/IBM/WebSphere/AppServer"/>
+	<property name="serverjdk" location="${was.home}/java"/>
+
+	<!-- CLEAN LAST BUILD ATTEMP -->
+	<target name="clean" depends="">		
+		<delete dir="${temp.dir}" />
+		<delete dir="${dest.dir}" />
+	</target>
+
+	<!-- PREPARE FOLDERS FOR DISTRIBUTION -->
+	<target name="prepare" depends="clean">		
+		<mkdir dir="${temp.dir}" />
+		<mkdir dir="${dest.dir}" />
+		<mkdir dir="${temp.dir.webcontent}" />	
+		<mkdir dir="${temp.dir.resources}" />		
+		<mkdir dir="${temp.dir.meta-inf}" />
+		<mkdir dir="${temp.dir.web-inf}" />		
+		<mkdir dir="${temp.dir.classes}" />
+		<mkdir dir="${temp.dir.lib}" />
+	</target>
+
+	<!-- Set up a path id for external JARS reference during compilation of WAR Java files-->
+	<path id="build.classpath">		
+		<pathelement location="${serverjdk}/src.jar"/>
+		<pathelement location="${serverjdk}/jre/lib/rt.jar"/>
+						
+		<fileset dir="${was.home}/lib/">
+			<include name="j2ee.jar" />
+		</fileset>
+			
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<!-- COMPILE -->
+	<target name="compile" depends="prepare">		
+		<javac debug="on" srcdir="${src.dir}" destdir="${temp.dir.classes}" includeAntRuntime="no">
+			<classpath refid="build.classpath" />
+			<compilerarg value="-Xlint:unchecked" />
+		</javac>
+	</target>
+
+	<!-- PACKAGE WAR File -->
+	<target name="makewar" depends="compile">
+		
+		<copy todir="${temp.dir.resources}">
+			<fileset dir="${WARBasePath}/webapp/resources">
+				<include name="**/*.*"/>				
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp.dir.classes}">
+			<fileset dir="${WARBasePath}/resources">
+				<include name="**/*.xml"/>
+				<include name="**/*.properties"/>				
+			</fileset>
+		</copy>
+		
+		<copy file="${WARBasePath}/webapp/META-INF/context.xml" tofile="${temp.dir.meta-inf}/context.xml" overwrite="true" />
+		
+		<copy todir="${temp.dir.web-inf}">
+			<fileset dir="${WARBasePath}/webapp/WEB-INF">
+				<include name="**/*.xml"/>
+				<include name="**/*.properties"/>
+				<include name="**/*.jsp"/>
+			</fileset>					
+		</copy>
+		
+		<copy todir="${temp.dir.lib}">
+			<fileset dir="${lib.dir}">
+				<include name="**/*.jar"/>
+			</fileset>
+		</copy>
+		
+		<war destfile="${dest.dir}/${package.file}" webxml="${temp.dir.web-inf}/web.xml" basedir="${temp.dir.webcontent}">			
+			<!--<classes dir="${temp.dir.classes}" />-->
+		</war>
+	</target>
+	
+</project>
