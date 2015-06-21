@@ -1,0 +1,214 @@
+Download and Install just the Liberty profile runtime in build environments or non-Eclipse IDEs.
+===============================================================================================
+	1. Download the Liberty profile runtime:
+		https://developer.ibm.com/wasdev/downloads/liberty-profile-using-non-eclipse-environments/
+		
+	2. Run the following command then follow the prompts to install the Liberty profile runtime:
+		java -jar wlp-runtime-8.5.5.5.jar
+		
+	3. From the wlp/bin directory in your Liberty profile runtime installation, run the following command to create and start the default server:
+		server start
+		To run the server script on Windows systems:
+
+		server.bat create server_name
+		server.bat package server_name
+		server.bat run server_name
+		server.bat help server_name
+		server.bat status server_name
+		server.bat debug server_name
+		server.bat version server_name
+		The new server is created in wlp/usr/servers/defaultServer.
+
+	4. To deploy an application, copy the .war file to the server’s dropins directory:
+		usr/servers/server-name/dropins
+		There is no need to restart the server; the application should just work!
+
+Adding Web Service, JMS, or MongoDB support to the runtime
+==========================================================
+
+    1. Download the IBM® WebSphere Application Server V8.5.5.5 Liberty Profile Extended Content:
+		https://developer.ibm.com/wasdev/downloads/liberty-profile-using-non-eclipse-environments/
+    
+    2. Extract the content in the same location as your Liberty installation:
+		java -jar wlp-extended-8.5.5.5.jar
+		
+Liberty profile beta
+====================
+	1. The installUtility (located in the wlp/bin folder) can be used to install additional features from the Liberty Repository such as adminCenter-1.0, servlet-3.0, collectiveController-1.0, ndControllerBundle 
+	  (including adminCenter-1.0 and collectiveController-1.0), e.g.
+		bin/installUtility install adminCenter-1.0
+
+		You can also install all features required by a configured server using:
+		bin/installUtility install <server name>
+	2. Start the server using:
+		bin/server start
+
+Using the featureManager command
+================================
+    1. To find assets that are applicable to your configuration, use the searchstring option; for example:
+        featureManager find searchString
+
+    2. To view detailed information, use the --viewInfo option; for example:
+        featureManager find searchstring --viewInfo
+
+	3. Run the featureManager command to install the assets. Run the following command:
+		bin/featureManager install feature_shortName --when-file-exists=ignore
+
+	4. To install multiple features, use commas to separate each feature_shortName; for example:
+		bin/featureManager install feature_shortName1,feature_shortName2 --when-file-exists=ignore
+
+	5. Liberty Repository[8.5.5.4 or later]To download a feature to a local directory without installing the feature, use the --downloadOnly option; for example:
+		bin/featureManager install feature_shortName1,feature_shortName2 --downloadOnly=[all|required*|none]
+
+	6. Liberty Repository[8.5.5.4 or later]To install features from a local source directory, use the --location=directoryPath option; for example:
+		bin/featureManager install feature_shortName1,feature_shortName2 --location=directoryPath
+
+	7. Liberty Repository[8.5.5.4 or later]If you do not want to connect to the Liberty Repository, use the --offlineOnly option to install features from a local directory; for example:
+		bin/featureManager install feature_shortName1,feature_shortName2 --offlineOnly --location=directoryPath
+	
+	8. Run the featureManager command to install the adminCenter-1.0 feature:
+		bin/featureManager install adminCenter-1.0 --when-file-exists=ignore
+
+Setting up Admin Center
+=======================
+
+	1. Open an editor on the server.xml file of the Liberty profile server, and configure the server for Admin Center.	
+		a. Add the adminCenter-1.0 feature to the feature manager.
+			<featureManager>
+			   <feature>jsp-2.2</feature>
+			   <feature>adminCenter-1.0</feature>
+			</featureManager>
+		
+		b. Add one or more users to configure a secure login. For example:
+			<quickStartSecurity userName="admin" userPassword="adminpwd" />
+			
+			If user names or passwords include non-English characters, create the jvm.options file for the server and define the default client encoding as UTF-8:
+				-Ddefault.client.encoding=UTF-8
+		
+		c. To protect keystore files that have server authentication credentials, define a keystore and assign it a password.
+			<keyStore id="defaultKeyStore" password="Liberty" />
+			
+			For an example server.xml file that defines an Administrator and a non-Administrator and that defines a keystore, see the Example in this topic. For information about defining multiple administrative users, see Setting up BasicRegistry and role mapping on the Liberty profile.
+			
+		d. To access Admin Center from a smartphone, tablet, or remote computer, ensure that the server.xml file sets the host attribute of the httpEndpoint element to * (asterisk) or to a defined host name. By default, the host attribute is set to localhost.
+
+			<httpEndpoint id="defaultHttpEndpoint"
+						  host="*"
+						  httpPort="9080"
+						  httpsPort="9443" />
+
+		e. Save your changes to the server.xml file.
+			If you defined the default client encoding as UTF-8 for non-English characters in the jvm.options file and the user registry is in quickStartSecurity or basicRegistry elements, which store user names and passwords in the server.xml file, then save the server.xml file in UTF-8 encoding.
+	
+	2. If the server is not running, start the server.
+		For example, in a command window at the wlp/bin directory, enter a run or start command.
+			server run myServer
+
+		Look for server messages that show the adminCenter web application is running. After Admin Center is running, you can point a web browser at the application and log in
+		
+		Example: server.xml file that defines two authorized users
+
+		<server description="new server">
+
+		   <!-- Enable features -->
+		   <featureManager>
+			  <feature>adminCenter-1.0</feature>
+		   </featureManager>
+
+		   <!-- Define the host name for use by the collective.
+				If the host name needs to be changed, the server should be
+				removed from the collective and re-joined. -->
+		   <variable name="defaultHostName" value="localhost" />
+
+			<!-- Define an Administrator and non-Administrator -->
+		   <basicRegistry id="basic">
+			  <user name="admin" password="adminpwd" />
+			  <user name="nonadmin" password="nonadminpwd" />
+		   </basicRegistry>
+
+		   <!-- Assign 'admin' to Administrator -->
+		   <administrator-role>
+			  <user>admin</user>
+		   </administrator-role>
+
+		   <keyStore id="defaultKeyStore" password="Liberty" />
+
+		   <httpEndpoint id="defaultHttpEndpoint"
+						 host="*"
+						 httpPort="9080"
+						 httpsPort="9443" />
+
+		</server>
+
+Logging in to Admin Center
+==========================
+    1. Point a web browser at Admin Center.
+		https://host_name:port_number/adminCenter/
+
+		For host_name, specify the IP address or domain name server (DNS) host name of the computer on which the Liberty server is running. Specify localhost only if the browser is running on the same computer as the server.
+		For port_number, specify the httpsPort value in the server.xml file. For example:
+		https://localhost:9443/adminCenter/		 
+		https://myhost.xyz.com:9443/adminCenter/		  
+		https://9.65.234.567:9443/adminCenter/
+
+    2. If your browser prompts you to confirm that the connection is trusted, specify an exception or otherwise enable the connection to continue to Admin Center.
+    
+	3. Log in to Admin Center.
+		When you configured the server.xml file of the server to enable Admin Center, you defined one or more user names and passwords authorized to access the Admin Center. To log in to Admin Center, specify an authorized user name and password.
+
+		For example, specify the user name admin and the password adminpwd.
+
+
+		
+Specifying Liberty profile bootstrap properties
+===============================================
+	1. Bootstrap properties initialize the runtime environment for a particular server. Generally, they are attributes that affect the configuration and initialization of the runtime core.
+	
+	2. Bootstrap properties are set in a text file named bootstrap.properties. This file is not required, so it does not exist unless you create it. You must create this file in the server directory, which also contains the configuration root file server.xml. By default, the server directory is usr/servers/server_name.
+	
+	3. Use predefined properties to configure trace and logging.
+		For example:
+		To change the name of your trace file, specify the property com.ibm.ws.logging.trace.file.name with a file name of your choice, as follows:
+			com.ibm.ws.logging.trace.file.name = trace.log
+
+		To enable binary logging, specify the websphere.log.provider property as follows:
+			websphere.log.provider = binaryLogging-1.0
+			
+	4. Use predefined properties for configuration password encryption.
+
+	5. Use custom properties to define the default ports for web applications.
+		You can share server.xml and use XML configuration files across various development environments that allow machine- or environment-specific customization. For example:
+
+		Specify the properties default.http.port and default.https.port in the bootstrap.properties file:
+			default.http.port = 9081
+			default.https.port = 9444
+
+			Note: If you do not specify the properties, the default HTTP port is 9080 and HTTPS ports is 9443. To override the default HTTP endpoint definition, set the id attribute of the httpEndpoint element to defaultHttpEndpoint in the server configuration.
+
+		Use the following properties in the server.xml configuration file:
+
+			<httpEndpoint id="defaultHttpEndpoint"
+			host="*"
+			httpPort="${default.http.port}"
+			httpsPort="${default.https.port}" />
+
+		Note: host="*" means "listen on all adapters". By default, the server is listening only on address 127.0.0.1/localhost. You can also use the host property to specify a single IP address, and then the system listens only on the specified adapter.
+	
+	6. Use custom properties to set the command port.
+
+		Set the command port to enable the server script to communicate with the running Liberty server and request certain operations, such as stopping the Liberty server or issuing a Java™ dump.
+		By default, the Liberty server acquires an ephemeral port to be used by the command listener. You can override the default behavior of the Liberty server by using the command.port property.
+
+		Valid values
+		-1 		= Command port is disabled.
+		0 		= Ephemeral port is chosen at run time.
+		1-65535 = User-specified port.
+
+		Default value
+		0
+			Ephemeral port is chosen at run time.
+
+		Note: You are strongly discouraged from disabling the command port. If you disable the command port, you cannot use the server script to request some operations, for example, stopping the Liberty server or issuing a Java dump.
+		To apply the changes, restart the server.
+	
+		
