@@ -1,3 +1,14 @@
+wls 8.5.5.7
+============
+Failure to install WAS Liberty Extended Programming Models V8.5.5.7
+-------------------------------------------------------------------
+The wlp-extended-8.5.5.7 addon has dependencies on some EE6 features which are not available in the wlp-javaee7-8.5.5.7 installation.
+
+Here are a few options to get you going:
+1) If you don't need any EE7 features, then install the EE6 (web profile) version of Liberty from here: https://developer.ibm.com/wasdev/downloads/#asset/runtimes-8.5.5-wlp-runtime
+2) If you do want EE7 features, then you will need to install some EE6 features to enable the installation of the extended addod - from wlp/bin directory:
+installUtility install baseBundle
+
 Download and Install just the Liberty profile runtime in build environments or non-Eclipse IDEs.
 ===============================================================================================
 	1. Download the Liberty profile runtime:

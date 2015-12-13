@@ -1,0 +1,20 @@
+DNS_PROBE_FINISHED_BAD_CONFIG
+=============================
+
+ipconfig /release
+ipconfig /renew
+ 
+ipconfig /flushdns or netsh winsock reset catalog
+
+ncpa.cpl (network connections)
+
+
+Tweaking DNS Settings.
+
+If both of the above method didn’t helped you to fix DNS_PROBE_FINISHED_BAD_CONFIG error then Use this method. It Requires you to do minor Tweaking in your DNS Settings But In most cases this fixes the issue if done correctly. Follow the below Explained Steps.
+
+    Right Click on Network icon in taskbar then click on Open Network and Sharing Center.
+    Now from the Left pane, find and Click Change Adapter Settings. This will Open up Network Connections.
+    You will be presented with a new window with all Network Connections, Right Click on Active Connection and select Properties.
+    Now look for Internet Protocol Version 4 (TCP/IPv4), Double Click on it to open its Properties.
+    In the Properties Window, Click on Use the Following DNS Server Addresses and Type in 8.8.8.8 in Preferred DNS Server and 8.8.4.4  in Alternate DNS Server Just like shown in Below Picture. Then Click on OK.
