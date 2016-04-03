@@ -208,6 +208,9 @@ sudo shutdown -h now
 sudo reboot
 landscape-sysinfo
 
+You can give the user ownership with the following command:
+-----------------------------------------------------------
+chown -R username:groupname directory
 
 !! : to run the previous command 
 ^P : move up through history list, one command at a time. (Up arrow key) 
@@ -533,6 +536,22 @@ Now install that desktop file using the below command.
 
 Create a link file using the below command to open eclipse in command mode.
 	sudo ln -s /opt/eclipse/eclipse /usr/local/bin/
+
+Install Maven
+-------------
+#sudo apt-get remove maven2
+
+sudo add-apt-repository ppa:andrei-pozolotin/maven3
+sudo apt-get update
+sudo apt-get install maven3
+
+
+#If you encounter this: The program 'mvn' can be found in the following packages:
+
+#Just add those lines in /etc/profile
+export M2_HOME=/usr/share/maven3
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH
 
 Install Tomcat:
 ---------------
