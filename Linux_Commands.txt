@@ -7,6 +7,8 @@ To enter ^M, type CTRL-V, then CTRL-M. That is, hold down the CTRL key then pres
 To install VMware tools
 -----------------------
 ln -s /usr/src/linux-headers-$(uname -r)/include/generated/uapi/linux/version.h /usr/src/linux-headers-$(uname -r)/include/linux/version.h
+tar xzvf /mnt/cdrom/VMwareTools-x.x.x-xxxx.tar.gz -C /tmp/
+sudo ./vmware-install.pl -d
 
 Access internet using proxy in ubuntu
 ---------------------------------------
@@ -126,13 +128,6 @@ tasksel --list-tasks
 
 tasksel --task-packages dns-server
 
-
-The output of the command should list:
-
-bind9-doc 
-bind9utils 
-bind9
-
 If you did not install one of the tasks during the installation process, but for example you decide to make your new LAMP server a DNS server as well, simply insert the installation CD and from a terminal:
 
 sudo tasksel install dns-server
@@ -200,6 +195,7 @@ To logout su
 1. exit.
 2. Ctrl+d
 3. su username
+logout
 
 Create a backup of what packages are currently installed:
 ========================================================
@@ -211,8 +207,7 @@ sudo halt
 sudo shutdown -h now
 sudo reboot
 landscape-sysinfo
-tar xzvf /mnt/cdrom/VMwareTools-x.x.x-xxxx.tar.gz -C /tmp/
-sudo ./vmware-install.pl -d
+
 
 !! : to run the previous command 
 ^P : move up through history list, one command at a time. (Up arrow key) 
@@ -444,29 +439,100 @@ To determine the default shell for the oracle user, enter the following command:
 --------------------------------------------------------------------------------
 echo $SHELL
 
-Install MySQL
-=============
+To list all services:
+----------------------
+service --status-all
+service --status-all | grep ntpd
+service --status-all | less
 
-sudo apt-get install mysql-server
-service mysql status
-service mysql stop
-service mysql start
+service httpd status
+
+The rcconf command under Ubuntu Linux allows you to control which services are started when the system
+-------------------------------------------------------------------------------------------------------
+boots up or reboots
+--------------------
+apt-get install rcconf
+rcconf
+
+Type the following commands to verify your new setup, enter:
+-----------------------------------------------------------
+ifconfig eth0
+route -n
+ping google.com
+
+To see list of logged in user type who or w command:
+----------------------------------------------------
+w or who
+pkill -KILL -u {username}
+pkill -KILL -u raj
+sudo pkill -KILL -u raj
+
+to list down files and dir in unix
+----------------------------------
+alias lf="ls -l | egrep -v '^d'"
+alias ldir="ls -l | egrep '^d'"
+
+counting files and directories
+------------------------------
+ls -1 | wc -l
+ls -lR | grep ^d | wc -l
 
 Install Java
 ============
 whereis java
-sudo apt-get purge openjdk*
-apt-get install software-properties-commo
-sudo apt-get install python-software-properties
 
 sudo add-apt-repository ppa:webupd8team/java
-	 add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java6-installer
 sudo apt-get install oracle-jdk7-installer
 sudo apt-get install oracle-java8-installer
 
 sudo apt-get remove oracle-java7-installer
+
+sudo gedit /etc/profile
+JAVA_HOME=/usr/lib/jvm/jdk1.7.0_60
+PATH=$PATH:$JAVA_HOME/bin
+export JAVA_HOME
+export PATH
+
+Reload the profiles
+. /etc/profile
+java –version
+
+/etc/environment
+----------------
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/IBM/WebSphere/AppServer/java/bin:/usr/local/apache-ant-1.9.2/bin"
+JAVA_HOME="/usr/lib/jvm/jdk1.7.0_60"
+ANT_HOME="/usr/local/apache-ant-1.9.2"
+
+
+Install Eclipse
+---------------
+sudo apt-get update
+Download latest linux eclipse
+Move the downloaded package to /opt directory.
+sudo mv Downloads/eclipse-standard-kepler-SR2-linux-gtk-x86_64.tar.gz /opt/
+Unzip the downloaded file.
+cd /opt
+sudo tar -xvf eclipse-standard-kepler-SR2-linux-gtk-x86_64.tar.gz
+Create a new file eclipse.desktop in /usr/share/applications/ and add the below code .
+
+[Desktop Entry]
+Name=Eclipse
+Type=Application
+Exec=/opt/eclipse/eclipse
+Terminal=false
+Icon=/opt/eclipse/icon.xpm
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[en]=eclipse.desktop
+
+Now install that desktop file using the below command.
+	sudo desktop-file-install /usr/share/applications/eclipse.desktop
+
+Create a link file using the below command to open eclipse in command mode.
+	sudo ln -s /opt/eclipse/eclipse /usr/local/bin/
 
 Install Tomcat:
 ---------------
@@ -484,117 +550,9 @@ Open the default tomcat port in your firewall
 sudo ufw enable 8080/tcp
 http://192.168.179.129:8080/
 
-Then type ( or copy and paste from here ) these commands one at a time:
------------------------------------------------------------------------
-sudo rm /var/lib/dpkg/info/oracle-java7-installer*
-sudo apt-get purge oracle-java7-installer*
-sudo rm /etc/apt/sources.list.d/java
-sudo apt-get update
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java7-installer
-
-export DISPLAY=192.168.5.2:0.0
-unset DISPLAY
-gedit HelloWorld.java
-sudo apt-get install ubuntu-desktop
-xclock, xcalc
-sudo apt-get install gksu
-
-RedHatLinux6:
-=============
-Network Configuration:
-----------------------
-ifup eth0
-setup
-vim /etc/hosts
-vim /etc/sysconfig/network
-vim /etc/resolv.conf
-ethtool eth0
-/etc/init.d/network restart
-service network restart
-service network start
-service network stop
-
-To list all services:
-----------------------
-service --status-all
-service --status-all | grep ntpd
-service --status-all | less
-
-service httpd status
-
-apt-get install rcconf
-
-The rcconf command under Ubuntu Linux allows you to control which services are started when the system
--------------------------------------------------------------------------------------------------------
-boots up or reboots
---------------------
-rcconf
-
-Type the following commands to verify your new setup, enter:
------------------------------------------------------------
-ifconfig eth0
-route -n
-ping google.com
-
-To see list of logged in user type who or w command:
-----------------------------------------------------
-w or who
-pkill -KILL -u {username}
-pkill -KILL -u raj
-sudo pkill -KILL -u raj
-
-Linux logout user or logoff user commands
-------------------------------------------
-ctrl+d
-logout
-
-File Explorer:
+Install MySQL:
 --------------
-sudo nautilus
-
-type eclipse
-dpkg -S /usr/bin/eclipse
-aptitude search eclipse
-
-sudo mkdir -p /usr/lib/jvm
-sudo tar xvf ~/Downloads/jdk-7u25-linux-x64.tar.gz -C /usr/lib/jvm
-sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.7.0_60/bin/javac" 1
-sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0_60/bin/java" 1
-sudo update-alternatives --set "javac" "/usr/lib/jvm/jdk1.7.0_60/bin/javac"
-sudo update-alternatives --set "java" "/usr/lib/jvm/jdk1.7.0_60/bin/java"
-sudo gedit /etc/profile
-JAVA_HOME=/usr/lib/jvm/jdk1.7.0_60
-PATH=$PATH:$JAVA_HOME/bin
-export JAVA_HOME
-export PATH
-
-Reload the profiles
-. /etc/profile
-java –version
-
-/etc/environment
-----------------
-PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/IBM/WebSphere/AppServer/java/bin:/usr/local/apache-ant-1.9.2/bin"
-JAVA_HOME="/opt/IBM/WebSphere/AppServer/java"
-ANT_HOME="/usr/local/apache-ant-1.9.2"
-WAS_HOME="/opt/IBM/WebSphere/AppServer"
-
-Solaris (CPU usage):
--------------------
-top
-prstat
-mpstat
-ps -e -o pcpu -o pid -o user -o args
-ssh -l username hostname
-svcs -a - to list all services
-
-to list down files and dir in unix
-================================== 
-alias lf="ls -l | egrep -v '^d'"
-alias ldir="ls -l | egrep '^d'"
-
-counting files and directories
-ls -1 | wc -l
-ls -lR | grep ^d | wc -l
+sudo apt-get install mysql-server
+service mysql status
+service mysql stop
+service mysql start
