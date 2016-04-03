@@ -572,6 +572,45 @@ http://192.168.179.129:8080/
 Install MySQL:
 --------------
 sudo apt-get install mysql-server
-service mysql status
-service mysql stop
-service mysql start
+sudo mysql_secure_installation
+sudo service mysql status or sudo /etc/init.d/mysql status
+sudo service mysql stop
+sudo service mysql start
+mysql -u root -p
+
+flush privileges;
+
+Create a New MySQL User and Database
+	create database testdb;
+	create user 'testuser'@'localhost' identified by 'password';
+	grant all on testdb.* to 'testuser';
+
+		(or)
+
+	create database testdb;
+	grant all on testdb.* to 'testuser'@'localhost' identified by 'password';
+
+		
+	mysql -u testuser -p
+	use testdb;
+	create table customers (customer_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, first_name TEXT, last_name TEXT);
+
+
+Access all disks all users:
+---------------------------
+sudo mkdir /media/reservedide
+sudo mkdir /media/cdriveide
+sudo mkdir /media/ddriveide
+sudo mkdir /media/drivesata
+
+sudo chmod -R 777 /media/reservedide
+sudo chmod -R 777 /media/cdriveide
+sudo chmod -R 777 /media/ddriveide
+sudo chmod -R 777 /media/drivesata
+
+sudo gedit /etc/fstab
+	
+UUID=4E24629024627B3B /media/reservedide ntfs-3g auto,user,rw 0 0
+UUID=4ADC71C6DC71ACB7 /media/cdriveide ntfs-3g auto,user,rw 0 0
+UUID=80DA5A3DDA5A3020 /media/ddriveide ntfs-3g auto,user,rw 0 0
+UUID=461EB67C1EB66519 /media/drivesata ntfs-3g auto,user,rw 0 0
