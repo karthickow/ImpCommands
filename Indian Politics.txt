@@ -1,0 +1,272 @@
+﻿National Democratic Alliance (NDA) - Centre-Right
+United Progressive Alliance (UPA) - Centre-Left
+
+1. India has an asymmetric federal government, with elected officials at the federal, state and local levels.
+2. At the national level, the head of government, Prime Minister, is elected by members of the Lok Sabha, the lower house of the parliament of India.
+3. All members of the Lok Sabha, except two who can be nominated by the President of India, are directly elected through general elections which take place every five years.
+4. Members of the Rajya Sabha, the upper house of the Indian parliament, are elected by elected members of the legislative assemblies of the states and the Electoral college for the Union Territories of India.
+
+General or Lok Sabha (Lower House) Elections (545 (543 elected + 2 Nominated from the Anglo-Indian Community by the President of India)) - 5 Years Term (7 April 2014 to 12 May 2014)
+====================================================================================================================================================================================
+
+The Lok Sabha, the lower house of the Parliament of India, is made up of Members of Parliament (MPs). Each represents a single geographic constituency. There are currently 543 constituencies.
+
+The maximum size of the Lok Sabha as outlined in the Constitution of India is 552 members made up of up to 530 members representing people of the states of India and up to 20 members representing people from the Union Territories on the basis of their population and 2 are nominated by President.
+
+A party needs 272 MPs to stake claim to form the Central Government. If a party doesn't have 272 MPs on its own it can ally with other parties and form the government. Leader of the party/alliance takes oath as the Prime Minister. 
+
+The elections(16th Lok Sabha) were conducted in 9 phases from 7 April 2014 to 12 May 2014. The results of the election were declared on 16 May 2014. The Bharatiya Janata Party (of the NDA) achieved an absolute majority with 282 seats out of 543. 
+
+Its PM candidate Narendra Modi took office on 26 May 2014 as the 15th prime minister of independent India. There is no leader of the opposition in the 16th Lok Sabha as the Indian Parliament rules state that a party in the Lok Sabha must have at least 10% of total seats (545) in order to be considered the opposition party
+
+State/Union Territory				Number of Parliamentary seats
+-----------------------------------------------------------------
+Andhra Pradesh 								25
+Arunachal Pradesh 							 2
+Assam 										14
+Bihar 										40
+Chhattisgarh 								11
+Goa 										 2
+Gujarat 									26
+Haryana 									10
+Himachal Pradesh 							 4
+Jammu and Kashmir 							 6
+Jharkhand 									14
+Karnataka 									28
+Kerala 										20
+Madhya Pradesh 								29
+Maharashtra 								48
+Manipur 									 2
+Meghalaya 									 2
+Mizoram 	 								 1
+Nagaland 									 1
+Odisha 										21
+Punjab 										13
+Rajasthan 									25
+Sikkim 										 1
+Tamil Nadu 									39
+Telangana 									17
+Tripura 									 2
+Uttar Pradesh 								80
+Uttarakhand 								 5
+West Bengal 								42
+Andaman and Nicobar Islands 				 1
+Chandigarh 									 1
+Dadra and Nagar Haveli 					     1
+Daman and Diu 								 1
+Lakshadweep 								 1
+NCT of Delhi 								 7
+Puducherry 									 1
+
+Constituency No. 	Constituency 		Reserved for(SC/ST/None) 	Assembly constituency segments
+==================================================================================================
+1 					Thiruvallur 		SC 							1. Gummidipundi 2. Ponneri (SC) 4.Thiruvallur 5. Poonamallee (SC) 6. Avadi 9. Madavaram
+2 					Chennai North 		None 						10. Thiruvottiyur 11. Dr.Radhakrishnan Nagar 12.Perambur 13. Kolathur 15. Thiru. Vi. Ka. Nagar (SC) 17. Royapuram
+3 					Chennai South 		None 						22. Virugambakkam 23. Saidapet 24. T. Nagar 25. Mylapore 26. Velachery 27. Sholinganallur
+4 					Chennai Central 	None 						14. Villivakkam 16. Egmore (SC) 18. Harbour 19. Chepauk-Thiruvallikeni 20. Thousand Lights 21. Anna Nagar
+5 					Sriperumbudur 		None 						7. Maduravoyal 8. Ambattur 28. Alandur 29. Sriperumbudur (SC) 30. Pallavaram 31. Tambaram
+6 					Kancheepuram 		SC 							32. Chengalpattu 33. Thiruporur 34. Cheyyur (SC) 35. Madurantakam 36. Uthiramerur 37. Kancheepuram
+7 					Arakkonam 			None 						3. Tiruttani 38. Arakkonam (SC) 39. Sholingur 40. Katpadi 41. Ranipet 42. Arcot
+8 					Vellore 			None 						43. Vellore 44. Anaikattu 45. K. V. Kuppam (SC) 46. Gudiyattam (SC) 47. Vaniyambadi 48. Ambur
+9 					Krishnagiri 		None 						51. Uthangarai (SC) 52. Bargur 53. Krishnagiri 54. Veppanahalli 55. Hosur 56. Thalli
+10 					Dharmapuri 			None 						57. Palacodu 58. Pennagaram 59. Dharmapuri 60. Pappireddippatti 61. Harur (SC) 85. Mettur
+11 					Tiruvannamalai 		None 						49. Jolarpet 50. Tirupattur 62. Chengam (SC) 63. Tiruvannamalai 64. Kilpennathur 65. Kalasapakkam
+12 					Arani 				None 						66. Polur 67. Arani 68. Cheyyar 69. Vandavasi (SC) 70. Gingee 71. Mailam
+13 					Villupuram 			SC 							72. Tindivanam (SC) 73. Vanur (SC) 74. Villupuram 75. Vikravandi 76. Tirukkoyilur 77. Ulundurpettai
+14 					Kallakurichi 		None 						78. Rishivandiyam 79. Sankarapuram 80. Kallakurichi (SC) 81. Gangavalli (SC) 82. Attur (SC) 83. Yercaud (ST)
+15 					Salem 				None 						84. Omalur 86. Edappadi 88. Salem (West) 89. Salem (North) 90. Salem (South) 91. Veerapandi
+16 					Namakkal 			None 						87. Sankari 92. Rasipuram (SC) 93. Senthamangalam (ST) 94. Namakkal 95. Paramathi Velur 96. Tiruchengodu
+17 					Erode 				None 						97. Kumarapalayam 98. Erode (East) 99. Erode (West) 100. Modakkurichi 101. Dharapuram (SC) 102. Kangayam
+18 					Tiruppur 			None 						103. Perundurai 104. Bhavani 105. Anthiyur 106. Gobichettipalayam 113. Tiruppur (North) 114.Tiruppur (South)
+19 					Nilgiris 			SC 							107. Bhavanisagar (SC) 108. Udhagamandalam 109. Gudalur (SC) 110. Coonoor 111. Mettuppalayam 112. Avanashi (SC)
+20 					Coimbatore 			None 						115. Palladam 116. Sulur 117. Kavundampalayam 118. Coimbatore (North) 120. Coimbatore (South) 121. Singanallur
+21 					Pollachi 			None 						121. Thondamuthur 122. Kinathukadavu 123. Pollachi 124. Valparai (SC) 125. Udumalpet 126.Madathukulam
+22 					Dindigul 			None 						127. Palani 128. Oddanchatram 129. Athoor 130. Nilakkottai (SC) 131. Natham 132. Dindigul
+23 					Karur 				None 						133. Vedasandur 134. Aravakurichi 135. Karur 136. Krishnarayapuram (SC) 138. Manapaarai 179. Viralimalai
+24 					Tiruchirappalli 	None 						139. Srirangam 140. Tiruchirappalli (West) 141. Tiruchirappalli (East) 142. Thiruverumbur 178. Gandharvakottai (SC) 180. Pudukkottai
+25 					Perambalur 			None 						137. Kulithalai 143. Lalgudi 144. Manachanallur 145. Musiri 146. Thuraiyur (SC) 147. Perambalur (SC)
+26 					Cuddalore 			None 						151. Tittakudi (SC) 152. Vriddhachalam 153. Neyveli 154. Panruti 155. Cuddalore 156. Kurinjipadi
+27 					Chidambaram 		SC 							148. Kunnam 149. Ariyalur 150. Jayankondam 157. Bhuvanagiri 158. Chidambaram 159. Kattumannarkoil (SC)
+28 					Mayiladuturai 		None 						160. Sirkazhi (SC) 161. Mayiladuthurai 162. Poompuhar 170. Thiruvidaimarudur (SC) 171. Kumbakonam 172. Papanasam
+29 					Nagapattinam 		SC 							163. Nagapattinam 164. Kilvelur (SC) 165. Vedaranyam 166. Thiruthuraipoondi (SC) 168. Thiruvarur 169. Nannilam
+30 					Thanjavur 			None 						167. Mannargudi 173. Thiruvaiyaru 174. Thanjavur 175. Orathanadu 176. Pattukkottai 177. Peravurani
+31 					Sivaganga 			None 						181. Thirumayam 182. Alangudi 184. Karaikudi 185. Tiruppattur 186. Sivaganga 187. Manamadurai (SC)
+32 					Madurai 			None 						188. Melur 189. Madurai East 191. Madurai North 192. Madurai South 193. Madurai Central 194. Madurai West
+33 					Theni 				None 						190. Sholavandan (SC) 197. Usilampatti 198. Andipatti 199. Periyakulam (SC) 200. Bodinayakanur 201. Cumbum
+34 					Virudhunagar 		None 						195. Thiruparankundram 196. Thirumangalam 204. Sattur 205. Sivakasi 206. Virudhunagar 207.Aruppukkottai
+35 					Ramanathapuram 		None 						183. Aranthangi 208. Tiruchuli 209. Paramakudi (SC) 210. Tiruvadanai 211. Ramanathapuram 212. Mudhukulathur
+36 					Thoothukudi 		None 						213. Vilathikulam 214. Thoothukkudi 215. Tiruchendur 216. Srivaikuntam 217. Ottapidaram (SC) 218.Kovilpatti
+37 					Tenkasi 			SC 							202. Rajapalayam 203. Srivilliputhur (SC) 219. Sankarankovil (SC) 220. Vasudevanallur (SC) 221. Kadayanallur 222. Tenkasi
+38 					Tirunelveli 		None 						223. Alangulam 224. Tirunelveli 225. Ambasamudram 226. Palayamkottai 227. Nanguneri 228. Radhapuram
+39 					Kanyakumari 		None 						229. Kanyakumari 230. Nagercoil 231. Colachel 232. Padmanabhapuram 233. Vilavancode 234. Killiyoor
+
+1951-52  	1st Lok Sabha 	489 		INC 	364 	44.99% 	CPI 	16 		3.29% 	SOC 	12 	10.59%
+1957 		2nd Lok Sabha 	494 		INC 	371 	47.78% 	CPI 	27 		8.92% 	PSP 	19 	10.41%
+1962 		3rd Lok Sabha 	494 		INC 	361 	44.72% 	CPI 	29 		9.94% 	SWA 	18 	7.89%
+1967 		4th Lok Sabha 	520 		INC 	283 	40.78% 	SWA 	44 		8.67% 	BJS 	35 	9.31%
+1971 		5th Lok Sabha 	518 		INC 	352 	43.68% 	CPM 	25 		5.12% 	CPI 	23 	4.73%
+1977 		6th Lok Sabha 	542 		BLD 	295 	41.32% 	INC 	154 	34.52% 	CPM 	22 	4.29%
+1980 		7th Lok Sabha 	529(542*) 	INC(I) 	351 	42.69% 	JNP(S) 	41 		9.39% 	CPM 	37 	6.24%
+1984 		8th Lok Sabha 	541 		INC 	404 	49.01% 	TDP 	30 		4.31% 	CPM 	22 	5.87%
+1989 		9th Lok Sabha 	529 		INC 	197 	39.53% 	JD 		143 	17.79% 	BJP 	85 	11.36%
+1991 		10th Lok Sabha 	521 		INC 	232 	36.26% 	BJP 	120 	20.11% 	JD 		59 	11.84%
+1996 		11th Lok Sabha 	543 		BJP 	161 	20.29% 	INC 	140 	28.80% 	JD 		46 	23.45%
+1998 		12th Lok Sabha 	543 		BJP 	182 	25.59% 	INC 	141 	25.82% 	CPM 	32 	5.16%
+1999 		13th Lok Sabha 	543 		BJP 	182 	23.75% 	INC 	114 	28.30% 	CPM 	33 	5.40%
+2004 		14th Lok Sabha 	543 		INC 	145 	26.53% 	BJP 	138 	22.16% 	CPM 	43 	5.66%
+2009 		15th Lok Sabha 	543 		INC 	206 	28.55% 	BJP 	116 	18.80% 	SP 		23 	3.23%
+2014 		16th Lok Sabha	543 		BJP 	282 	31.34% 	INC 	44 		19.52% 	AIADMK 	37 	3.31%
+
+* : 12 seats in Assam and 1 in Meghalaya did not vote.
+
+Rajya Sabha (Upper House) Elections (Maximum of 250 members, current laws have provision for 245 members) - 6 Years Term
+========================================================================================================================
+Rajya sabha members are not directly elected by the people. They are elected by the Members of Legislative Assembly of the respective states. MLAs elect the Rajya Sabha members.
+The President can appoint 12 members for their contributions to art, literature, science, and social services. Members sit for staggered six-year terms, with one third of the members retiring every two years.
+It is not subject to dissolution
+
+Name of State and Union Territory 		No. of Seats
+Andhra Pradesh							 	11
+Arunachal Pradesh 							 1
+Assam 										 7
+Bihar 										16
+Chhattisgarh 								 5
+Goa 										 1
+Gujarat 									11
+Haryana 									 5
+Himachal Pradesh 							 3
+Jammu & Kashmir 							 4
+Jharkhand 									 6
+Karnataka 									12
+Kerala 										 9
+Madhya Pradesh 								11
+Maharashtra 								19
+Manipur 									 1
+Meghalaya 									 1
+Mizoram 									 1
+Nagaland 									 1
+National Capital Territory (Delhi) 			 3
+Nominated 									12
+Odisha 										10
+Pondicherry 								 1
+Punjab 										 7
+Rajasthan 									10
+Sikkim 										 1
+Tamil Nadu 									18
+Telangana	 								 7
+Tripura 									 1
+Uttar Pradesh 								31
+Uttarakhand 								 3
+West Bengal 								16
+
+(TN) State Assembly Elections -  (15th state assembly elections held May 2016)
+=============================================================================
+It has a strength of 235 members of whom 234 are democratically elected using the First-past-the-post system. The remaining member is nominated as a representative of the Anglo Indian community.
+People directly elect their representatives for the Legislative assembly. Total strength of each assembly depends on each State, mostly based on size and population .
+Eg: Tamil Nadu has 234 MLAs
+
+Similar to Lok sabha elections, leader of the majority party/alliance takes oath as Chief Minister
+
+Local Body Elections (Urban and Rural)
+======================================
+In Rural Local Bodies a voter has to cast 4 votes and in Urban Local Bodies a voter has to cast two votes.
+
+In this case as well, people directly elect their representatives for a smaller geographical area. There are different types of local bodies. Corporations, Municipalities, Panchayats, etc.
+
+Eg: In Tamil Nadu Chennai, Coimbatore, Trichy, etc are corporations and they elect a Mayor and also Ward Councillors. A ward is typically a very small geographical area. Unlike State and Central elections, people directly elect the Mayor. In most cases the party which has majority Councillors will also hold the mayor post because of popular support. People generally vote based on parties , not on any individuals.
+
+Local bodies are categorized into two Urban Local Body and Rural Local Body. 
+
+Urban Local Bodies
+------------------
+The urban local bodies acts as platform between the people in the urban areas and the administration.
+
+    City Municipal Corporations
+    Municipalities
+    Town Panchayat
+
+Larger cities of Tamil Nadu are governed by City Municipal Corporations (Tamil: மாநகராட்சிகள்). Tamil Nadu has 12 municipal corporations: Chennai, Coimbatore, Madurai, Tiruchirappalli, Tiruppur, Salem, Erode, Tirunelveli, Vellore, Thoothukudi, Dindigul and Thanjavur. These cities alone house one-third of urban population of the state. Corporation consists of a council of elected councilors from each ward and a presiding officer, Mayor who is also an elected representative.
+
+Municipalities (Tamil: நகராட்சிகள்) fall next to the city corporations. There are about 123 Municipalities in Tamil Nadu. Municipalities have four categories based on their annual income and population. These include 15 special grade municipalities, 31 selection grade municipalities, 33 grade I municipalities, 44 grade II municipalities. Their elected representatives include ward councillors and a presiding officer, Municipal Chairperson. Municipal Commissioner is the executive authority.
+
+Town panchayat (Tamil: பேரூராட்சிகள்) is the body of government for areas in transition form ‘rural’ to ‘urban’. Tamil Nadu is the first state to introduce such a classification in urban local bodies. The state has 529 town panchayats. Town panchayats are upgraded to Grade III municipalities if they are found to be eligible. They are categorized in a similar way to that of Municipalities depending on the income criteria and population. Town panchayat council include elected ward councilors and their presiding officer, Town panchayat chairperson. Executive Officer is the executive authority as in case of Town panchayats.
+
+Local Body/Party 	Corporation Mayor 	Corporation Councillor 	Municipal Chairman 	Municipal Councillor 	Town Panchayat Chairman 	Town Pt. Ward Member
+AIADMK 				10 					584 					89 					1,681 					285 						2,855
+BJP 				0 					4 						2 					37 						13 							181
+CPI 				0 					4 						0 					10 						2 							33
+CPI(M) 				0 					3 						2 					20 						5 							101
+DMK 				0 					130 					23 					963 					121 						1,819
+INC 				0 					17 						0 					165 					24 							381
+MDMK 				0 					11 						1 					49 						7 							82
+PMK 				0 					2 						0 					60 						2 							108
+DMDK 				0 					8 						2 					121 					3 							390
+Independent 		0 					55 						5 					553 					64 							1996
+
+Rural Local Bodies
+------------------
+Rural local bodies include the panchayat raj institutions of this state. There are three levels in this system as follows.
+
+    Village Panchayats
+    Panchayat Unions(co-terminus with Blocks)
+    District Panchayats in this state.
+
+Village panchayats (Tamil: ஊராட்சிகள்) form the grass-root level of democracy as they form the local government for the basic building blocks of our country - villages. It is set up in villages where the population is less than 300. There are about 12,524 Village panchayats in this state. Gram Sabha is a part of Village panchayat which consists of elected ward members and Village panchayat president. Village panchayat president himself is an executive authority here. They must meet for minimum of four times a year.
+
+Panchayat Union (Tamil: ஊராட்சி ஒன்றியம்) is the group of Village panchayats. They serve as the link between the villages and the district administration. They form the local government at the Taluk level. Tamil Nadu has 385 panchayat unions. Panchayat union council consists of elected ward members from the villages. It is headed by a panchayat union chairperson, who is elected indirectly by the ward members of the council.
+
+District panchayats (Tamil: மாவட்ட ஊராட்சி ஒன்றியங்கள்) form the cream of the panchayat raj system. They take the top slot with mainly advisory powers to the rest. Developmental administration of the district in rural areas are in its hands. It consists of ward members elected from various villages in its jurisdiction. It is presided by district panchayat chairperson, who is indirectly elected by its ward members. There are 31 district panchayats in this state except for the district of Chennai as it is an urban district. District collector is the ex-officio chairman of the District rural development agency.
+
+Office								No. of Seats
+------------------------------------------------
+URBAN:
+=====
+Corporation Mayor					   12
+Corporation Councillor				  919
+Municipal Chairmen					  123
+Municipal Councillors				 3598
+Town Panchayat Chairmen				  529
+Town Panchayat Ward Members			 8303
+
+RURAL:
+======	
+District Panchayat Ward Members		  655
+Panchayat Union Ward Members		 6471
+Village Panchayat Presidents	    12524
+Village Panchayat Ward Members		99324
+
+District			Urban 												Rural
+				Corporations 	Municipalities 	Town Panchayats 	Panchayat Unions (Blocks) 	Village Panchayats
+Ariyalur 		0 				2 				2 					6 							201
+Chennai 		1 				0 				0 					0 							0
+Coimbatore 		1 				6 				52 					13 							389
+Cuddalore 		0 				5 				16 					13 							682
+Dharmapuri 		0 				1 				10 					8 							251
+Dindigul 		1 				2 				24 					14 							306
+Erode 			1 				4 				53 					14 							343
+Kancheepuram 	0 				10 				24 					13 							648
+Kanniyakumari 	0 				4 				56 					9 							99
+Karur 			0 				4 				11 					8 							157
+Krishnagiri 	0 				2 				7 					10 							337
+Madurai 		1 				6 				24 					12 							431
+Nagapattinam 	0 				4 				8 					11 							434
+Namakkal 		0 				5 				19 					15 							331
+Perambalur 		0 				1 				4 					4 							121
+Pudukkottai 	0 				2 				8 					13 							498
+Ramanathapuram 	0 				4 				7 					11 							443
+Salem 			1 				4 				33 					20 							385
+Sivaganga 		0 				3 				12 					12 							445
+Thanjavur 		1 				2 				22 					14 							589
+Nilgiris 		0 				4 				11 					4 							35
+Theni 			0 				6 				22 					8 							130
+Thiruvallur 	0 				5 				13 					14 							539
+Thiruvannamalai 0 				4 				10 					18 							860
+Thiruvarur 		0 				4 				7 					10 							430
+Thoothukudi 	1 				2 				19 					12 							408
+Tiruchirappalli 1 				3 				17 					14 							408
+Tirunelveli 	1 				8 				36 					19 							425
+Tiruppur 		1 				6 				17 					13 							273
+Vellore 		1 				8 				22 					20 							753
+Villupuram 		0 				3 				15 					22 							1104
+Virudhunagar 	0 				7 				9 					11 							450
+Total 			12 				123 			529 				385 						12,524
