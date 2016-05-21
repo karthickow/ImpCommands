@@ -11,6 +11,9 @@ git config --global --unset http.proxy		// to unset http proxy
 git config --global user.name "Karthick"
 git config --global user.email "karthickkrishnan24@gmail.com"
 
+git mergetool --tool-help
+git config --global merge.tool tortoisemerge
+
 git help -a
 
 echo 'test content' > test.txt

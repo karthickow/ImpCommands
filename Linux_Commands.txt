@@ -201,13 +201,9 @@ Create a backup of what packages are currently installed:
 ========================================================
 sudo dpkg --get-selections > list.txt
 
-
-sudo apt-get install openssh-server
-sudo halt
-sudo shutdown -h now
-sudo reboot
-landscape-sysinfo
-
+You can give the user ownership with the following command:
+-----------------------------------------------------------
+chown -R username:groupname directory
 
 !! : to run the previous command 
 ^P : move up through history list, one command at a time. (Up arrow key) 
@@ -410,10 +406,6 @@ To determine the amount of shared memory available, enter the following command:
 ---------------------------------------------------------------------------------
 df -k /dev/shm/
 
-To determine whether the system architecture can run the software, enter the following command:
------------------------------------------------------------------------------------------------
-uname -m
-
 To determine the amount of disk space available in the /tmp directory, enter the following command:
 ---------------------------------------------------------------------------------------------------
 df -k /tmp
@@ -429,15 +421,22 @@ cat /proc/version
 
 To determine whether the required kernel is installed, enter the following command:
 -----------------------------------------------------------------------------------
-uname -r
+uname -r		
+uname -m or arch 	//system architecture
 
-To determine whether an Oracle software owner user named oracle exists, enter the following command:
------------------------------------------------------------------------------------------------------
-id oracle
+cat /etc/issue
+    (OR)
+lsb_release -a
 
-To determine the default shell for the oracle user, enter the following command:
---------------------------------------------------------------------------------
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get -f install	//Install Dependencies
+
+id oracle	//User exists
 echo $SHELL
+
+sudo shutdown -h now or sudo init 0
+sudo reboot or sudo init 6
 
 To list all services:
 ----------------------
@@ -505,6 +504,10 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 JAVA_HOME="/usr/lib/jvm/jdk1.7.0_60"
 ANT_HOME="/usr/local/apache-ant-1.9.2"
 
+Clean cache
+-----------
+sudo apt-get clean
+sudo apt-get autoclean
 
 Install Eclipse
 ---------------
@@ -534,6 +537,22 @@ Now install that desktop file using the below command.
 Create a link file using the below command to open eclipse in command mode.
 	sudo ln -s /opt/eclipse/eclipse /usr/local/bin/
 
+Install Maven
+-------------
+#sudo apt-get remove maven2
+
+sudo add-apt-repository ppa:andrei-pozolotin/maven3
+sudo apt-get update
+sudo apt-get install maven3
+
+
+#If you encounter this: The program 'mvn' can be found in the following packages:
+
+#Just add those lines in /etc/profile
+export M2_HOME=/usr/share/maven3
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH
+
 Install Tomcat:
 ---------------
 sudo apt-get update
@@ -553,6 +572,45 @@ http://192.168.179.129:8080/
 Install MySQL:
 --------------
 sudo apt-get install mysql-server
-service mysql status
-service mysql stop
-service mysql start
+sudo mysql_secure_installation
+sudo service mysql status or sudo /etc/init.d/mysql status
+sudo service mysql stop
+sudo service mysql start
+mysql -u root -p
+
+flush privileges;
+
+Create a New MySQL User and Database
+	create database testdb;
+	create user 'testuser'@'localhost' identified by 'password';
+	grant all on testdb.* to 'testuser';
+
+		(or)
+
+	create database testdb;
+	grant all on testdb.* to 'testuser'@'localhost' identified by 'password';
+
+		
+	mysql -u testuser -p
+	use testdb;
+	create table customers (customer_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, first_name TEXT, last_name TEXT);
+
+
+Access all disks all users:
+---------------------------
+sudo mkdir /media/reservedide
+sudo mkdir /media/cdriveide
+sudo mkdir /media/ddriveide
+sudo mkdir /media/drivesata
+
+sudo chmod -R 777 /media/reservedide
+sudo chmod -R 777 /media/cdriveide
+sudo chmod -R 777 /media/ddriveide
+sudo chmod -R 777 /media/drivesata
+
+sudo gedit /etc/fstab
+	
+UUID=4E24629024627B3B /media/reservedide ntfs-3g auto,user,rw 0 0
+UUID=4ADC71C6DC71ACB7 /media/cdriveide ntfs-3g auto,user,rw 0 0
+UUID=80DA5A3DDA5A3020 /media/ddriveide ntfs-3g auto,user,rw 0 0
+UUID=461EB67C1EB66519 /media/drivesata ntfs-3g auto,user,rw 0 0
