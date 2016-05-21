@@ -1,4 +1,11 @@
-﻿National Democratic Alliance (NDA) - Centre-Right
+﻿Seasons
+======= 
+1. Winter 					(December to March) 
+2. Summer(Pre-Monsoon) 		(April to June) 
+3. Monsoon (Rainy) Season 	(July to September)
+4. Post-Monsoon (Autumn)  	(October to November)
+
+National Democratic Alliance (NDA) - Centre-Right
 United Progressive Alliance (UPA) - Centre-Left
 
 1. India has an asymmetric federal government, with elected officials at the federal, state and local levels.
@@ -159,8 +166,8 @@ Uttar Pradesh 								31
 Uttarakhand 								 3
 West Bengal 								16
 
-(TN) State Assembly Elections -  (15th state assembly elections held May 2016)
-=============================================================================
+(TN) State Assembly Elections -  (15th state assembly elections held May 2016) - 243 TALUKS
+===========================================================================================
 It has a strength of 235 members of whom 234 are democratically elected using the First-past-the-post system. The remaining member is nominated as a representative of the Anglo Indian community.
 People directly elect their representatives for the Legislative assembly. Total strength of each assembly depends on each State, mostly based on size and population .
 Eg: Tamil Nadu has 234 MLAs
@@ -270,3 +277,419 @@ Vellore 		1 				8 				22 					20 							753
 Villupuram 		0 				3 				15 					22 							1104
 Virudhunagar 	0 				7 				9 					11 							450
 Total 			12 				123 			529 				385 						12,524
+
+
+The table below lists geographic and demographic parameters for all 32 districts.
+
+No. 	District 			Code 	Headquarters 	Formed from 			 	Taluks 	
+--------------------		-----------------------------------------------------------
+1. 		Ariyalur 			AR 		Ariyalur 		Perambalur district 	 	Ariyalur
+																				Udayarpalayam
+																				Sendurai
+				
+							
+2. 		Chennai 			CH 	 												Tondiarpet
+																				Perambur
+																				Ayanavaram
+																				Purasawalkam
+																				Aminjikarai
+																				Egmore
+																				Mylapore
+																				Guindy
+																				Mambalam
+																				Velachery	
+		
+				
+3. 		Coimbatore 			CO 		Coimbatore 									Mettupalayam
+	                                                                            Coimbatore-North
+		                                                                        Coimbatore-South
+		                                                                        Pollachi
+		                                                                        Annur
+		                                                                        Kinathukadavu
+		                                                                        Sulur taluk
+		                                                                        Perur taluk
+		                                                                        Valparai
+		
+		
+	
+		
+4. 		Cuddalore 			CU 		Cuddalore 	 	South Arcot district 		Cuddalore 	
+	                                                                            Panruti
+		                                                                        Chidambaram
+		                                                                        Kattumannarkoil
+		                                                                        Kurinjipadi
+		                                                                        Titakudi
+		                                                                        Vriddachalam
+		
+		
+	
+		
+5. 		Dharmapuri 			DH 		Dharmapuri 		Salem district 				Dharmapuri	
+	                                                                            Palacode
+		                                                                        Pennagaram
+		                                                                        Harur
+		                                                                        Pappireddipatti
+		
+		
+	
+		
+6. 		Dindigul 			DI 		Dindigul 		Madurai district			Athoor
+	                                                                            Dindigul-West
+		                                                                        Dindigul-East
+		                                                                        Kodaikanal
+		                                                                        Natham
+		                                                                        Nilakottai
+		                                                                        Oddanchattiram
+		                                                                        Palani
+		                                                                        Vedasandur
+		
+		
+	
+		
+7. 		Erode 				ER 		Erode 			Coimbatore district			Anthiyur
+	                                                                            Bhavani
+		                                                                        Erode
+		                                                                        Gobichettipalayam
+		                                                                        Perundurai
+		                                                                        Sathyamangalam
+		
+		
+	
+		
+8. 		Kanchipuram 		KC 		Kanchipuram 	Chengalpattu district		Alandur
+	                                                                            Chengalpattu
+		                                                                        Cheyyur
+		                                                                        Kanchipuram
+		                                                                        Madurantakam
+		                                                                        Sholinganallur
+		                                                                        Sriperumbudur
+		                                                                        Tambaram
+		                                                                        Thiruporur
+		                                                                        Thirukazhukundram
+		                                                                        Uthiramerur
+		                                                                        Walajabad
+		
+		
+	
+		
+9. 		Kanyakumari 		KK 		Nagercoil 									Agastheeswaram
+	                                                                            Kalkulam
+		                                                                        Vilavancode
+		                                                                        Thovalai
+		
+		
+	
+		
+10.	 	Karur 				KR 		Karur 			Tiruchirappalli district 	Aravakurichi
+	                                                                            Kadavur
+		                                                                        Karur
+		                                                                        Krishnarayapuram
+		                                                                        Kulithalai
+		
+		
+	
+		
+11.	 	Krishnagiri 		KR 		Krishnagiri 	Dharmapuri district			Krishnagiri
+	                                                                            Hosur
+		                                                                        Pochampalli
+		                                                                        Uthangarai
+		                                                                        Denkanikottai
+		
+		
+	
+		
+12.	 	Madurai 			MA 		Madurai 									Madurai-North
+	                                                                            Madurai-South
+		                                                                        Melur
+		                                                                        Peraiyur
+		                                                                        Thirumangalam
+		                                                                        Usilampatti
+		                                                                        Vadipatti
+		
+		
+	
+		
+13.	 	Nagapattinam 		NG 		Nagapattinam 	Thanjavur district			Kilvelur
+	                                                                            Kuthalam
+		                                                                        Mayiladuthurai
+		                                                                        Nagapattinam
+		                                                                        Sirkazhi
+		                                                                        Tharangambadi
+		                                                                        Thirukkuvalai
+		
+		
+	
+		
+14.	 	Namakkal 			NM 		Namakkal 		Salem district				Kollimalai
+	                                                                            Namakkal
+		                                                                        Paramathi-Velur
+		                                                                        Thiruchengode
+		                                                                        Rasipuram
+		
+		
+	
+		
+15.	 	The Nilgiris 		NI 		Ooty 										Coonoor
+	                                                                            Gudalur
+		                                                                        Kotagiri
+		                                                                        Kundah
+		                                                                        Panthalur
+		                                                                        Udagamandalam
+		
+		
+	
+		
+16.	 	Perambalur 			PE 		Perambalur 		Tiruchirappalli district	Alathur
+	                                                                            Kunnam
+		                                                                        Perambalur
+		                                                                        Veppanthattai
+		
+		
+	
+		
+17.	 	Pudukkottai 		PU 		Pudukottai 		Tiruchirappalli district	Alangudi
+	                                                                            Aranthangi
+		                                                                        Avadaiyarkoil
+		                                                                        Gandarvakottai
+		                                                                        Illupur
+		                                                                        Kulathur
+		                                                                        Manamelkudi
+		                                                                        Pudukottai
+		                                                                        Thirumayam
+		
+		
+	
+		
+18.	 	Ramanathapuram 		RA 		Ramanathapuram								Kadaladi
+	                                                                            Kamuthi
+		                                                                        Manamelkudi
+		                                                                        Mudukulathur
+		                                                                        Paramakudi
+		                                                                        Ramanathapuram
+		                                                                        Rameswaram
+		                                                                        Tiruvadanai
+		
+		
+	
+		
+19.	 	Salem 				SA 		Salem										Attur
+	                                                                            Idappadi
+		                                                                        Gangavalli
+		                                                                        Mettur
+		                                                                        Omalur
+		                                                                        Pethanaickenpalayam
+		                                                                        Salem
+		                                                                        Kondalampatty
+		                                                                        Sankagiri
+		                                                                        Valapady
+		                                                                        Yercaud
+		
+		
+	
+		
+20.	 	Sivaganga 			SI 		Sivaganga		Madurai district 			Devakottai
+													Ramanathapuram district 	Ilayangudi
+	                                                                            Karaikudi
+		                                                                        Manamadurai
+		                                                                        Sivaganga
+		                                                                        Tirupathur
+		                                                                        Tiruppuvanam
+		
+		
+		
+	
+		
+21.	 	Thanjavur 			TJ 		Thanjavur									Kumbakonam
+	                                                                            Orathanadu
+		                                                                        Papanasam
+		                                                                        Pattukkottai
+		                                                                        Peravurani
+		                                                                        Thanjavur
+		                                                                        Thiruvaiyaru
+		                                                                        Thiruvidaimarudur
+		
+		
+	
+		
+22.	 	Theni 				TH 		Theni 			Madurai district			Theni
+	                                                                            Periyakulam
+		                                                                        Andipatti
+		                                                                        Bodniayakkanur
+		                                                                        Uthamapalayam
+		                                                                        Uthamapalayam
+		
+		
+	
+		
+23.	 	Thoothukudi 		TK 		Thoothukudi 	Tirunelveli district		Ettayapuram
+	                                                                            Kovilpatti
+		                                                                        Ottapidaram
+		                                                                        Sathankulam
+		                                                                        Srivaikuntam
+		                                                                        Thiruchendur
+		                                                                        Thoothukudi
+		                                                                        Vilathikulam
+		
+		
+	
+		
+24.	 	Tiruchirappalli 	TC 		Tiruchirappalli								Lalgudi
+	                                                                            Manachanallur
+		                                                                        Manapparai
+		                                                                        Musiri
+		                                                                        Srirangam
+		                                                                        Tiruchirapalli
+		                                                                        Thiruverumpur
+		                                                                        Thottiyam
+		                                                                        Thuraiyur
+		
+		
+	
+		
+25.	 	Tirunelveli 		TI 		Tirunelveli 								Alangulam
+	                                                                            Ambasamudram
+		                                                                        Nanguneri
+		                                                                        Palayamkottai
+		                                                                        Tenkasi
+		                                                                        Kadayanallur
+		                                                                        Shenkottai
+		                                                                        Radhapuram
+		                                                                        Sankarankoil
+		                                                                        Sivagiri
+		                                                                        Tirunelveli
+		                                                                        Veerakeralamputhur
+		
+		
+	
+			
+26.	 	Tiruppur 			TP 		Tiruppur 		Coimbatore district 		Avinashi
+													Erode district              Palladam
+	                                                                            Dharapuram
+		                                                                        Kangeyam
+		                                                                        Madathukulam
+		                                                                        Tiruppur
+		                                                                        Udumalaipettai
+		
+		
+		
+	
+		
+27.	 	Tiruvallur 			TL 		Tiruvallur 		Chengalpattu district 		Ambattur	
+	                                                                            Avadi
+		                                                                        Gummidipoondi
+		                                                                        Madhavaram
+		                                                                        Maduravoyal
+		                                                                        Pallipattu
+		                                                                        Ponneri
+		                                                                        Poonamallee
+		                                                                        Tiruttani
+		                                                                        Tiruvallur
+		                                                                        Tiruvottiyur
+		                                                                        Uthukkottai
+		
+		
+	
+		
+28.	 	Tiruvannamalai 		TV 		Tiruvannamalai 	North Arcot district		Arani
+	                                                                            Chengam
+		                                                                        Cheyyar
+		                                                                        Polur
+		                                                                        Thandarampattu
+		                                                                        Tiruvannamalai
+		                                                                        Vandavasi
+		
+		
+	
+		
+29.	 	Tiruvarur 			TR 		Thiruvarur 		Thanjavur district			Kudavasal
+	                                                                            Mannargudi
+		                                                                        Nannilam
+		                                                                        Needamangalam
+		                                                                        Thiruthiraipoondi
+		                                                                        Tiruvarur
+		                                                                        Valangaiman
+		
+		
+	
+		
+30.	 	Vellore 			VE 		Vellore 		North Arcot district		Ambur
+	                                                                            Anaikattu
+		                                                                        Arakkonam
+		                                                                        Arcort
+		                                                                        Gudiyatham
+		                                                                        Katpadi
+		                                                                        Tirupattur
+		                                                                        Vaniyambadi
+		                                                                        Vellore
+		                                                                        Walajapet
+		
+		
+	
+		
+31.	 	Viluppuram 			VL 		Viluppuram 		South Arcot district		Chinnasalem
+	                                                                            Gingee
+		                                                                        Kallakurichi
+		                                                                        Sankarapuram
+		                                                                        Tindivanam
+		                                                                        Ulundupettai
+		                                                                        Tirukoilur
+		                                                                        Vanur
+		                                                                        Vikravandi
+		                                                                        Villupuram
+		
+		
+	
+		
+32.	 	Virudhunagar 		VR 		Virudhunagar 	 Madurai district			Aruppukkottai
+													 Ramanathapuram district 	Kariapatti	
+	                                                                            Rajapalayam
+		                                                                        Sattur
+		                                                                        Sivakasi
+		                                                                        Srivilliputhur
+		                                                                        Tiruchuli
+		                                                                        Virudhunagar
+		
+#	Name 				ISO Code		Population		Offical Languages							Capital	 			Largest City		Literacy rate		%  Urban
+========================================================================================================================================================================
+1	Andhra Pradesh		AP				49506799		Telugu										Hyderabad			Visakhapatnam		67.41				29.6
+2	Arunachal Pradesh	AR				1382611			English										Itanagar								66.95				20.8
+3	Assam				AS				31169272		Assamese, Bengali, Bodo						Dispur				Guwahati			73.18				12.9
+4	Bihar				BR				103804637		Hindi, Urdu									Patna									63.82				10.5
+5	Chhattisgarh		CT				25540196		Hindi										Naya Raipur			Raipur				71.04				20.1
+6	Goa					GA				1457723			Konkani										Panaji				Vasco				87.4				62.2
+7	Gujarat				GJ				60383628		Gujarati									Gandhinagar			Ahmedabad			79.31				37.4
+8	Haryana				HR				25353081		Hindi, Punjabi								Chandigarh			Faridabad			76.64				28.9
+9	Himachal Pradesh	HP				6856509			Hindi										Shimla									83.78				9.8
+10	Jammu and Kashmir	JK				12548926		Urdu										Srinagar (summer)						68.74				24.8
+																									Jammu (winter)		
+11	Jharkhand			JH				32966238		Hindi										Ranchi				Jamshedpur			67.63				22.2
+12	Karnataka			KA				61130704		Kannada										Bengaluru								75.6				34
+13	Kerala				KL				33387677		Malayalam									Thiruvananthapuram						93.91				26
+14	Madhya Pradesh		MP				72597565		Hindi										Bhopal				Indore				70.63				26.5
+15	Maharashtra			MH				112372972		Marathi										Mumbai									82.91				42.4
+16	Manipur				MN				2721756			Manipuri									Imphal									79.85				25.1
+17	Meghalaya			ML				2964007			English, Garo, Hindi, Khasi, Pnar			Shillong								75.48				19.6
+18	Mizoram				MZ				1091014			Mizo, English								Aizawl									91.58				49.6
+19	Nagaland			NL				1980602			English										Kohima				Dimapur				80.11				17.2
+20	Odisha				OR				41947358		Odia										Bhubaneswar								73.45				15
+21	Punjab				PB				27704236		Punjabi										Chandigarh			Ludhiana			76.68				33.9
+22	Rajasthan			RJ				68621012		Hindi										Jaipur									67.06				23.4
+23	Sikkim				SK				607688			Bhutia, Gurung, Lepcha, Limbu, Manggar, 	Gangtok									82.2				11.1
+														Nepali, Newari, Sherpa, Sunwar, Tamang		
+24	Tamil Nadu			TN				72138958		Tamil										Chennai									80.33				44
+25	Telangana			TG				35,193,978		Telugu, Urdu								Hyderabad								66.50
+26	Tripura				TR				3671032			Bengali, Tripuri							Agartala								87.75				17.1
+27	Uttar Pradesh		UP				199581477		Hindi, Urdu									Lucknow				Kanpur				69.72				20.8
+28	Uttarakhand			UT				10116752		Hindi, Sanskrit								Dehradun								79.63				25.7
+29	West Bengal			WB				91347736		Bengali and Nepali							Kolkata									77.08				28
+		
+		
+#	Name									ISO Code			Languages								Capital			Literacy Rate(%)	% Urban
+===================================================================================================================================================
+1	Andaman and Nicobar Islands				AN					English, Hindi							Port Blair		86.27				32.6
+2	Chandigarh								CH					English, Hindi, Punjabi					Chandigarh		86.43				89.8
+3	Dadra and Nagar Haveli					DN					English, Gujarati, Hindi, Marathi		Silvassa		77.65				22.9
+4	Daman and Diu							DD					English, Gujarati, Hindi, Marathi		Daman			87.07				36.2
+5	Lakshadweep								LD					English, Malayalam						Kavaratti		92.28				44.5
+6	National Capital Territory of Delhi		DL					English, Hindi, Punjabi, Urdu			New Delhi		86.34				93.2
+7	Puducherry								PY					English, Malayalam, Tamil, Telugu		Pondicherry		86.55				66.6

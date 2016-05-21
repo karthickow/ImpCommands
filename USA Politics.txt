@@ -1,0 +1,120 @@
+Seasons
+=======
+Spring	 		April to June
+Summer	 		July to September
+Fall (Autumn)	October to December
+Winter	 		January to March 
+
+Northern Hemisphere
+===================
+Spring 			March Equinox to June Solstice;
+Summer 			June Solstice to September Equinox;
+Fall (Autumn)	September Equinox to December Solstice; and,
+Winter 			December Solstice to March Equinox.
+		
+The United States of America (USA), commonly referred to as the United States (U.S.) or America, is a federal republic composed of 50 states, the federal district of Washington, D.C., five major territories, and various possessions (consist of eight United States insular areas in the Pacific Ocean (Baker Island, Howland Island, Jarvis Island, Johnston Atoll, Kingman Reef, Midway Atoll, Palmyra Atoll, and Wake Island) and one in the Caribbean Sea (Navassa Island))
+
+Constitution
+============
+Federal government is divided into three branches: the legislative, consisting of the bicameral Congress; the executive, consisting of the President; and the judicial, consisting of the Supreme Court and other federal courts
+
+US Congress
+===========
+The United States Congress is the bicameral legislature of the federal government of the United States consisting of two houses: the Senate and the House of Representatives. The Congress meets in the Capitol in Washington, D.C. Both senators and representatives are chosen through direct election, though vacancies in the Senate may be filled by a gubernatorial appointment. 
+
+Members are usually affiliated to the Republican Party or to the Democratic Party, and only rarely to a third-party or as independents. Congress has 535 voting members: 435 Representatives and 100 Senators.
+
+
+
+
+State				Abbr	Capital					Largest city			Population			House Seat(s)
+-------------------------------------------------------------------------------------------------------------
+Alabama				AL		Montgomery				Birmingham				 4,833,722			 7
+Alaska				AK		Juneau					Anchorage				   735,132		     1
+Arizona				AZ		Phoenix					Phoenix					 6,626,624			 9
+Arkansas			AR		Little Rock				Little Rock				 2,959,373			 4
+California			CA		Sacramento				Los Angeles				38,332,521			53
+Colorado			CO		Denver					Denver					 5,268,367			 7
+Connecticut			CT		Hartford				Bridgeport				 3,596,080			 5
+Delaware			DE		Dover					Wilmington				   925,749			 1
+Florida				FL		Tallahassee				Jacksonville			19,552,860			27
+Georgia				GA		Atlanta					Atlanta					 9,992,167			14
+Hawaii				HI		Honolulu				Honolulu				 1,404,054			 2
+Idaho				ID		Boise					Boise					 1,612,136			 2
+Illinois			IL		Springfield				Chicago					12,882,135			18
+Indiana				IN		Indianapolis			Indianapolis			 6,570,902			 9
+Iowa				IA		Des Moines				Des Moines				 3,090,416			 4
+Kansas				KS		Topeka					Wichita					 2,893,957			 4
+Kentucky			KY		Frankfort				Louisville				 4,395,295			 6
+Louisiana			LA		Baton Rouge				New Orleans				 4,625,470			 6
+Maine				ME		Augusta					Portland				 1,328,302			 2
+Maryland			MD		Annapolis				Baltimore				 5,928,814			 8
+Massachusetts		MA		Boston					Boston					 6,692,824			 9
+Michigan			MI		Lansing					Detroit					 9,895,622			14
+Minnesota			MN		St. Paul				Minneapolis				 5,420,380			 8
+Mississippi			MS		Jackson					Jackson					 2,991,207			 4
+Missouri			MO		Jefferson City			Kansas City				 6,021,988			 8
+Montana				MT		Helena					Billings				 1,015,165			 1
+Nebraska			NE		Lincoln					Omaha					 1,868,516			 3
+Nevada				NV		Carson City				Las Vegas				 2,790,136			 4
+New Hampshire		NH		Concord					Manchester				 1,323,459			 2
+New Jersey			NJ		Trenton					Newark					 8,899,339			12
+New Mexico			NM		Santa Fe				Albuquerque				 2,085,287			 3
+New York			NY		Albany					New York				19,651,127			27
+North Carolina		NC		Raleigh					Charlotte				 9,848,060			13
+North Dakota		ND		Bismarck				Fargo					   723,393			 1
+Ohio				OH		Columbus				Columbus				11,570,808			16
+Oklahoma			OK		Oklahoma City			Oklahoma City			 3,850,568			 5
+Oregon				OR		Salem					Portland				 3,930,065			 5
+Pennsylvania		PA		Harrisburg				Philadelphia			12,773,801			18
+Rhode Island		RI		Providence				Providence				 1,051,511			 2
+South Carolina		SC		Columbia				Columbia				 4,774,839			 7
+South Dakota		SD		Pierre					Sioux Falls				   844,877			 1
+Tennessee			TN		Nashville				Memphis					 6,495,978			 9
+Texas				TX		Austin					Houston					26,448,193		 	36
+Utah				UT		Salt Lake City			Salt Lake City			 2,900,872			 4
+Vermont				VT		Montpelier				Burlington				   626,630			 1
+Virginia			VA		Richmond				Virginia Beach			 8,260,405			11
+Washington			WA		Olympia					Seattle					 6,971,406			10
+West Virginia		WV		Charleston				Charleston				 1,854,304			 3
+Wisconsin			WI		Madison					Milwaukee				 5,742,713			 8
+Wyoming				WY		Cheyenne				Cheyenne				   582,658			 1
+																		   315,460,207		   435
+																		   
+Name					Abbr	Population	House seat
+------------------------------------------------------
+District of Columbia	DC		646,449		1
+
+Inhabited territories
+=====================				
+Territory					Abbr	Capital				Population		House Seat
+----------------------------------------------------------------------------------
+American Samoa				AS		Pago Pago			   55,519			1
+Guam						GU		Hagåtña				  159,358			1
+Northern Mariana Islands	MP		Saipan				   53,883			1
+Puerto Rico					PR		San Juan			3,725,789			1
+U.S. Virgin Islands			VI		Charlotte Amalie	  106,405			1
+
+Uninhabited territories
+=======================
+Baker Island
+Howland Island
+Jarvis Island
+Johnston Atoll
+Kingman Reef
+Midway Atoll
+Navassa Island
+Palmyra Atoll
+Wake Island
+
+Disputed territories
+====================		
+Territory							Administered By			Also claimed By
+---------------------------------------------------------------------------
+Bajo Nuevo Bank (Petrel Island)		Colombia	 			Jamaica
+		 													Nicaragua
+		
+Serranilla Bank	 					Colombia	 			Honduras
+		 													Nicaragua
+
+																		   
