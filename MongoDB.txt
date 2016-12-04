@@ -1,0 +1,13 @@
+mongod.exe -storageEngine=mmapv1 -f "C:\Program Files\MongoDB\mongo.config"
+
+Final Exam
+==========
+mongorestore --port 27017 -d enron -c messages 
+
+use enron
+db.messages.find({"headers.To":"andrew.fastow@enron.com","headers.From":"jeff.skilling@enron.com"}).count();
+
+
+Please add the email address "mrpotatohead@mongodb.com" to the list of addresses in the "headers.To" array for the document with "headers.Message-ID" of "<8147308.1075851042335.JavaMail.evans@thyme>"
+
+db.messages.update({"headers.Message-ID":"<8147308.1075851042335.JavaMail.evans@thyme>"},{$addToSet:{"headers.To":"mrpotatohead@10gen.com"}})

@@ -375,4 +375,6 @@ If you want to debug the source code or look at the Javadocs of any library in t
 
 	mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.1.0 -Dpackaging=jar -Dfile=ojdbc14.jar -DgeneratePom=true
 	
+	mvn install:install-file -DgroupId=com.oracle.jdbc -DartifactId=ojdbc7 -Dversion=12.1.0.2 -Dpackaging=jar -Dfile=ojdbc7.jar -DgeneratePom=true
+	mvn install:install-file -DgroupId=com.oracle.jdbc -DartifactId=ucp -Dversion=12.1.0.2 -Dpackaging=jar -Dfile=ucp.jar -DgeneratePom=true
 	

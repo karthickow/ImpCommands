@@ -45,8 +45,6 @@ touch README.md
 git init
 git add README.md
 git commit -m "first commit"
-git remote add origin https://github.com/karthickow/main.git
-git push -u origin master
 
 Push an existing repository from the command line
 --------------------------------------------------
@@ -112,6 +110,7 @@ git reset --hard 6ad30c1 // Resets your index and working directory to the state
 git reset HEAD 
 git config  remote.origin.url 									// to see remote url
 git config  remote.origin.url git@github.com:karthickow/BusBookingSystem.git	// change remote url
+git config --global push.default matching
 
 git remote -v
 git remote rm origin	//removing an existing remote alias
@@ -174,6 +173,9 @@ git mergetool
 git branch -a // lists local and remote branch
 git branch // lists only local branches
 git branch -v //see the last commit on each branch
+git branch -m 1.0/branchname 
+git branch -u upstream/foo  //track upstream
+git branch --set-upstream-to=upstream/foo  //track upstream
 git checkout -b newfeature // create and immediately switch to a branch
 git push origin newfeature //pushing to newly created branch
 git checkout master // switch branch to master
