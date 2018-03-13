@@ -485,6 +485,7 @@ sudo apt-get update
 sudo apt-get install oracle-java6-installer
 sudo apt-get install oracle-jdk7-installer
 sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
 
 sudo apt-get remove oracle-java7-installer
 
@@ -614,3 +615,162 @@ UUID=4E24629024627B3B /media/reservedide ntfs-3g auto,user,rw 0 0
 UUID=4ADC71C6DC71ACB7 /media/cdriveide ntfs-3g auto,user,rw 0 0
 UUID=80DA5A3DDA5A3020 /media/ddriveide ntfs-3g auto,user,rw 0 0
 UUID=461EB67C1EB66519 /media/drivesata ntfs-3g auto,user,rw 0 0
+
+
+
+
+Step 3 - Install Apache Tomcat 8.5
+
+In this step, we will install Apache Tomcat under the user tomcat.
+
+Create a user and group named tomcat:
+
+groupadd tomcat
+useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
+
+Note:
+-s /bin/false = disable shell access.
+-g tomcat = assign the new user to the group tomcat.
+-d /opt/tomcat = define the home directory for the user.
+
+Next, go to the /opt directory and download tomcat with the wget command:
+
+cd /opt/
+wget http://mirror.wanxp.id/apache/tomcat/tomcat-8/v8.5.6/bin/apache-tomcat-8.5.6.tar.gz
+
+Extract the Tomcat archive and rename the directory to 'tomcat'.
+
+tar -xzvf apache-tomcat-8.5.6.tar.gz
+mv apache-tomcat-8.5.6 tomcat
+
+Change the owner of the tomcat directory to the tomcat user, and make all files in the bin directory executable.
+
+chown -hR tomcat:tomcat tomcat
+chmod +x /opt/tomcat/bin/*
+
+Next, we need to define the CATALINA_HOME directory, so we can run a test with Apache Tomcat. Catalina is the Tomcat servlet container.
+
+Edit the .bashrc file with vim:
+
+vim ~/.bashrc
+
+Paste the configuration line below at the end of the line:
+
+export CATALINA_HOME=/opt/tomcat
+
+Save and exit, and then reload the .bashrc.
+
+source ~/.bashrc
+
+Check the CATALINA_HOME environment.
+
+echo $CATALINA_HOME
+
+Step 4 - Test Apache Tomcat
+
+In step 3, we configured the basic Tomcat setup, in this step, we will do some testing and make sure that there is no error in our configuration.
+
+Run the command below to test the Apache Tomcat:
+
+$CATALINA_HOME/bin/startup.sh
+
+Make sure the results is 'Tomcat started' to verify that Tomcat is successfully installed.
+
+Tomcat is using port 8080, check the open port on the server with netstat command.
+
+netstat -plntu
+
+$CATALINA_HOME/bin/shutdown.sh
+chown -hR tomcat:tomcat /opt/tomcat/
+
+Step 5 - Setup an Apache Tomcat Service
+
+In this tutorial, we want run Apache Tomcat as tomcat user with a systemd service file so it can be started and stopped easily. Now we need to create the 'tomcat.service' file.
+
+Go to the systemd system directory and create a new file 'tomcat.service'.
+
+cd /etc/systemd/system/
+vim tomcat.service
+
+Paste configuration below:
+
+[Unit]
+Description=Apache Tomcat 8 Servlet Container
+After=syslog.target network.target
+
+[Service]
+User=tomcat
+Group=tomcat
+Type=forking
+Environment=CATALINA_PID=/opt/tomcat/tomcat.pid
+Environment=CATALINA_HOME=/opt/tomcat
+Environment=CATALINA_BASE=/opt/tomcat
+ExecStart=/opt/tomcat/bin/startup.sh
+ExecStop=/opt/tomcat/bin/shutdown.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+Save the file and exit the editor.
+
+Reload the systemd daemon, then start the Tomcat service and add the Apache Tomcat service to start at boot time.
+
+systemctl daemon-reload
+systemctl start tomcat
+systemctl enable tomcat
+
+Check that tomcat is running by checking the open port.
+
+netstat -plntu
+
+And check the tomcat status, make sure the service is active.
+
+systemctl status tomcat
+
+
+Step 6 - Configure Apache Tomcat Users
+
+In this step, we will configure the users for Apache Tomcat. Tomcat is installed, and it's running by default on port 8080, we can access it from the web browser, but we can not access the site-manager dashboard until now. This is the purpose of this step, to enable and configure Tomcat users, edit the file 'tomcat-users.xml'.
+
+Go to the tomcat configuration directory and edit the tomcat-users.xml with vim.
+
+cd /opt/tomcat/conf/
+vim tomcat-users.xml
+
+Create a new line under line 43 and paste configuration below:
+
+<role rolename="manager-gui"/>
+<user username="admin" password="password" roles="manager-gui,admin-gui"/>
+
+Save and exit.
+
+Next, go to the manager directory and edit the context.xml file.
+
+cd /opt/tomcat/webapps/manager/META-INF/
+vim context.xml
+
+Comment line 19 and 20.
+
+<Context antiResourceLocking="false" privileged="true" >
+<!--  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+</Context>
+
+Save and exit.
+
+And go to the host-manager directory and edit the context file again.
+
+cd /opt/tomcat/webapps/host-manager/META-INF/
+vim context.xml
+
+Comment out line 19 and 20.
+
+<Context antiResourceLocking="false" privileged="true" >
+<!--  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+</Context>
+
+Save and exit, then restart tomcat.
+
+systemctl restart tomcat
