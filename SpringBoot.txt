@@ -3,3 +3,39 @@ Actuator:
 By default, all web endpoints are available beneath the path /actuator with URLs of the form /actuator/{id}. The /actuator base path can be configured by using the management.endpoints.web.base-path property, as shown in the following example:
 	
 	management.endpoints.web.base-path=/manage
+	
+	# Actuator and Spring Security
+	management.security.enabled=true
+	management.endpoints.web.base-path=/manage
+	management.security.roles=ACTRADMIN
+	#security.basic.enabled=true
+	security.user.name=
+	security.user.password=
+
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-security</artifactId>
+	</dependency>
+	
+SpringSecurityConfig.java
+	package com.devglan.config; 
+	
+	import org.springframework.beans.factory.annotation.Autowired; 
+	import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder; 
+	import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity; 
+	import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter; 
+
+	@Configuration 
+	public class SpringSecurityConfig extends WebSecurityConfigurerAdapter { 
+		@Autowired 
+		public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception { 
+			auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ACTRADMIN"); 
+		} 
+	}
+
+Actuator Endpoints
+	docs, heapdump, jolokia, and logfile
