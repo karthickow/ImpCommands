@@ -1,0 +1,1 @@
+mvn sonar:sonar -Dsonar.organization=karthickow-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=955baf432c67c394c6a24ae1593ceaf4ccae4877
