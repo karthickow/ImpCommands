@@ -1,1 +1,6 @@
+show variables like '%timeout%';
 SHOW VARIABLES LIKE "%version%";
+show global variables like '%timeout%';
+select @@max_connections;
+SHOW STATUS WHERE variable_name = 'Threads_connected';
+SELECT VERSION();

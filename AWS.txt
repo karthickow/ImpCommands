@@ -1,0 +1,11 @@
+-Djavax.net.ssl.keyStore=/path/to/keystore/keystore.jks
+-Djavax.net.ssl.keyStorePassword=password
+-Djavax.net.ssl.trustStore=/path/to/keystore/truststore.jks
+-Djavax.net.ssl.trustStorePassword=password
+
+AWS RDS MYSQL 
+
+mystoredbinstance
+karthee_k
+143_b4udiE
+dbname = mystore
