@@ -35,6 +35,7 @@ https://github.com/karthickow/BusBookingSystem.git
 git@github.com:karthickow/BusBookingSystem.git
 
 git clone https://github.com/karthickow/ImpCommands.git Imp // a new name to the folder
+git clone -b my-branch https://git@github.com/username/myproject.git
 Checking the Status of Your Files
 ----------------------------------
 git status
