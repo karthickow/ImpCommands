@@ -1,0 +1,6 @@
+SQL Server:
+----------
+Server Name = kartheek.database.windows.net
+karthee_k
+143_b4udiE
+dbname = mystore
