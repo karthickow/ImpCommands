@@ -4,3 +4,7 @@ show global variables like '%timeout%';
 select @@max_connections;
 SHOW STATUS WHERE variable_name = 'Threads_connected';
 SELECT VERSION();
+
+show global variables like 'init%';
+SHOW PROCESSLIST;
+select * from information_schema.processlist;
