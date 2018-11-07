@@ -1,3 +1,4 @@
+https://helpx.adobe.com/creative-suite/kb/cs2-product-downloads.html?promoid=19SCDRQK
 <proxy>
       <active>true</active>
       <protocol>http</protocol>
