@@ -1,0 +1,23 @@
+security enable-ssl-http-server --interactive --override-ssl-context --no-trusted-certificate-validation
+
+
+
+First, obtain or generate your client keystore.
+	keytool -genkeypair -alias client -keyalg RSA -keysize 2048 -validity 365 -keystore client.keystore.jks -dname "CN=client" -keypass secret -storepass secret
+
+Export your client certificate.
+	keytool -exportcert  -keystore client.keystore.jks -alias client -keypass secret -storepass secret -file client.cer
+
+Export your server certificate
+	keytool -exportcert  -keystore server.keystore.jks -alias localhost -keypass secret -storepass secret -file server.cer
+
+Import the server certificate into the client truststore
+	keytool -importcert -keystore client.truststore.jks -storepass secret -alias localhost -trustcacerts -file server.cer
+
+
+keytool -importkeystore -srckeystore client.keystore.jks -destkeystore client.keystore.p12 -deststoretype PKCS12
+openssl pkcs12 -in client.keystore.p12 -nokeys -out client.keystore.crt
+openssl pkcs12 -in client.keystore.p12 -nocerts -nodes -out client.keystore.key
+
+
+openssl req -nodes -new -newkey rsa:2048 -keyout client.key -out client.csr -config c:\Karthick\softwares\OpenSSL-Win64\bin\openssl.cfg
