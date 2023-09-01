@@ -1,2 +1,0 @@
-C:\Program Files\IBM\SDP\runtimes\base_v7\profiles\was70profile1\bin>createEJBStubs.bat D:\Karthick\ToInstall\StudentEAR.ear -logfile myLog.out
-java -jar javapetstore-2.0-ea5-installer.jar
