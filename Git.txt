@@ -1,7 +1,3 @@
-shift+zz //save and exit vi editor
-
-http://gitref.org/inspect/    // git reference documentation
-
 git config --global user.name "Karthick"
 git config --global user.email karthickkrishnan24@gmail.com
 
@@ -11,8 +7,13 @@ git config --global --unset http.proxy		// to unset http proxy
 git config --global user.name "Karthick"
 git config --global user.email "karthickkrishnan24@gmail.com"
 
-git mergetool --tool-help
+git config  remote.origin.url 	// to see remote url
+git config  remote.origin.url git@github.com:karthickow/BusBookingSystem.git	// change remote url
+git config --global push.default matching
 git config --global merge.tool tortoisemerge
+git config color.vi true
+
+git mergetool --tool-help
 
 git help -a
 
@@ -50,7 +51,9 @@ git commit -m "first commit"
 Push an existing repository from the command line
 --------------------------------------------------
 git remote add origin https://github.com/karthickow/main.git
-git push -u origin master
+git push -u origin master 
+git push --set-upstream origin master
+
 
 git log		//Shows a listing of commits on a branch including the corresponding details.
 git log --oneline  //To see a more compact version of the same history
@@ -109,9 +112,7 @@ git checkout readme
 git commit -am ""
 git reset --hard 6ad30c1 // Resets your index and working directory to the state of your last commit.
 git reset HEAD 
-git config  remote.origin.url 									// to see remote url
-git config  remote.origin.url git@github.com:karthickow/BusBookingSystem.git	// change remote url
-git config --global push.default matching
+
 
 git remote -v
 git remote rm origin	//removing an existing remote alias
@@ -169,7 +170,7 @@ git rm --cached hello.txt
 git rm 						//Removes files from your index and your working directory so they will not be tracked. Example: git rm filename
 git add .gitignore
 
-git config color.vi true
+
 git mergetool
 git branch -a // lists local and remote branch
 git branch // lists only local branches
