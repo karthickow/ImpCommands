@@ -176,8 +176,18 @@ git branch -a // lists local and remote branch
 git branch // lists only local branches
 git branch -v //see the last commit on each branch
 git branch -vv // Shows the branch it is tracking (blue color)
-git branch -m 1.0/branchname 
+
+// How to rename a local git branch
+git branch -m 1.0/branchname //same branch
+git branch -m <old_name> <new_name>  //different branch
+
+//How to rename a remote git branch
+git push origin -u <new_name>
+git push origin --delete <old_name>
+git push origin :old-name new-name  //in one command
+
 git branch -u upstream/foo  //track upstream
+git branch -u origin/defaultsecurityconfig //track upstream
 git branch --set-upstream-to=upstream/foo  //track upstream
 git checkout -b newfeature // create and immediately switch to a branch
 git push origin newfeature //pushing to newly created branch
